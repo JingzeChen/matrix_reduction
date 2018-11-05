@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <device_launch_parameters.h>
 
 #include "cuda_runtime.h"
 #include "cuda_runtime_api.h"
@@ -14,17 +15,58 @@
 typedef long indx;
 typedef short dimension;
 
-__global__ void allocate_all_columns(column *matrix, int column_num, ScatterAllocator::AllocatorHandle allocator) {
+__global__ void allocate_all_columns(indx ** tmp_gpu_columns, const size_t * column_length, int column_num,
+        ScatterAllocator::AllocatorHandle allocator) {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
     if (thread_id >= column_num)
         return;
-    auto col = &matrix[thread_id];
-    auto length = matrix->data_length[thread_id];
-    auto size = round_up_to_2s(length);
-    col->data_length = (size_t) length;
-    col->size = (size_t) (size > INITIAL_SIZE ? size : INITIAL_SIZE);
-    col->pos = (indx *) allocator.malloc(sizeof(indx) * (size / 64));
-    col->value = (indx *) allocator.malloc(sizeof(indx) * (size / 64));
+
+    auto length = column_length[thread_id];
+    tmp_gpu_columns[thread_id] = (indx *) allocator.malloc(sizeof(indx) * length);
+}
+
+__global__ void transform_all_columns(indx ** tmp_gpu_columns, const size_t * column_length, column *matrix, int column_num,
+        ScatterAllocator::AllocatorHandle allocator) {
+    int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
+    if (thread_id >= column_num)
+        return;
+
+    auto src_length = column_length[thread_id];
+    auto src_data = tmp_gpu_columns[thread_id];
+    auto col = matrix[thread_id];
+    col.data_length = 0;
+
+    indx last_pos = -1;
+
+    for (int i = 0; i < src_length; i++) {
+        indx current_pos = src_data[i] / 64;
+        if (last_pos != current_pos) {
+            col.data_length++;
+            last_pos = current_pos;
+        }
+    }
+
+    col.pos = (indx *) allocator.malloc(sizeof(indx) * col.data_length);
+    col.value = (unsigned long long *) allocator.malloc(sizeof(unsigned long long) * col.data_length);
+
+    last_pos = -1;
+    unsigned long long last_value = 0;
+    int cur_block_id = 0;
+
+    for (int i = 0; i < src_length; i++) {
+        indx current_pos = src_data[i] / 64;
+        if (last_pos != current_pos) {
+            if (last_pos != -1) {
+                col.pos[cur_block_id] = last_pos;
+                col.value[cur_block_id] = last_value;
+                cur_block_id++;
+            }
+            last_pos = current_pos;
+            last_value = 0;
+        }
+        unsigned long long mask = ((unsigned long long) 1) << (63 - src_data[i] % 64);
+        last_value |= mask;
+    }
 }
 
 gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vector> *src_matrix,
@@ -73,39 +115,31 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
 
     gpuErrchk(cudaMemcpy(matrix, h_matrix, sizeof(column) * cols_num, cudaMemcpyHostToDevice));
 
-    allocate_all_columns <<< CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >>> (matrix, cols_num, allocator);
+    indx ** tmp_gpu_columns, ** h_tmp_gpu_columns;
+    gpuErrchk(cudaMalloc((void **) &tmp_gpu_columns, sizeof(indx *) * cols_num));
+    allocate_all_columns <<< CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >>> (tmp_gpu_columns,
+            column_length, cols_num, allocator);
+    cudaMemcpy(h_tmp_gpu_columns, tmp_gpu_columns, sizeof(indx *) * cols_num, cudaMemcpyDeviceToHost);
 
     for (phat::index i = 0; i < cols_num; i++) {
         phat::column col;
         src_matrix->get_col(i, col);
-        column h_single_column;
-
-        int j = 0;
-        size_t k = 0;
-        size_t h_pos[h_column_length[i]];
-        unsigned long long h_value[h_column_length[i]];
-        while (j < col.size()) {
-            unsigned long long t_value = 0;
-            size_t
-            t_pos = col[j] / 64 + 1;
-            while (t_pos == (col[j] / 64 + 1)) {
-                t_value += 1 << (col[j] % 64);
-                j++;
-            }
-            h_pos[k] = t_pos;
-            h_value[k] = t_value;
-            k++;
-        }
-        gpuErrchk(cudaMemcpy(matrix[i].pos, h_pos, sizeof(size_t) * k, cudaMemcpyHostToDevice));
-        gpuErrchk(cudaMemcpy(matrix[i].value, h_value, sizeof(unsigned long long) * k, cudaMemcpyHostToDevice));
-        matrix[i].data_length = k + 1;
+        auto col_data_ptr = &col[0];
+        gpuErrchk(cudaMemcpy(h_tmp_gpu_columns[i], col_data_ptr, sizeof(indx) * col.size(),
+                             cudaMemcpyHostToDevice));
     }
 
-    delete[] h_data_length;
-    delete[] h_chunks_start_offset;
+    transform_all_columns <<< CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >>> (tmp_gpu_columns,
+            column_length, matrix, cols_num, allocator);
+
+    gpuErrchk(cudaFree(tmp_gpu_columns));
+    delete[] h_matrix;
+    delete[] h_chunk_offset;
     delete[] h_column_type;
-    delete[] h_lowest_one;
-    delete[] h_dims_ptr;
+    delete[] h_column_length;
+    delete[] h_dims;
+    delete[] h_lowest_one_lookup;
+    delete[] h_chunks_start_offset;
 }
 
 __device__ dimension gpu_boundary_matrix::get_max_dim(int col) {

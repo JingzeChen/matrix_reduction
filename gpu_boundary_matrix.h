@@ -25,7 +25,7 @@ struct column {
     indx *pos; //the indx of non-zero 64-bits array in the current column.
     unsigned long long *value; //the value of non-zero 64-bits array represented by long integer.
     size_t data_length;  //the number of non-zero 64-bits arrays in the current column.
-    size_t _size;  //maximal number of non-zero 64-bits arrays in the current column.
+    size_t size;  //maximal number of non-zero 64-bits arrays in the current column.
 };
 
 class gpu_boundary_matrix {
