@@ -18,17 +18,18 @@
 typedef long index;
 typedef short dimension;
 
-__global__ void allocate_all_columns(gpu_matrix &matrix, ScatterAllocator::AllocatorHandle allocator)
+__global__ void allocate_all_columns(column* matrix, int column_num, ScatterAllocator::AllocatorHandle allocator)
 {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
-    if (thread_id >= matrix->column_num)
+    if (thread_id >= column_num)
         return;
     auto col = &matrix[thread_id];
     auto length = matrix->data_length[thread_id];
     auto size = round_up_to_2s(length);
     col->data_length = (size_t) length;
     col->size = (size_t) (size > INITIAL_SIZE ? size : INITIAL_SIZE);
-    col->data = (indx *) allocator.malloc(sizeof(indx) * size);
+    col->pos = (index *) allocator.malloc(sizeof(index) * (size/64));
+    col->value = (index *) allocator.malloc(sizeof(index) * (size/64));
 }
 
 gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix<phat::vector_vector>* src_matrix,
@@ -64,38 +65,54 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix<phat::vector_vect
         h_chunk_offset[chunks_num] = (indx) (cols_num);
 
         gpuErrchk(cudaMalloc((void **) &dims, sizeof(dimension) * cols_num));
-        gpuErrchk(cudaMalloc((void **) &column_length, sizeof(indx) * cols_num));
-        gpuErrchk(cudaMalloc((void **) &lowest_one_lookup, sizeof(indx) * cols_num));
-        gpuErrchk(cudaMalloc((void **) &chunk_offset, sizeof(indx) * (chunks_num + 1)));
-        gpuErrchk(cudaMalloc((void **) &chunk_columns_finished, sizeof(indx) * chunks_num));
+        gpuErrchk(cudaMalloc((void **) &column_length, sizeof(index) * cols_num));
+        gpuErrchk(cudaMalloc((void **) &lowest_one_lookup, sizeof(index) * cols_num));
+        gpuErrchk(cudaMalloc((void **) &chunk_offset, sizeof(index) * (chunks_num + 1)));
+        gpuErrchk(cudaMalloc((void **) &chunk_columns_finished, sizeof(index) * chunks_num));
         gpuErrchk(cudaMalloc((void **) &column_type, sizeof(short) * cols_num));
-        gpuErrchk(cudaMalloc((void **) &d_cols_ptr, sizeof(column) * cols_num));
+        gpuErrchk(cudaMalloc((void **) &matrix, sizeof(column) * cols_num));
         gpuErrchk(cudaMalloc((void **) &is_active, sizeof(bool) * cols_num));
+        gpuErrchk(cudaMalloc((void **) &is_ready_for_mark, sizeof(bool) * cols_num));
 
-        gpuErrchk(cudaMemcpy(dims, h_dims_ptr, sizeof(dimension) * cols_num, cudaMemcpyHostToDevice));
+        gpuErrchk(cudaMemcpy(dims, h_dims, sizeof(dimension) * cols_num, cudaMemcpyHostToDevice));
         gpuErrchk(cudaMemcpy(column_length, h_data_length, sizeof(size_t) * cols_num, cudaMemcpyHostToDevice));
         gpuErrchk(cudaMemcpy(lowest_one_lookup, h_lowest_one, sizeof(indx) * cols_num, cudaMemcpyHostToDevice));
         gpuErrchk(cudaMemcpy(chunk_offset, h_chunk_offset, sizeof(indx) * (chunks_num + 1),cudaMemcpyHostToDevice));
         gpuErrchk(cudaMemcpy(column_type, h_column_type, sizeof(short) * cols_num, cudaMemcpyHostToDevice));
 
-        gpuErrchk(cudaMalloc())
         gpuErrchk(cudaMemcpy(d_matrix, h_matrix, sizeof(gpu_matrix), cudaMemcpyHostToDevice));
 
-        mx_allocate_all_columns << < CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >> >
-            (d_matrix, allocator);
+        allocate_all_columns << < CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >> >
+            (matrix, cols_num, allocator);
 
         for (phat::index i = 0; i < cols_num; i++)
         {
             phat::column col;
             src_matrix->get_col(i, col);
-            auto col_data_ptr = &col[0];
             column h_single_column;
-            gpuErrchk(cudaMemcpy(&h_single_column, &d_cols_ptr[i], sizeof(column), cudaMemcpyDeviceToHost));
-            gpuErrchk(cudaMemcpy(h_single_column.data, col_data_ptr, sizeof(indx) * h_single_column.data_length,
-                        cudaMemcpyHostToDevice));
+
+            int j = 0;
+            size_t k = 0;
+            size_t h_pos[h_column_length[i]];
+            unsigned long long h_value[h_column_length[i]];
+            while(j < col.size())
+            {
+                unsigned long long t_value = 0;
+                size_t t_pos = col[j]/64 + 1;
+                while(t_pos == (col[j]/64 +1))
+                {
+                    t_value += 1 << (col[j] % 64);
+                    j++;
+                }
+                h_pos[k] = t_pos;
+                h_value[k] = t_value;
+                k++;
+            }
+            gpuErrchk(cudaMemcpy(matrix[i].pos, h_pos, sizeof(size_t)*k, cudaMemcpyHostToDevice));
+            gpuErrchk(cudaMemcpy(matrix[i].value, h_value, sizeof(unsigned long long)*k, cudaMemcpyHostToDevice));
+            gpyErrchk(cudaMemcpy(matrix[i].data_length, k+1, sizeof(size_t), cudaMemcpyHostToDevice));
         }
 
-        delete h_matrix;
         delete[] h_data_length;
         delete[] h_chunks_start_offset;
         delete[] h_column_type;
@@ -192,29 +209,42 @@ __device__ void gpu_boundary_matrix::add_two_columns(int target, int source, Sca
     int msize = round_up_to_2s(matrix[target].data_length + matrix[source].data_length);
     auto new_pos = (index *) allocator->malloc(sizeof(index) * msize) : new index[msize];
     auto new_value = (index *) allocator->malloc(sizeof(index) * msize) : new index[msize];
-    while(tgt_id <= matrix[target].data_length && src_id <= matrix[source].data_length)
+    while(tgt_id < matrix[target].data_length && src_id < matrix[source].data_length)
     {
         if(matrix[target].pos[tgt_id] == matrix[source].pos[src_id])
         {
-            new_value[temp_id] = matrix[target].value[tgt_id] & matrix[source].value[src_id];
-            new_pos[temp_id] = matrix[target].pos[tgt_id];
+            if(matrix[target].value[tgt_id] ^ matrix[source].value[src_id] != 0)
+            {
+                new_pos[temp_id] = matrix[target].pos[tgt_id];
+                new_value[temp_id] = matrix[target].value[tgt_id] ^ matrix[source].value[src_id];
+            }
             tgt_id++;
             src_id++;
             temp_id++;
         }
         else if(matrix[target].pos[tgt_id] < matrix[source].pos[src_id])
         {
-            new_value[temp_id] = matrix[target].value[tgt_id];
-            new_pos[temp_id] = matrix[target].pos[tgt_id];
-            tgt_id++;
-            temp_id++;
+            if(matrix[target].pos[tgt_id] == matrix[source].pos[src_id+1])
+                tgt_id++;
+            else
+            {
+                new_value[temp_id] = matrix[target].value[tgt_id];
+                new_pos[temp_id] = matrix[target].pos[tgt_id];
+                tgt_id++;
+                temp_id++;
+            }
         }
         else
         {
-            new_value[temp_id] = matrix[source].value[src_id];
-            new_pos[temp_id] = matrix[source].pos[src_id];
-            src_id++;
-            temp_id++;
+            if(matrix[target].pos[tgt_id+1] == matrix[source].pos[src_id])
+               src_id++;
+            else
+            {
+               new_value[temp_id] = matrix[source].value[src_id];
+               new_pos[temp_id] = matrix[source].pos[src_id];
+               src_id++;
+               temp_id++;
+            }
         }
     }
 

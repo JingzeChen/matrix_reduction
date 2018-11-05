@@ -40,6 +40,7 @@ public:
 // whose lowest row is i.
     index* lowest_one_lookup;
     bool* is_active; //denotes each column as active or inactive.
+    bool* is_ready_for_mark;
 
 public:
     //construct boundary matrix on gpu.
@@ -72,4 +73,7 @@ public:
 
     //mark column as global, local positive or local negative and clean corresponding column as zero.
     __device__ void mark_and_clean(index my_col_id, indx row_begin, dimension cur_dim);
+
+    //to get the row index of
+    __device__ index current_row_index(col_id, cur_row_idx);
 }
