@@ -1,20 +1,18 @@
-#include<cstdio>
-#include<iostream>
-#ifndef PHAT_CUDA_COMMON_H
-#define PHAT_CUDA_COMMON_H
+#ifndef CHUNK_REDUCTION_ALGORITHM_H
+#define CHUNK_REDUCTION_ALGORITHM_H
 
 #include <cstdint>
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
+#include <cstdio>
+#include <iostream>
 
-#include "cuda_runtime_api.h"
-#include "cuda_runtime.h"
-#include "cuda.h"
-
+#include "gpu_common.h"
 #include "mallocMC.hpp"
 
 #include "gpu_boundary_matrix.h"
 
+#endif
 
 
