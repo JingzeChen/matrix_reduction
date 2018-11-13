@@ -1,0 +1,1242 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/0f27679c/
+$(VERBOSE).SILENT	build/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+$(VERBOSE).SILENT	cmake-build-debug/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+${TARGET_DEBUG}	Makefile	/^${TARGET_DEBUG} : ${OBJ_DEBUG}$/;"	t
+${TARGET}	Makefile	/^${TARGET} : ${OBJ}$/;"	t
+%.o	Makefile	/^%.o: %.cu$/;"	t
+%_debug.o	Makefile	/^%_debug.o: %.cu$/;"	t
+ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID$/;"	d	file:
+AlignmentConfig	gpu_common.h	/^struct AlignmentConfig{$/;"	s
+AlignmentPolicies	mallocmc_lib/alignmentPolicies/Noop.hpp	/^namespace AlignmentPolicies{$/;"	n	namespace:mallocMC
+AlignmentPolicies	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^namespace AlignmentPolicies{$/;"	n	namespace:mallocMC
+AlignmentPolicies	mallocmc_lib/alignmentPolicies/Shrink.hpp	/^namespace AlignmentPolicies{$/;"	n	namespace:mallocMC
+AlignmentPolicies	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^namespace AlignmentPolicies{$/;"	n	namespace:mallocMC
+AlignmentPolicy	mallocmc_lib/allocator.hpp	/^        typedef T_AlignmentPolicy AlignmentPolicy;$/;"	t	class:mallocMC::Allocator	typeref:typename:T_AlignmentPolicy
+AlignmentPolicy	mallocmc_lib/device_allocator.hpp	/^        typedef T_AlignmentPolicy AlignmentPolicy;$/;"	t	class:mallocMC::DeviceAllocator	typeref:typename:T_AlignmentPolicy
+Allocator	mallocmc_lib/allocator.hpp	/^        Allocator($/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST
+Allocator	mallocmc_lib/allocator.hpp	/^    class Allocator :$/;"	c	namespace:mallocMC
+AllocatorHandle	mallocmc_lib/allocator.hpp	/^        typedef AllocatorHandleImpl<Allocator> AllocatorHandle;$/;"	t	class:mallocMC::Allocator	typeref:typename:AllocatorHandleImpl<Allocator>
+AllocatorHandleImpl	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        AllocatorHandleImpl($/;"	f	struct:mallocMC::AllocatorHandleImpl
+AllocatorHandleImpl	mallocmc_lib/mallocMC_allocator_handle.hpp	/^    struct AllocatorHandleImpl$/;"	s	namespace:mallocMC
+BadAllocException	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^  struct BadAllocException$/;"	s	namespace:mallocMC::OOMPolicies
+Base	phat_lib/representations/abstract_pivot_column.h	/^        typedef vector_vector Base;$/;"	t	class:phat::abstract_pivot_column	typeref:typename:vector_vector
+CHUNK_REDUCTION_ALGORITHM_H	chunk_reduction_algorithm.h	/^#define CHUNK_REDUCTION_ALGORITHM_H$/;"	d
+CMAKE_AR	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_AR	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_AR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_AR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_AR "\/usr\/bin\/ar")$/;"	v
+CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/chen\/CLionProjects\/matrix_reduction\/build$/;"	m
+CMAKE_BINARY_DIR	cmake-build-debug/Makefile	/^CMAKE_BINARY_DIR = \/home\/chen\/CLionProjects\/matrix_reduction\/cmake-build-debug$/;"	m
+CMAKE_C11_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C11_COMPILE_FEATURES "c_std_11;c_static_assert")$/;"	v
+CMAKE_C11_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C11_COMPILE_FEATURES "c_std_11;c_static_assert")$/;"	v
+CMAKE_C90_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C90_COMPILE_FEATURES "c_std_90;c_function_prototypes")$/;"	v
+CMAKE_C90_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C90_COMPILE_FEATURES "c_std_90;c_function_prototypes")$/;"	v
+CMAKE_C99_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C99_COMPILE_FEATURES "c_std_99;c_restrict;c_variadic_macros")$/;"	v
+CMAKE_C99_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C99_COMPILE_FEATURES "c_std_99;c_restrict;c_variadic_macros")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_C_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_CXX_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_C_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_CXX_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	cmake-build-debug/Makefile	/^CMAKE_COMMAND = \/home\/chen\/Downloads\/clion-2018.2.5\/bin\/cmake\/linux\/bin\/cmake$/;"	m
+CMAKE_COMPILER_IS_CYGWIN	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_CYGWIN	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_CYGWIN	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_CYGWIN	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_CYGWIN )$/;"	v
+CMAKE_COMPILER_IS_GNUCC	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCC 1)$/;"	v
+CMAKE_COMPILER_IS_GNUCC	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCC 1)$/;"	v
+CMAKE_COMPILER_IS_GNUCXX	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCXX 1)$/;"	v
+CMAKE_COMPILER_IS_GNUCXX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCXX 1)$/;"	v
+CMAKE_COMPILER_IS_MINGW	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_COMPILER_IS_MINGW	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_COMPILER_IS_MINGW	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_COMPILER_IS_MINGW	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_MINGW )$/;"	v
+CMAKE_CROSSCOMPILING	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	build/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CROSSCOMPILING	cmake-build-debug/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "FALSE")$/;"	v
+CMAKE_CXX11_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_att/;"	v
+CMAKE_CXX11_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_att/;"	v
+CMAKE_CXX14_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_de/;"	v
+CMAKE_CXX14_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_de/;"	v
+CMAKE_CXX17_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")$/;"	v
+CMAKE_CXX17_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")$/;"	v
+CMAKE_CXX20_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")$/;"	v
+CMAKE_CXX20_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")$/;"	v
+CMAKE_CXX98_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")$/;"	v
+CMAKE_CXX98_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")$/;"	v
+CMAKE_CXX_ABI_COMPILED	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_ABI_COMPILED TRUE)$/;"	v
+CMAKE_CXX_ABI_COMPILED	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_ABI_COMPILED TRUE)$/;"	v
+CMAKE_CXX_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_CXX_CL_SHOWINCLUDES_PREFIX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_CXX_COMPILER	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER "\/usr\/bin\/c++")$/;"	v
+CMAKE_CXX_COMPILER	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER "\/usr\/bin\/c++")$/;"	v
+CMAKE_CXX_COMPILER_ABI	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ABI "ELF")$/;"	v
+CMAKE_CXX_COMPILER_ABI	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ABI "ELF")$/;"	v
+CMAKE_CXX_COMPILER_AR	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_CXX_COMPILER_AR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_CXX_COMPILER_ARG1	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ARG1 "")$/;"	v
+CMAKE_CXX_COMPILER_ARG1	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ARG1 "")$/;"	v
+CMAKE_CXX_COMPILER_ENV_VAR	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ENV_VAR "CXX")$/;"	v
+CMAKE_CXX_COMPILER_ENV_VAR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ENV_VAR "CXX")$/;"	v
+CMAKE_CXX_COMPILER_ID	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	build/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_CXX_COMPILER_ID "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID_RUN	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_CXX_COMPILER_ID_RUN	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_CXX_COMPILER_LOADED	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_LOADED 1)$/;"	v
+CMAKE_CXX_COMPILER_LOADED	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_LOADED 1)$/;"	v
+CMAKE_CXX_COMPILER_RANLIB	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_CXX_COMPILER_RANLIB	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_CXX_COMPILER_VERSION	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION "8.2.1")$/;"	v
+CMAKE_CXX_COMPILER_VERSION	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION "8.2.1")$/;"	v
+CMAKE_CXX_COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_CXX_COMPILER_VERSION_INTERNAL	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_CXX_COMPILER_WORKS	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_CXX_COMPILER_WORKS	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_CXX_COMPILER_WRAPPER	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WRAPPER "")$/;"	v
+CMAKE_CXX_COMPILER_WRAPPER	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WRAPPER "")$/;"	v
+CMAKE_CXX_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias/;"	v
+CMAKE_CXX_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias/;"	v
+CMAKE_CXX_IGNORE_EXTENSIONS	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_CXX_IGNORE_EXTENSIONS	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/8.2.1;\/usr\/lib;/;"	v
+CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/8.2.1;\/usr\/lib;/;"	v
+CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_LIBRARIES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_LIBRARIES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_CXX_LIBRARY_ARCHITECTURE	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE 30)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE 30)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)$/;"	v
+CMAKE_CXX_PLATFORM_ID	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_PLATFORM_ID "Linux")$/;"	v
+CMAKE_CXX_PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_PLATFORM_ID "Linux")$/;"	v
+CMAKE_CXX_SIMULATE_ID	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_ID "")$/;"	v
+CMAKE_CXX_SIMULATE_ID	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_ID "")$/;"	v
+CMAKE_CXX_SIMULATE_VERSION	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_VERSION "")$/;"	v
+CMAKE_CXX_SIMULATE_VERSION	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_VERSION "")$/;"	v
+CMAKE_CXX_SIZEOF_DATA_PTR	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_CXX_SIZEOF_DATA_PTR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;mm;CPP)$/;"	v
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;mm;CPP)$/;"	v
+CMAKE_CXX_STANDARD_COMPUTED_DEFAULT	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")$/;"	v
+CMAKE_CXX_STANDARD_COMPUTED_DEFAULT	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")$/;"	v
+CMAKE_CXX_TARGET_INCLUDE_PATH	build/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_CXX_TARGET_INCLUDE_PATH$/;"	v
+CMAKE_CXX_TARGET_INCLUDE_PATH	cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_CXX_TARGET_INCLUDE_PATH$/;"	v
+CMAKE_C_ABI_COMPILED	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_ABI_COMPILED TRUE)$/;"	v
+CMAKE_C_ABI_COMPILED	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_ABI_COMPILED TRUE)$/;"	v
+CMAKE_C_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_C_CL_SHOWINCLUDES_PREFIX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_C_COMPILER	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER "\/usr\/bin\/cc")$/;"	v
+CMAKE_C_COMPILER	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER "\/usr\/bin\/cc")$/;"	v
+CMAKE_C_COMPILER_ABI	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ABI "ELF")$/;"	v
+CMAKE_C_COMPILER_ABI	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ABI "ELF")$/;"	v
+CMAKE_C_COMPILER_AR	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_C_COMPILER_AR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_AR "\/usr\/bin\/gcc-ar")$/;"	v
+CMAKE_C_COMPILER_ARG1	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ARG1 "")$/;"	v
+CMAKE_C_COMPILER_ARG1	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ARG1 "")$/;"	v
+CMAKE_C_COMPILER_ENV_VAR	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ENV_VAR "CC")$/;"	v
+CMAKE_C_COMPILER_ENV_VAR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ENV_VAR "CC")$/;"	v
+CMAKE_C_COMPILER_ID	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID "GNU")$/;"	v
+CMAKE_C_COMPILER_ID	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID "GNU")$/;"	v
+CMAKE_C_COMPILER_ID_RUN	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_C_COMPILER_ID_RUN	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_C_COMPILER_LOADED	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_LOADED 1)$/;"	v
+CMAKE_C_COMPILER_LOADED	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_LOADED 1)$/;"	v
+CMAKE_C_COMPILER_RANLIB	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_C_COMPILER_RANLIB	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_RANLIB "\/usr\/bin\/gcc-ranlib")$/;"	v
+CMAKE_C_COMPILER_VERSION	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION "8.2.1")$/;"	v
+CMAKE_C_COMPILER_VERSION	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION "8.2.1")$/;"	v
+CMAKE_C_COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_C_COMPILER_VERSION_INTERNAL	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_C_COMPILER_WORKS	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_C_COMPILER_WORKS	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_C_COMPILER_WRAPPER	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WRAPPER "")$/;"	v
+CMAKE_C_COMPILER_WRAPPER	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WRAPPER "")$/;"	v
+CMAKE_C_COMPILE_FEATURES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILE_FEATURES "c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macr/;"	v
+CMAKE_C_COMPILE_FEATURES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILE_FEATURES "c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macr/;"	v
+CMAKE_C_IGNORE_EXTENSIONS	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_IGNORE_EXTENSIONS h;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_C_IGNORE_EXTENSIONS	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_IGNORE_EXTENSIONS h;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_C_IMPLICIT_LINK_DIRECTORIES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/8.2.1;\/usr\/lib;\//;"	v
+CMAKE_C_IMPLICIT_LINK_DIRECTORIES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "\/usr\/lib\/gcc\/x86_64-pc-linux-gnu\/8.2.1;\/usr\/lib;\//;"	v
+CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_C_IMPLICIT_LINK_LIBRARIES	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")$/;"	v
+CMAKE_C_IMPLICIT_LINK_LIBRARIES	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_C_LIBRARY_ARCHITECTURE	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_C_LINKER_PREFERENCE	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_LINKER_PREFERENCE 10)$/;"	v
+CMAKE_C_LINKER_PREFERENCE	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_LINKER_PREFERENCE 10)$/;"	v
+CMAKE_C_PLATFORM_ID	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_PLATFORM_ID "Linux")$/;"	v
+CMAKE_C_PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_PLATFORM_ID "Linux")$/;"	v
+CMAKE_C_SIMULATE_ID	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_ID "")$/;"	v
+CMAKE_C_SIMULATE_ID	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_ID "")$/;"	v
+CMAKE_C_SIMULATE_VERSION	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_VERSION "")$/;"	v
+CMAKE_C_SIMULATE_VERSION	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_VERSION "")$/;"	v
+CMAKE_C_SIZEOF_DATA_PTR	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_C_SIZEOF_DATA_PTR	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_C_SOURCE_FILE_EXTENSIONS	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_SOURCE_FILE_EXTENSIONS c;m)$/;"	v
+CMAKE_C_SOURCE_FILE_EXTENSIONS	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_SOURCE_FILE_EXTENSIONS c;m)$/;"	v
+CMAKE_C_STANDARD_COMPUTED_DEFAULT	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")$/;"	v
+CMAKE_C_STANDARD_COMPUTED_DEFAULT	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")$/;"	v
+CMAKE_DEPENDS_CHECK_CXX	build/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_CHECK_CXX$/;"	v
+CMAKE_DEPENDS_CHECK_CXX	cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_CHECK_CXX$/;"	v
+CMAKE_DEPENDS_GENERATOR	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")$/;"	v
+CMAKE_DEPENDS_GENERATOR	cmake-build-debug/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")$/;"	v
+CMAKE_DEPENDS_LANGUAGES	build/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_LANGUAGES$/;"	v
+CMAKE_DEPENDS_LANGUAGES	cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_LANGUAGES$/;"	v
+CMAKE_DEPEND_INFO_FILES	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPEND_INFO_FILES$/;"	v
+CMAKE_DEPEND_INFO_FILES	cmake-build-debug/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPEND_INFO_FILES$/;"	v
+CMAKE_FORCE_UNIX_PATHS	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_FORCE_UNIX_PATHS	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_Fortran_TARGET_MODULE_DIR	build/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_Fortran_TARGET_MODULE_DIR "")$/;"	v
+CMAKE_Fortran_TARGET_MODULE_DIR	cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_Fortran_TARGET_MODULE_DIR "")$/;"	v
+CMAKE_HOST_SYSTEM	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM "Linux-4.18.16-arch1-1-ARCH")$/;"	v
+CMAKE_HOST_SYSTEM	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM "Linux-4.18.12-arch1-1-ARCH")$/;"	v
+CMAKE_HOST_SYSTEM_NAME	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_HOST_SYSTEM_NAME	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_HOST_SYSTEM_PROCESSOR	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_HOST_SYSTEM_PROCESSOR	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_HOST_SYSTEM_VERSION	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_VERSION "4.18.16-arch1-1-ARCH")$/;"	v
+CMAKE_HOST_SYSTEM_VERSION	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_VERSION "4.18.12-arch1-1-ARCH")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	cmake-build-debug/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	cmake-build-debug/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	cmake-build-debug/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "Debug")$/;"	v
+CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	cmake-build-debug/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	cmake-build-debug/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")$/;"	v
+CMAKE_INSTALL_PREFIX	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	cmake-build-debug/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	cmake-build-debug/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "0")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_C_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_CXX_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_C_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_CXX_COMPILER_ABI}")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LINKER	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_LINKER	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_LINKER	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_LINKER	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_LINKER "\/usr\/bin\/ld")$/;"	v
+CMAKE_MAKEFILE_DEPENDS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_DEPENDS$/;"	v
+CMAKE_MAKEFILE_DEPENDS	cmake-build-debug/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_DEPENDS$/;"	v
+CMAKE_MAKEFILE_OUTPUTS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_OUTPUTS$/;"	v
+CMAKE_MAKEFILE_OUTPUTS	cmake-build-debug/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_OUTPUTS$/;"	v
+CMAKE_MAKEFILE_PRODUCTS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_PRODUCTS$/;"	v
+CMAKE_MAKEFILE_PRODUCTS	cmake-build-debug/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_PRODUCTS$/;"	v
+CMAKE_RANLIB	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RANLIB	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RANLIB	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RANLIB	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^set(CMAKE_RANLIB "\/usr\/bin\/ranlib")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/chen\/CLionProjects\/matrix_reduction\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/chen\/CLionProjects\/matrix_reduction\/cmake-build-d/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/chen\/CLionProjects\/matrix_reduction")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/chen\/CLionProjects\/matrix_reduction")$/;"	v
+CMAKE_SIZEOF_VOID_P	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_C_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_C_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/chen\/CLionProjects\/matrix_reduction$/;"	m
+CMAKE_SOURCE_DIR	cmake-build-debug/Makefile	/^CMAKE_SOURCE_DIR = \/home\/chen\/CLionProjects\/matrix_reduction$/;"	m
+CMAKE_SYSTEM	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_SYSTEM "Linux-4.18.16-arch1-1-ARCH")$/;"	v
+CMAKE_SYSTEM	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM "Linux-4.18.12-arch1-1-ARCH")$/;"	v
+CMAKE_SYSTEM_LOADED	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_LOADED 1)$/;"	v
+CMAKE_SYSTEM_LOADED	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_LOADED 1)$/;"	v
+CMAKE_SYSTEM_NAME	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_SYSTEM_NAME	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_SYSTEM_PROCESSOR	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_SYSTEM_PROCESSOR	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_SYSTEM_VERSION	build/CMakeFiles/3.12.4/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "4.18.16-arch1-1-ARCH")$/;"	v
+CMAKE_SYSTEM_VERSION	cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "4.18.12-arch1-1-ARCH")$/;"	v
+CMAKE_TARGET_LINKED_INFO_FILES	build/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_TARGET_LINKED_INFO_FILES$/;"	v
+CMAKE_TARGET_LINKED_INFO_FILES	cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake	/^set(CMAKE_TARGET_LINKED_INFO_FILES$/;"	v
+COMPILER_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_ID /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+CUDA	mallocmc_lib/mallocMC_utils.hpp	/^namespace CUDA$/;"	n
+CUDA_BLOCKS_NUM	gpu_common.h	/^#define CUDA_BLOCKS_NUM(/;"	d
+CUDA_MAX_BLOCK_THREADS_NUM	gpu_common.h	/^#define CUDA_MAX_BLOCK_THREADS_NUM /;"	d
+CUDA_NVCC_FLAGS	CMakeLists.txt	/^    CUDA_NVCC_FLAGS$/;"	v
+CUDA_THREADS_EACH_BLOCK	gpu_common.h	/^#define CUDA_THREADS_EACH_BLOCK(/;"	d
+CXX	Makefile	/^CXX = nvcc$/;"	m
+CXXFLAGS_COMMON	Makefile	/^CXXFLAGS_COMMON = -std=c++14 -Iphat_lib -Imallocmc_lib$/;"	m
+CXXFLAGS_DEBUG	Makefile	/^CXXFLAGS_DEBUG =  ${CXXFLAGS_COMMON} -g -G -O0$/;"	m
+CXXFLAGS_RELEASE	Makefile	/^CXXFLAGS_RELEASE = ${CXXFLAGS_COMMON} -O3 -DBDEBUG$/;"	m
+CXX_STD	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define CXX_STD /;"	d	file:
+CXX_STD	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define CXX_STD /;"	d	file:
+CYGWIN	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+CYGWIN	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+CYGWIN	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+CYGWIN	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(CYGWIN 1)$/;"	v
+C_DIALECT	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT /;"	d	file:
+C_DIALECT	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT$/;"	d	file:
+C_DIALECT	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define C_DIALECT /;"	d	file:
+C_DIALECT	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT /;"	d	file:
+C_DIALECT	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT$/;"	d	file:
+C_DIALECT	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define C_DIALECT /;"	d	file:
+CreationPolicies	mallocmc_lib/creationPolicies/OldMalloc.hpp	/^namespace CreationPolicies{$/;"	n	namespace:mallocMC
+CreationPolicies	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^namespace CreationPolicies{$/;"	n	namespace:mallocMC
+CreationPolicies	mallocmc_lib/creationPolicies/Scatter.hpp	/^namespace CreationPolicies{$/;"	n	namespace:mallocMC
+CreationPolicies	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^namespace CreationPolicies{$/;"	n	namespace:mallocMC
+CreationPolicy	mallocmc_lib/allocator.hpp	/^        typedef T_CreationPolicy CreationPolicy;$/;"	t	class:mallocMC::Allocator	typeref:typename:T_CreationPolicy
+CreationPolicy	mallocmc_lib/device_allocator.hpp	/^        typedef T_CreationPolicy CreationPolicy;$/;"	t	class:mallocMC::DeviceAllocator	typeref:typename:T_CreationPolicy
+CudaSetLimits	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^  struct CudaSetLimits{$/;"	s	namespace:mallocMC::ReservePoolPolicies
+DEC	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
+DEC	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
+DEC	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
+DEC	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
+DefaultScatterConfig	mallocmc_lib/creationPolicies/Scatter.hpp	/^  struct DefaultScatterConfig{$/;"	s	namespace:mallocMC::CreationPolicies::ScatterConf
+DefaultScatterHashingParams	mallocmc_lib/creationPolicies/Scatter.hpp	/^  struct DefaultScatterHashingParams{$/;"	s	namespace:mallocMC::CreationPolicies::ScatterConf
+DefaultShrinkConfig	mallocmc_lib/alignmentPolicies/Shrink.hpp	/^  struct DefaultShrinkConfig{$/;"	s	namespace:mallocMC::AlignmentPolicies::ShrinkConfig
+DefaultXMallocConfig	mallocmc_lib/distributionPolicies/XMallocSIMD.hpp	/^    struct DefaultXMallocConfig{$/;"	s	namespace:mallocMC::DistributionPolicies::XMallocSIMDConf
+DevAllocator	mallocmc_lib/allocator.hpp	/^        > DevAllocator;$/;"	t	class:mallocMC::Allocator	typeref:typename:DeviceAllocator<CreationPolicy,DistributionPolicy,OOMPolicy,AlignmentPolicy>
+DevAllocator	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        typedef typename T_HostAllocator::DevAllocator DevAllocator;$/;"	t	struct:mallocMC::AllocatorHandleImpl	typeref:typename:T_HostAllocator::DevAllocator
+DeviceAllocator	mallocmc_lib/device_allocator.hpp	/^    class DeviceAllocator :$/;"	c	namespace:mallocMC
+DistributionPolicies	mallocmc_lib/distributionPolicies/Noop.hpp	/^namespace DistributionPolicies{$/;"	n	namespace:mallocMC
+DistributionPolicies	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^namespace DistributionPolicies{$/;"	n	namespace:mallocMC
+DistributionPolicies	mallocmc_lib/distributionPolicies/XMallocSIMD.hpp	/^namespace DistributionPolicies{$/;"	n	namespace:mallocMC
+DistributionPolicies	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^namespace DistributionPolicies{$/;"	n	namespace:mallocMC
+DistributionPolicy	mallocmc_lib/allocator.hpp	/^        typedef T_DistributionPolicy DistributionPolicy;$/;"	t	class:mallocMC::Allocator	typeref:typename:T_DistributionPolicy
+DistributionPolicy	mallocmc_lib/device_allocator.hpp	/^        typedef T_DistributionPolicy DistributionPolicy;$/;"	t	class:mallocMC::DeviceAllocator	typeref:typename:T_DistributionPolicy
+EQUALS	build/Makefile	/^EQUALS = =$/;"	m
+EQUALS	cmake-build-debug/Makefile	/^EQUALS = =$/;"	m
+GLOBAL	gpu_boundary_matrix.cu	/^#define GLOBAL /;"	d	file:
+GLOBAL	gpu_boundary_matrix.h	/^#define GLOBAL /;"	d
+GLOBAL	phat_lib/algorithms/chunk_reduction.h	/^        enum column_type { GLOBAL$/;"	e	enum:phat::chunk_reduction_impl::column_type
+GPU_BOUNDARY_MATRIX_H	gpu_boundary_matrix.h	/^#define GPU_BOUNDARY_MATRIX_H$/;"	d
+GetAvailableSlotsIfAvailAcc	mallocmc_lib/device_allocator.hpp	/^    struct GetAvailableSlotsIfAvailAcc$/;"	s	namespace:mallocMC::detail
+GetAvailableSlotsIfAvailAcc	mallocmc_lib/device_allocator.hpp	/^    struct GetAvailableSlotsIfAvailAcc<$/;"	s	namespace:mallocMC::detail
+GetAvailableSlotsIfAvailHost	mallocmc_lib/allocator.hpp	/^    struct GetAvailableSlotsIfAvailHost$/;"	s	namespace:mallocMC::detail
+GetAvailableSlotsIfAvailHost	mallocmc_lib/allocator.hpp	/^    struct GetAvailableSlotsIfAvailHost<T_Allocator, true>$/;"	s	namespace:mallocMC::detail
+HEX	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#define HEX(/;"	d	file:
+HEX	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
+HEX	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#define HEX(/;"	d	file:
+HEX	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
+HashingProperties	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      typedef T_Hashing HashingProperties;$/;"	t	class:mallocMC::CreationPolicies::Scatter	typeref:typename:T_Hashing
+HeapInfo	mallocmc_lib/allocator.hpp	/^    struct HeapInfo$/;"	s	namespace:mallocMC
+HeapInfoVector	mallocmc_lib/allocator.hpp	/^        typedef std::vector< HeapInfo > HeapInfoVector;$/;"	t	class:mallocMC::Allocator	typeref:typename:std::vector<HeapInfo>
+HeapProperties	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      typedef T_Config  HeapProperties;$/;"	t	class:mallocMC::CreationPolicies::Scatter	typeref:typename:T_Config
+HierarchyThreshold	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 HierarchyThreshold =  (pagesize - 2*sizeof(uint32))\/33;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+ID_VOID_MAIN	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
+ID_VOID_MAIN	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
+INITIAL_SIZE	gpu_boundary_matrix.h	/^#define INITIAL_SIZE /;"	d
+LDFLAGS	Makefile	/^LDFLAGS = -lcuda$/;"	m
+LOCAL_NEGATIVE	gpu_boundary_matrix.cu	/^#define LOCAL_NEGATIVE /;"	d	file:
+LOCAL_NEGATIVE	gpu_boundary_matrix.h	/^#define LOCAL_NEGATIVE /;"	d
+LOCAL_NEGATIVE	phat_lib/algorithms/chunk_reduction.h	/^                         , LOCAL_NEGATIVE };$/;"	e	enum:phat::chunk_reduction_impl::column_type
+LOCAL_POSITIVE	gpu_boundary_matrix.cu	/^#define LOCAL_POSITIVE /;"	d	file:
+LOCAL_POSITIVE	gpu_boundary_matrix.h	/^#define LOCAL_POSITIVE /;"	d
+LOCAL_POSITIVE	phat_lib/algorithms/chunk_reduction.h	/^                         , LOCAL_POSITIVE$/;"	e	enum:phat::chunk_reduction_impl::column_type
+MALLOCMC_AP_SHRINK_DATAALIGNMENT	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^#define MALLOCMC_AP_SHRINK_DATAALIGNMENT /;"	d
+MALLOCMC_CP_SCATTER_ACCESSBLOCKS	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_ACCESSBLOCKS /;"	d
+MALLOCMC_CP_SCATTER_HASHINGDISTMP	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_HASHINGDISTMP /;"	d
+MALLOCMC_CP_SCATTER_HASHINGDISTWP	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_HASHINGDISTWP /;"	d
+MALLOCMC_CP_SCATTER_HASHINGDISTWPREL	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_HASHINGDISTWPREL /;"	d
+MALLOCMC_CP_SCATTER_HASHINGK	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_HASHINGK /;"	d
+MALLOCMC_CP_SCATTER_PAGESIZE	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_PAGESIZE /;"	d
+MALLOCMC_CP_SCATTER_REGIONSIZE	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_REGIONSIZE /;"	d
+MALLOCMC_CP_SCATTER_RESETFREEDPAGES	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_RESETFREEDPAGES /;"	d
+MALLOCMC_CP_SCATTER_WASTEFACTOR	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^#define MALLOCMC_CP_SCATTER_WASTEFACTOR /;"	d
+MALLOCMC_CUDA_CHECKED_CALL	mallocmc_lib/mallocMC_utils.hpp	/^#define MALLOCMC_CUDA_CHECKED_CALL(/;"	d
+MALLOCMC_CUDA_CHECK_ERROR	mallocmc_lib/mallocMC_utils.hpp	/^#define MALLOCMC_CUDA_CHECK_ERROR(/;"	d
+MALLOCMC_DP_XMALLOCSIMD_PAGESIZE	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^#define MALLOCMC_DP_XMALLOCSIMD_PAGESIZE /;"	d
+MALLOCMC_FLAVOR	mallocmc_lib/version.hpp	/^#define MALLOCMC_FLAVOR /;"	d
+MALLOCMC_VERSION_MAJOR	mallocmc_lib/version.hpp	/^#define MALLOCMC_VERSION_MAJOR /;"	d
+MALLOCMC_VERSION_MINOR	mallocmc_lib/version.hpp	/^#define MALLOCMC_VERSION_MINOR /;"	d
+MALLOCMC_VERSION_PATCH	mallocmc_lib/version.hpp	/^#define MALLOCMC_VERSION_PATCH /;"	d
+MAMC_ACCELERATOR	mallocmc_lib/mallocMC_prefixes.hpp	/^#define MAMC_ACCELERATOR /;"	d
+MAMC_HOST	mallocmc_lib/mallocMC_prefixes.hpp	/^#define MAMC_HOST /;"	d
+MATRIX_REDUCTION_GPU_COMMON_H	gpu_common.h	/^#define MATRIX_REDUCTION_GPU_COMMON_H$/;"	d
+MINGW	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(MINGW 1)$/;"	v
+MINGW	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(MINGW 1)$/;"	v
+Noop	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^  class Noop{$/;"	c	namespace:mallocMC::AlignmentPolicies
+Noop	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^  class Noop $/;"	c	namespace:mallocMC::DistributionPolicies
+OBJ	Makefile	/^OBJ = $(patsubst %.cu,%.o,${SRC})$/;"	m
+OBJ_DEBUG	Makefile	/^OBJ_DEBUG = $(patsubst %.cu,%_debug.o,${SRC})$/;"	m
+OOMPolicies	mallocmc_lib/oOMPolicies/BadAllocException.hpp	/^namespace OOMPolicies{$/;"	n	namespace:mallocMC
+OOMPolicies	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^namespace OOMPolicies{$/;"	n	namespace:mallocMC
+OOMPolicies	mallocmc_lib/oOMPolicies/ReturnNull.hpp	/^namespace OOMPolicies{$/;"	n	namespace:mallocMC
+OOMPolicies	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^namespace OOMPolicies{$/;"	n	namespace:mallocMC
+OOMPolicy	mallocmc_lib/allocator.hpp	/^        typedef T_OOMPolicy OOMPolicy;$/;"	t	class:mallocMC::Allocator	typeref:typename:T_OOMPolicy
+OOMPolicy	mallocmc_lib/device_allocator.hpp	/^        typedef T_OOMPolicy OOMPolicy;$/;"	t	class:mallocMC::DeviceAllocator	typeref:typename:T_OOMPolicy
+OldMalloc	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^  class OldMalloc$/;"	c	namespace:mallocMC::CreationPolicies
+PAGE	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      struct PAGE$/;"	s	class:mallocMC::CreationPolicies::Scatter
+PHAT_TLS_SPACING_FACTOR	phat_lib/helpers/thread_local_storage.h	/^#define PHAT_TLS_SPACING_FACTOR /;"	d
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID$/;"	d	file:
+PM_EXCEPTIONS_NOT_SUPPORTED_HERE	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^#define PM_EXCEPTIONS_NOT_SUPPORTED_HERE$/;"	d
+PTE	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      struct PTE$/;"	s	class:mallocMC::CreationPolicies::Scatter
+PointerEquivalent	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    typedef Shrink2NS::__PointerEquivalent<sizeof(char*)>::type PointerEquivalent;$/;"	t	class:mallocMC::AlignmentPolicies::Shrink
+PointerEquivalent	mallocmc_lib/mallocMC_utils.hpp	/^  typedef mallocMC::__PointerEquivalent<sizeof(char*)>::type PointerEquivalent;$/;"	t	namespace:mallocMC
+PolicyCheck1	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyCheck1{};$/;"	c	namespace:mallocMC
+PolicyCheck2	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyCheck2<$/;"	c	namespace:mallocMC
+PolicyCheck2	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyCheck2{};$/;"	c	namespace:mallocMC
+PolicyCheck3	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyCheck3{};$/;"	c	namespace:mallocMC
+PolicyCheck4	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyCheck4{};$/;"	c	namespace:mallocMC
+PolicyCheck5	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyCheck5{};$/;"	c	namespace:mallocMC
+PolicyConstraints	mallocmc_lib/mallocMC_constraints.hpp	/^  class PolicyConstraints:PolicyCheck2<T_CreationPolicy, T_DistributionPolicy>{$/;"	c	namespace:mallocMC
+Properties	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    typedef T_Config Properties;$/;"	t	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:T_Config
+Properties	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      struct  Properties : HeapProperties, HashingProperties{};$/;"	s	class:mallocMC::CreationPolicies::Scatter
+Properties	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      typedef T_Config Properties;$/;"	t	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:T_Config
+RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	cmake-build-debug/Makefile	/^RM = \/home\/chen\/Downloads\/clion-2018.2.5\/bin\/cmake\/linux\/bin\/cmake -E remove -f$/;"	m
+ReservePoolPolicies	mallocmc_lib/reservePoolPolicies/CudaSetLimits.hpp	/^namespace ReservePoolPolicies{$/;"	n	namespace:mallocMC
+ReservePoolPolicies	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^namespace ReservePoolPolicies{$/;"	n	namespace:mallocMC
+ReservePoolPolicies	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc.hpp	/^namespace ReservePoolPolicies{$/;"	n	namespace:mallocMC
+ReservePoolPolicies	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^namespace ReservePoolPolicies{$/;"	n	namespace:mallocMC
+ReservePoolPolicy	mallocmc_lib/allocator.hpp	/^        typedef T_ReservePoolPolicy ReservePoolPolicy;$/;"	t	class:mallocMC::Allocator	typeref:typename:T_ReservePoolPolicy
+ReturnNull	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^  class ReturnNull$/;"	c	namespace:mallocMC::OOMPolicies
+SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	cmake-build-debug/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SIMULATE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SOURCE_FILES	CMakeLists.txt	/^set(SOURCE_FILES main.cpp chunk_reduction_algorithm.cpp gpu_boundary_matrix.cpp gpu_common.h tes/;"	v
+SRC	Makefile	/^SRC =  test.cu chunk_reduction_algorithm.cu gpu_boundary_matrix.cu$/;"	m
+STRINGIFY	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
+SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	cmake-build-debug/Makefile	/^SUFFIXES =$/;"	m
+Scatter	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^  class Scatter$/;"	c	namespace:mallocMC::CreationPolicies
+ScatterAllocator	gpu_common.h	/^> ScatterAllocator;$/;"	t
+ScatterConf	mallocmc_lib/creationPolicies/Scatter.hpp	/^namespace ScatterConf{$/;"	n	namespace:mallocMC::CreationPolicies
+ScatterConfig	gpu_common.h	/^struct ScatterConfig{$/;"	s
+ScatterHashParams	gpu_common.h	/^struct ScatterHashParams{$/;"	s
+ScatterKernelDetail	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^namespace ScatterKernelDetail{$/;"	n	namespace:mallocMC::CreationPolicies
+Shrink	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^  class Shrink{$/;"	c	namespace:mallocMC::AlignmentPolicies
+Shrink2NS	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^namespace Shrink2NS{$/;"	n	namespace:mallocMC::AlignmentPolicies
+ShrinkConfig	mallocmc_lib/alignmentPolicies/Shrink.hpp	/^namespace ShrinkConfig{$/;"	n	namespace:mallocMC::AlignmentPolicies
+SimpleCudaMalloc	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^  struct SimpleCudaMalloc{$/;"	s	namespace:mallocMC::ReservePoolPolicies
+TARGET	Makefile	/^TARGET = matReduct$/;"	m
+TARGET_DEBUG	Makefile	/^TARGET_DEBUG = matReduct_debug$/;"	m
+Traits	mallocmc_lib/mallocMC_traits.hpp	/^    struct  Traits{$/;"	s	namespace:mallocMC
+UNIX	build/CMakeFiles/3.12.4/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UNIX	build/CMakeFiles/3.12.4/CMakeCXXCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UNIX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
+UNIX	cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake	/^  set(UNIX 1)$/;"	v
+XMallocSIMD	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^  class XMallocSIMD$/;"	c	namespace:mallocMC::DistributionPolicies
+XMallocSIMDConf	mallocmc_lib/distributionPolicies/XMallocSIMD.hpp	/^  namespace XMallocSIMDConf{$/;"	n	namespace:mallocMC::DistributionPolicies
+__PointerEquivalent	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^  struct __PointerEquivalent<8>{ typedef unsigned long long int type; };$/;"	s	namespace:mallocMC::AlignmentPolicies::Shrink2NS
+__PointerEquivalent	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^  template<int PSIZE> struct __PointerEquivalent{ typedef unsigned int type;};$/;"	s	namespace:mallocMC::AlignmentPolicies::Shrink2NS
+__PointerEquivalent	mallocmc_lib/mallocMC_utils.hpp	/^  class __PointerEquivalent$/;"	c	namespace:mallocMC
+__PointerEquivalent	mallocmc_lib/mallocMC_utils.hpp	/^  class __PointerEquivalent<8>$/;"	c	namespace:mallocMC
+__anon36b05c850102	phat_lib/helpers/thread_local_storage.h	/^    const T& operator[]( int tid ) const {$/;"	f	class:thread_local_storage	file:
+__anonb527336e0103	phat_lib/representations/bit_tree_pivot_column.h	/^        enum { block_size_in_bits = 64 };$/;"	g	class:phat::bit_tree_column
+__anonb527336e0203	phat_lib/representations/bit_tree_pivot_column.h	/^        enum { block_shift = 6 };$/;"	g	class:phat::bit_tree_column
+_accessblocks	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 _accessblocks   = accessblocks;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+_add_to	phat_lib/representations/abstract_pivot_column.h	/^        void _add_to( index source, index target ) {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_add_to	phat_lib/representations/vector_heap.h	/^        void _add_to( index source, index target )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_add_to	phat_lib/representations/vector_list.h	/^        void _add_to( index source, index target ) {$/;"	f	class:phat::vector_list	typeref:typename:void
+_add_to	phat_lib/representations/vector_set.h	/^        void _add_to( index source, index target ) {$/;"	f	class:phat::vector_set	typeref:typename:void
+_add_to	phat_lib/representations/vector_vector.h	/^        void _add_to( index source, index target ) {$/;"	f	class:phat::vector_vector	typeref:typename:void
+_clear	phat_lib/representations/abstract_pivot_column.h	/^        void _clear( index idx ) { is_pivot_col( idx ) ? get_pivot_col().clear() : Base::_clear(/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_clear	phat_lib/representations/vector_heap.h	/^        void _clear( index idx )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_clear	phat_lib/representations/vector_list.h	/^        void _clear( index idx ) {$/;"	f	class:phat::vector_list	typeref:typename:void
+_clear	phat_lib/representations/vector_set.h	/^        void _clear( index idx ) {$/;"	f	class:phat::vector_set	typeref:typename:void
+_clear	phat_lib/representations/vector_vector.h	/^        void _clear( index idx ) { $/;"	f	class:phat::vector_vector	typeref:typename:void
+_finalize	phat_lib/representations/vector_heap.h	/^        void _finalize( index idx ) {$/;"	f	class:phat::vector_heap	typeref:typename:void
+_finalize	phat_lib/representations/vector_list.h	/^        void _finalize( index idx ) {$/;"	f	class:phat::vector_list	typeref:typename:void
+_finalize	phat_lib/representations/vector_set.h	/^        void _finalize( index idx ) {$/;"	f	class:phat::vector_set	typeref:typename:void
+_finalize	phat_lib/representations/vector_vector.h	/^        void _finalize( index idx ) {$/;"	f	class:phat::vector_vector	typeref:typename:void
+_firstFreePageBased	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      volatile uint32 _firstFreePageBased;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:volatile uint32
+_firstfreeblock	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      volatile uint32 _firstfreeblock;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:volatile uint32
+_get_active_columns	phat_lib/algorithms/chunk_reduction.h	/^        void _get_active_columns( const boundary_matrix< Representation >& boundary_matrix$/;"	f	class:phat::chunk_reduction_impl	typeref:typename:void
+_get_col	phat_lib/representations/abstract_pivot_column.h	/^        void _get_col( index idx, column& col  ) const { is_pivot_col( idx ) ? get_pivot_col().g/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_get_col	phat_lib/representations/vector_heap.h	/^        void _get_col( index idx, column& col ) const$/;"	f	class:phat::vector_heap	typeref:typename:void
+_get_col	phat_lib/representations/vector_list.h	/^        void _get_col( index idx, column& col  ) const {$/;"	f	class:phat::vector_list	typeref:typename:void
+_get_col	phat_lib/representations/vector_set.h	/^        void _get_col( index idx, column& col  ) const {$/;"	f	class:phat::vector_set	typeref:typename:void
+_get_col	phat_lib/representations/vector_vector.h	/^        void _get_col( index idx, column& col  ) const { $/;"	f	class:phat::vector_vector	typeref:typename:void
+_get_dim	phat_lib/representations/vector_heap.h	/^        dimension _get_dim( index idx ) const$/;"	f	class:phat::vector_heap	typeref:typename:dimension
+_get_dim	phat_lib/representations/vector_list.h	/^        dimension _get_dim( index idx ) const { $/;"	f	class:phat::vector_list	typeref:typename:dimension
+_get_dim	phat_lib/representations/vector_set.h	/^        dimension _get_dim( index idx ) const { $/;"	f	class:phat::vector_set	typeref:typename:dimension
+_get_dim	phat_lib/representations/vector_vector.h	/^        dimension _get_dim( index idx ) const { $/;"	f	class:phat::vector_vector	typeref:typename:dimension
+_get_max_index	phat_lib/representations/abstract_pivot_column.h	/^        index _get_max_index( index idx ) const { return is_pivot_col( idx ) ? get_pivot_col().g/;"	f	class:phat::abstract_pivot_column	typeref:typename:index
+_get_max_index	phat_lib/representations/vector_heap.h	/^        index _get_max_index( index idx ) const$/;"	f	class:phat::vector_heap	typeref:typename:index
+_get_max_index	phat_lib/representations/vector_list.h	/^        index _get_max_index( index idx ) const {$/;"	f	class:phat::vector_list	typeref:typename:index
+_get_max_index	phat_lib/representations/vector_set.h	/^        index _get_max_index( index idx ) const {$/;"	f	class:phat::vector_set	typeref:typename:index
+_get_max_index	phat_lib/representations/vector_vector.h	/^        index _get_max_index( index idx ) const { $/;"	f	class:phat::vector_vector	typeref:typename:index
+_get_num_cols	phat_lib/representations/vector_heap.h	/^        index _get_num_cols( ) const$/;"	f	class:phat::vector_heap	typeref:typename:index
+_get_num_cols	phat_lib/representations/vector_list.h	/^        index _get_num_cols() const {$/;"	f	class:phat::vector_list	typeref:typename:index
+_get_num_cols	phat_lib/representations/vector_set.h	/^        index _get_num_cols() const {$/;"	f	class:phat::vector_set	typeref:typename:index
+_get_num_cols	phat_lib/representations/vector_vector.h	/^        index _get_num_cols() const {$/;"	f	class:phat::vector_vector	typeref:typename:index
+_global_column_simplification	phat_lib/algorithms/chunk_reduction.h	/^        void _global_column_simplification( const index col_idx$/;"	f	class:phat::chunk_reduction_impl	typeref:typename:void
+_is_empty	phat_lib/representations/abstract_pivot_column.h	/^        bool _is_empty( index idx ) const { return is_pivot_col( idx ) ? get_pivot_col().is_empt/;"	f	class:phat::abstract_pivot_column	typeref:typename:bool
+_is_empty	phat_lib/representations/vector_heap.h	/^        bool _is_empty( index idx ) const$/;"	f	class:phat::vector_heap	typeref:typename:bool
+_is_empty	phat_lib/representations/vector_list.h	/^        bool _is_empty( index idx ) const {$/;"	f	class:phat::vector_list	typeref:typename:bool
+_is_empty	phat_lib/representations/vector_set.h	/^        bool _is_empty( index idx ) const {$/;"	f	class:phat::vector_set	typeref:typename:bool
+_is_empty	phat_lib/representations/vector_vector.h	/^        bool _is_empty( index idx ) const { $/;"	f	class:phat::vector_vector	typeref:typename:bool
+_local_chunk_reduction	phat_lib/algorithms/chunk_reduction.h	/^        void _local_chunk_reduction( boundary_matrix< Representation >& boundary_matrix$/;"	f	class:phat::chunk_reduction_impl	typeref:typename:void
+_memsize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      size_t _memsize;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:size_t
+_numpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      uint32 _numpages;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:uint32
+_page	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      PAGE* _page;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:PAGE *
+_pagebasedMutex	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      uint32 _pagebasedMutex;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:uint32
+_pagesize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 _pagesize       = pagesize;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+_pagesize	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 _pagesize = pagesize;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+_pop_max_index	phat_lib/representations/vector_heap.h	/^        index _pop_max_index( column& col ) const$/;"	f	class:phat::vector_heap	typeref:typename:index
+_pop_max_index	phat_lib/representations/vector_heap.h	/^        index _pop_max_index( index idx )$/;"	f	class:phat::vector_heap	typeref:typename:index
+_prune	phat_lib/representations/vector_heap.h	/^        void _prune( index idx )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_ptes	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      volatile PTE* _ptes;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:volatile PTE *
+_regions	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      volatile uint32* _regions;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:volatile uint32 *
+_regionsize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 _regionsize     = regionsize;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+_remove_max	phat_lib/representations/abstract_pivot_column.h	/^        void _remove_max( index idx ) {	is_pivot_col( idx ) ? get_pivot_col().remove_max() : Bas/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_remove_max	phat_lib/representations/vector_heap.h	/^        void _remove_max( index idx )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_remove_max	phat_lib/representations/vector_list.h	/^        void _remove_max( index idx ) {$/;"	f	class:phat::vector_list	typeref:typename:void
+_remove_max	phat_lib/representations/vector_set.h	/^        void _remove_max( index idx ) {$/;"	f	class:phat::vector_set	typeref:typename:void
+_remove_max	phat_lib/representations/vector_vector.h	/^        void _remove_max( index idx ) {$/;"	f	class:phat::vector_vector	typeref:typename:void
+_resetfreedpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR bool _resetfreedpages  = resetfreedpages;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR bool
+_set_col	phat_lib/representations/abstract_pivot_column.h	/^        void _set_col( index idx, const column& col  ) { is_pivot_col( idx ) ? get_pivot_col().s/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_set_col	phat_lib/representations/vector_heap.h	/^        void _set_col( index idx, const column& col )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_set_col	phat_lib/representations/vector_list.h	/^        void _set_col( index idx, const column& col  ) {$/;"	f	class:phat::vector_list	typeref:typename:void
+_set_col	phat_lib/representations/vector_set.h	/^        void _set_col( index idx, const column& col  ) {$/;"	f	class:phat::vector_set	typeref:typename:void
+_set_col	phat_lib/representations/vector_vector.h	/^        void _set_col( index idx, const column& col  ) { $/;"	f	class:phat::vector_vector	typeref:typename:void
+_set_dim	phat_lib/representations/vector_heap.h	/^        void _set_dim( index idx, dimension dim )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_set_dim	phat_lib/representations/vector_list.h	/^        void _set_dim( index idx, dimension dim ) { $/;"	f	class:phat::vector_list	typeref:typename:void
+_set_dim	phat_lib/representations/vector_set.h	/^        void _set_dim( index idx, dimension dim ) { $/;"	f	class:phat::vector_set	typeref:typename:void
+_set_dim	phat_lib/representations/vector_vector.h	/^        void _set_dim( index idx, dimension dim ) { $/;"	f	class:phat::vector_vector	typeref:typename:void
+_set_num_cols	phat_lib/representations/abstract_pivot_column.h	/^        void _set_num_cols( index nr_of_cols ) {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_set_num_cols	phat_lib/representations/vector_heap.h	/^        void _set_num_cols( index nr_of_columns )$/;"	f	class:phat::vector_heap	typeref:typename:void
+_set_num_cols	phat_lib/representations/vector_list.h	/^        void _set_num_cols( index nr_of_columns ) {$/;"	f	class:phat::vector_list	typeref:typename:void
+_set_num_cols	phat_lib/representations/vector_set.h	/^        void _set_num_cols( index nr_of_columns ) {$/;"	f	class:phat::vector_set	typeref:typename:void
+_set_num_cols	phat_lib/representations/vector_vector.h	/^        void _set_num_cols( index nr_of_columns ) {$/;"	f	class:phat::vector_vector	typeref:typename:void
+_sync	phat_lib/representations/abstract_pivot_column.h	/^        void _sync() { $/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+_sync	phat_lib/representations/vector_heap.h	/^        void _sync( ) {}$/;"	f	class:phat::vector_heap	typeref:typename:void
+_sync	phat_lib/representations/vector_list.h	/^        void _sync() {}$/;"	f	class:phat::vector_list	typeref:typename:void
+_sync	phat_lib/representations/vector_set.h	/^        void _sync() {}$/;"	f	class:phat::vector_set	typeref:typename:void
+_sync	phat_lib/representations/vector_vector.h	/^        void _sync() {}$/;"	f	class:phat::vector_vector	typeref:typename:void
+_wastefactor	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 _wastefactor    = wastefactor;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+abstract_pivot_column	phat_lib/representations/abstract_pivot_column.h	/^    class abstract_pivot_column : public vector_vector {$/;"	c	namespace:phat
+accessblocks	gpu_common.h	/^    typedef boost::mpl::int_<8>     accessblocks;$/;"	t	struct:ScatterConfig	typeref:typename:boost::mpl::int_<8>
+accessblocks	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<8>     accessblocks;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterConfig	typeref:typename:boost::mpl::int_<8>
+accessblocks	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 accessblocks  = MALLOCMC_CP_SCATTER_ACCESSBLOCKS;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+addChunkHierarchy	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline void* addChunkHierarchy(uint32 chunksize, uint32 fullsegments, uint32 ad/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+addChunkNoHierarchy	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline void* addChunkNoHierarchy(uint32 chunksize, uint32 page, uint32 spots)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+add_col	phat_lib/representations/bit_tree_pivot_column.h	/^        void add_col(const column &col) {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+add_col	phat_lib/representations/full_pivot_column.h	/^        void add_col( const column& col ) {$/;"	f	class:phat::full_column	typeref:typename:void
+add_col	phat_lib/representations/heap_pivot_column.h	/^        void add_col( const column& col ) {$/;"	f	class:phat::heap_column	typeref:typename:void
+add_col	phat_lib/representations/sparse_pivot_column.h	/^        void add_col( const column& col ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+add_index	phat_lib/representations/bit_tree_pivot_column.h	/^        void add_index( const size_t entry ) {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+add_index	phat_lib/representations/full_pivot_column.h	/^        void add_index( const index idx ) {$/;"	f	class:phat::full_column	typeref:typename:void
+add_index	phat_lib/representations/sparse_pivot_column.h	/^        void add_index( const index idx ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+add_to	phat_lib/boundary_matrix.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+add_to	phat_lib/boundary_matrix_original.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+add_to	phat_lib/boundary_matrix_tants.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+add_two_columns	gpu_boundary_matrix.cu	/^gpu_boundary_matrix::add_two_columns(int target, int source, ScatterAllocator::AllocatorHandle a/;"	f	typeref:typename:void gpu_boundary_matrix::
+alignPool	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    static boost::tuple<void*,size_t> alignPool(void* memory, size_t memsize){$/;"	f	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:boost::tuple<void *,size_t>
+alignPool	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    static boost::tuple<void*,size_t> alignPool(void* memory, size_t memsize){$/;"	f	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:boost::tuple<void *,size_t>
+all	build/Makefile	/^all: cmake_check_build_system$/;"	t
+all	cmake-build-debug/Makefile	/^all: cmake_check_build_system$/;"	t
+alloc	mallocmc_lib/allocator.hpp	/^        alloc($/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST void
+allocChunked	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocChunked(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+allocPageBased	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocPageBased(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+allocPageBasedSingle	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocPageBasedSingle(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+allocPageBasedSingleRegion	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocPageBasedSingleRegion(uint32 startpage, uint32 endpage, uint32 bytes/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+allocate_all_columns	gpu_boundary_matrix.cu	/^__global__ void allocate_all_columns(indx ** tmp_gpu_columns, const size_t * column_length, int /;"	f	typeref:typename:void
+allocatorHandle	mallocmc_lib/allocator.hpp	/^        AllocatorHandle allocatorHandle;$/;"	m	class:mallocMC::Allocator	typeref:typename:AllocatorHandle
+append_pair	phat_lib/persistence_pairs.h	/^        void append_pair( index birth, index death ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
+applyPadding	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    static uint32 applyPadding(uint32 bytes){$/;"	f	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:MAMC_HOST MAMC_ACCELERATOR uint32
+applyPadding	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    static uint32 applyPadding(uint32 bytes){$/;"	f	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:MAMC_HOST MAMC_ACCELERATOR uint32
+bit_tree_column	phat_lib/representations/bit_tree_pivot_column.h	/^    class bit_tree_column$/;"	c	namespace:phat
+bit_tree_pivot_column	phat_lib/representations/bit_tree_pivot_column.h	/^    typedef abstract_pivot_column<bit_tree_column> bit_tree_pivot_column;$/;"	t	namespace:phat	typeref:typename:abstract_pivot_column<bit_tree_column>
+bitmask	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        uint32 bitmask;$/;"	m	struct:mallocMC::CreationPolicies::Scatter::PTE	typeref:typename:uint32
+block_shift	phat_lib/representations/bit_tree_pivot_column.h	/^        enum { block_shift = 6 };$/;"	e	enum:phat::bit_tree_column::__anonb527336e0203
+block_size_in_bits	phat_lib/representations/bit_tree_pivot_column.h	/^        enum { block_size_in_bits = 64 };$/;"	e	enum:phat::bit_tree_column::__anonb527336e0103
+block_type	phat_lib/representations/bit_tree_pivot_column.h	/^        typedef uint64_t block_type;$/;"	t	class:phat::bit_tree_column	typeref:typename:uint64_t
+boundary_matrix	phat_lib/boundary_matrix.h	/^        boundary_matrix( const boundary_matrix< OtherRepresentation >& other ) {$/;"	f	class:phat::boundary_matrix
+boundary_matrix	phat_lib/boundary_matrix.h	/^        boundary_matrix() {};$/;"	f	class:phat::boundary_matrix
+boundary_matrix	phat_lib/boundary_matrix.h	/^    class boundary_matrix$/;"	c	namespace:phat
+boundary_matrix	phat_lib/boundary_matrix_original.h	/^        boundary_matrix( const boundary_matrix< OtherRepresentation >& other ) {$/;"	f	class:phat::boundary_matrix
+boundary_matrix	phat_lib/boundary_matrix_original.h	/^        boundary_matrix() {};$/;"	f	class:phat::boundary_matrix
+boundary_matrix	phat_lib/boundary_matrix_original.h	/^    class boundary_matrix$/;"	c	namespace:phat
+boundary_matrix	phat_lib/boundary_matrix_tants.h	/^        boundary_matrix( const boundary_matrix< OtherRepresentation >& other ) {$/;"	f	class:phat::boundary_matrix
+boundary_matrix	phat_lib/boundary_matrix_tants.h	/^        boundary_matrix() {};$/;"	f	class:phat::boundary_matrix
+boundary_matrix	phat_lib/boundary_matrix_tants.h	/^    class boundary_matrix$/;"	c	namespace:phat
+calcAdditionalChunks	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline uint32 calcAdditionalChunks(uint32 fullsegments, uint32 segmentsize, uin/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ uint32
+can_use_coalescing	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      bool can_use_coalescing;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:bool
+checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError()$/;"	f	namespace:CUDA	typeref:typename:void
+checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError(const char* file, int line)$/;"	f	namespace:CUDA	typeref:typename:void
+checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError(cudaError errorValue, const char* file, int line)$/;"	f	namespace:CUDA	typeref:typename:void
+check_lowest_one_locally	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::check_lowest_one_locally(indx my_col_id, indx block_id,$/;"	f	typeref:typename:void gpu_boundary_matrix::
+chunk_columns_finished	gpu_boundary_matrix.h	/^    indx *chunk_columns_finished; \/\/counts the number of operations that are finished.$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
+chunk_offset	gpu_boundary_matrix.h	/^    indx *chunk_offset; \/\/stores the offset of each chunk\/block in gpu.$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
+chunk_reduction	phat_lib/algorithms/chunk_reduction.h	/^    class chunk_reduction : public chunk_reduction_impl<false> {};$/;"	c	namespace:phat
+chunk_reduction_algorithm.cpp.i	build/Makefile	/^chunk_reduction_algorithm.cpp.i:$/;"	t
+chunk_reduction_algorithm.cpp.i	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.cpp.i:$/;"	t
+chunk_reduction_algorithm.cpp.o	build/Makefile	/^chunk_reduction_algorithm.cpp.o:$/;"	t
+chunk_reduction_algorithm.cpp.o	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.cpp.o:$/;"	t
+chunk_reduction_algorithm.cpp.s	build/Makefile	/^chunk_reduction_algorithm.cpp.s:$/;"	t
+chunk_reduction_algorithm.cpp.s	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.cpp.s:$/;"	t
+chunk_reduction_algorithm.i	build/Makefile	/^chunk_reduction_algorithm.i: chunk_reduction_algorithm.cpp.i$/;"	t
+chunk_reduction_algorithm.i	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.i: chunk_reduction_algorithm.cpp.i$/;"	t
+chunk_reduction_algorithm.o	build/Makefile	/^chunk_reduction_algorithm.o: chunk_reduction_algorithm.cpp.o$/;"	t
+chunk_reduction_algorithm.o	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.o: chunk_reduction_algorithm.cpp.o$/;"	t
+chunk_reduction_algorithm.s	build/Makefile	/^chunk_reduction_algorithm.s: chunk_reduction_algorithm.cpp.s$/;"	t
+chunk_reduction_algorithm.s	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.s: chunk_reduction_algorithm.cpp.s$/;"	t
+chunk_reduction_impl	phat_lib/algorithms/chunk_reduction.h	/^    template <bool use_sqrt = false> class chunk_reduction_impl  {$/;"	c	namespace:phat
+chunk_reduction_sqrt	phat_lib/algorithms/chunk_reduction.h	/^    class chunk_reduction_sqrt : public chunk_reduction_impl<true> {};$/;"	c	namespace:phat
+chunksize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        uint32 chunksize;$/;"	m	struct:mallocMC::CreationPolicies::Scatter::PTE	typeref:typename:uint32
+classname	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    static std::string classname(){$/;"	f	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:std::string
+classname	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    static std::string classname(){$/;"	f	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:MAMC_HOST std::string
+classname	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    static std::string classname(){$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:std::string
+classname	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      static std::string classname(){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:std::string
+classname	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^    static std::string classname(){$/;"	f	class:mallocMC::DistributionPolicies::Noop	typeref:typename:std::string
+classname	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      static std::string classname(){$/;"	f	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:MAMC_HOST std::string
+classname	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^    static std::string classname(){$/;"	f	struct:mallocMC::OOMPolicies::BadAllocException	typeref:typename:std::string
+classname	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^      static std::string classname(){$/;"	f	class:mallocMC::OOMPolicies::ReturnNull	typeref:typename:std::string
+classname	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^    static std::string classname(){$/;"	f	struct:mallocMC::ReservePoolPolicies::CudaSetLimits	typeref:typename:std::string
+classname	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^    static std::string classname(){$/;"	f	struct:mallocMC::ReservePoolPolicies::SimpleCudaMalloc	typeref:typename:std::string
+clean	Makefile	/^clean:$/;"	t
+clean	build/Makefile	/^clean:$/;"	t
+clean	cmake-build-debug/Makefile	/^clean:$/;"	t
+clean/fast	build/Makefile	/^clean\/fast: clean$/;"	t
+clean/fast	cmake-build-debug/Makefile	/^clean\/fast: clean$/;"	t
+clear	phat_lib/boundary_matrix.h	/^        void clear( index idx ) { rep._clear( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+clear	phat_lib/boundary_matrix_original.h	/^        void clear( index idx ) { rep._clear( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+clear	phat_lib/boundary_matrix_tants.h	/^        void clear( index idx ) { rep._clear( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+clear	phat_lib/persistence_pairs.h	/^        void clear() {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
+clear	phat_lib/representations/bit_tree_pivot_column.h	/^		void clear() {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+clear	phat_lib/representations/full_pivot_column.h	/^		void clear() {$/;"	f	class:phat::full_column	typeref:typename:void
+clear	phat_lib/representations/heap_pivot_column.h	/^		void clear() {$/;"	f	class:phat::heap_column	typeref:typename:void
+clear	phat_lib/representations/sparse_pivot_column.h	/^		void clear() {$/;"	f	class:phat::sparse_column	typeref:typename:void
+clear_column	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::clear_column(int col) {$/;"	f	typeref:typename:void gpu_boundary_matrix::
+cmake_check_build_system	build/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_check_build_system	cmake-build-debug/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_force	build/Makefile	/^cmake_force:$/;"	t
+cmake_force	cmake-build-debug/Makefile	/^cmake_force:$/;"	t
+col_bit_field	phat_lib/representations/full_pivot_column.h	/^        std::vector< char > col_bit_field;$/;"	m	class:phat::full_column	typeref:typename:std::vector<char>
+collect	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^    uint32 collect(uint32 bytes){$/;"	f	class:mallocMC::DistributionPolicies::Noop	typeref:typename:MAMC_ACCELERATOR uint32
+collect	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      uint32 collect(uint32 bytes){$/;"	f	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:MAMC_ACCELERATOR uint32
+column	gpu_boundary_matrix.h	/^struct column {$/;"	s
+column	phat_lib/helpers/misc.h	/^    typedef std::vector< index > column;$/;"	t	namespace:phat	typeref:typename:std::vector<index>
+column_length	gpu_boundary_matrix.h	/^    indx *column_length; \/\/stores length of each column.$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
+column_type	gpu_boundary_matrix.h	/^    short *column_type;  \/\/denotes type of each column: global, local negative or local positi/;"	m	class:gpu_boundary_matrix	typeref:typename:short *
+column_type	phat_lib/algorithms/chunk_reduction.h	/^        enum column_type { GLOBAL$/;"	g	class:phat::chunk_reduction_impl
+compute_persistence_pairs	phat_lib/compute_persistence_pairs.h	/^    void compute_persistence_pairs( persistence_pairs& pairs, boundary_matrix< Representation >&/;"	f	namespace:phat	typeref:typename:void
+compute_persistence_pairs_dualized	phat_lib/compute_persistence_pairs.h	/^    void compute_persistence_pairs_dualized( persistence_pairs& pairs, boundary_matrix< Represen/;"	f	namespace:phat	typeref:typename:void
+const	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
+const	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
+count	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        uint32 count;$/;"	m	struct:mallocMC::CreationPolicies::Scatter::PTE	typeref:typename:uint32
+countFreeChunksInPage	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ unsigned countFreeChunksInPage(uint32 page, uint32 chunksize){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ unsigned
+create	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    __device__ void* create(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:__device__ void *
+create	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* create(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+data	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        char data[pagesize];$/;"	m	struct:mallocMC::CreationPolicies::Scatter::PAGE	typeref:typename:char[]
+data	phat_lib/representations/bit_tree_pivot_column.h	/^        std::vector< block_type > data;$/;"	m	class:phat::bit_tree_column	typeref:typename:std::vector<block_type>
+data	phat_lib/representations/heap_pivot_column.h	/^        std::priority_queue< index > data;$/;"	m	class:phat::heap_column	typeref:typename:std::priority_queue<index>
+data	phat_lib/representations/sparse_pivot_column.h	/^        std::set< index > data;$/;"	m	class:phat::sparse_column	typeref:typename:std::set<index>
+dataAlignment	gpu_common.h	/^    typedef boost::mpl::int_<16> dataAlignment;$/;"	t	struct:AlignmentConfig	typeref:typename:boost::mpl::int_<16>
+dataAlignment	mallocmc_lib/alignmentPolicies/Shrink.hpp	/^    typedef boost::mpl::int_<16> dataAlignment;$/;"	t	struct:mallocMC::AlignmentPolicies::ShrinkConfig::DefaultShrinkConfig	typeref:typename:boost::mpl::int_<16>
+dataAlignment	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    BOOST_STATIC_CONSTEXPR uint32 dataAlignment = MALLOCMC_AP_SHRINK_DATAALIGNMENT;$/;"	m	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+data_length	gpu_boundary_matrix.h	/^    size_t data_length;  \/\/the number of non-zero 64-bits arrays in the current column.$/;"	m	struct:column	typeref:typename:size_t
+deallocChunked	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void deallocChunked(void* mem, uint32 page, uint32 chunksize)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void
+deallocPageBased	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void deallocPageBased(void* mem, uint32 page, uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void
+debrujin_magic_table	phat_lib/representations/bit_tree_pivot_column.h	/^        size_t debrujin_magic_table[ 64 ];$/;"	m	class:phat::bit_tree_column	typeref:typename:size_t[64]
+debug	Makefile	/^debug: ${TARGET_DEBUG}$/;"	t
+default_target	build/Makefile	/^default_target: all$/;"	t
+default_target	cmake-build-debug/Makefile	/^default_target: all$/;"	t
+depend	build/Makefile	/^depend:$/;"	t
+depend	cmake-build-debug/Makefile	/^depend:$/;"	t
+destroy	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    __device__ void destroy(void* mem)$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:__device__ void
+destroy	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void destroy(void* mem)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void
+destructiveResize	mallocmc_lib/allocator.hpp	/^        destructiveResize($/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST void
+detail	mallocmc_lib/allocator.hpp	/^namespace detail{$/;"	n	namespace:mallocMC
+detail	mallocmc_lib/device_allocator.hpp	/^namespace detail{$/;"	n	namespace:mallocMC
+devAllocator	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        DevAllocator* devAllocator;$/;"	m	struct:mallocMC::AllocatorHandleImpl	typeref:typename:DevAllocator *
+dimension	gpu_boundary_matrix.cu	/^typedef short dimension;$/;"	t	typeref:typename:short	file:
+dimension	gpu_boundary_matrix.h	/^typedef short dimension;$/;"	t	typeref:typename:short
+dimension	phat_lib/helpers/misc.h	/^    typedef int8_t dimension;$/;"	t	namespace:phat	typeref:typename:int8_t
+dims	gpu_boundary_matrix.h	/^    dimension *dims;     \/\/stores dimension of each column of boundary matrix.$/;"	m	class:gpu_boundary_matrix	typeref:typename:dimension *
+dims	phat_lib/representations/vector_heap.h	/^        std::vector< dimension > dims;$/;"	m	class:phat::vector_heap	typeref:typename:std::vector<dimension>
+dims	phat_lib/representations/vector_list.h	/^        std::vector< dimension > dims;$/;"	m	class:phat::vector_list	typeref:typename:std::vector<dimension>
+dims	phat_lib/representations/vector_set.h	/^        std::vector< dimension > dims;$/;"	m	class:phat::vector_set	typeref:typename:std::vector<dimension>
+dims	phat_lib/representations/vector_vector.h	/^        std::vector< dimension > dims;$/;"	m	class:phat::vector_vector	typeref:typename:std::vector<dimension>
+distribute	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^    void* distribute(void* allocatedMem){$/;"	f	class:mallocMC::DistributionPolicies::Noop	typeref:typename:MAMC_ACCELERATOR void *
+distribute	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      void* distribute(void* allocatedMem){$/;"	f	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:MAMC_ACCELERATOR void *
+divup	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_HOST MAMC_ACCELERATOR inline T divup(T a, T b) { return (a + b - 1)\/b; }$/;"	f	namespace:mallocMC	typeref:typename:MAMC_HOST MAMC_ACCELERATOR T
+dualize	phat_lib/helpers/dualize.h	/^    void dualize( boundary_matrix< Representation >& boundary_matrix ) {$/;"	f	namespace:phat	typeref:typename:void
+dualize_persistence_pairs	phat_lib/helpers/dualize.h	/^    void dualize_persistence_pairs( persistence_pairs& pairs, const index n ) {$/;"	f	namespace:phat	typeref:typename:void
+edit_cache	build/Makefile	/^edit_cache:$/;"	t
+edit_cache	cmake-build-debug/Makefile	/^edit_cache:$/;"	t
+edit_cache/fast	build/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+edit_cache/fast	cmake-build-debug/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+error	mallocmc_lib/mallocMC_utils.hpp	/^    error(const std::string& msg)$/;"	f	class:CUDA::error
+error	mallocmc_lib/mallocMC_utils.hpp	/^    error(cudaError errorValue)$/;"	f	class:CUDA::error
+error	mallocmc_lib/mallocMC_utils.hpp	/^    error(cudaError errorValue, const char* file, int line)$/;"	f	class:CUDA::error
+error	mallocmc_lib/mallocMC_utils.hpp	/^  class error : public std::runtime_error$/;"	c	namespace:CUDA
+features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {"\\n"$/;"	v	typeref:typename:const char[]
+features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {"\\n"$/;"	v	typeref:typename:const char[]
+features	cmake-build-debug/CMakeFiles/feature_tests.c	/^  const char features[] = {"\\n"$/;"	v	typeref:typename:const char[]
+features	cmake-build-debug/CMakeFiles/feature_tests.cxx	/^  const char features[] = {"\\n"$/;"	v	typeref:typename:const char[]
+finalize	phat_lib/boundary_matrix.h	/^        void finalize( index idx ) { rep._finalize( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+finalize	phat_lib/boundary_matrix_original.h	/^        void finalize( index idx ) { rep._finalize( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+finalize	phat_lib/boundary_matrix_tants.h	/^        void finalize( index idx ) { rep._finalize( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+finalize	phat_lib/representations/abstract_pivot_column.h	/^        void finalize( index idx ) { Base::_finalize( idx ); }$/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+finalizeKernel	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^  __global__ void finalizeKernel(T_Allocator* heap){$/;"	f	namespace:mallocMC::CreationPolicies::ScatterKernelDetail	typeref:typename:__global__ void
+free	mallocmc_lib/allocator.hpp	/^        void free()$/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST void
+free	mallocmc_lib/device_allocator.hpp	/^        free($/;"	f	class:mallocMC::DeviceAllocator	typeref:typename:MAMC_ACCELERATOR void
+free	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        free($/;"	f	struct:mallocMC::AllocatorHandleImpl	typeref:typename:MAMC_ACCELERATOR void
+full_column	phat_lib/representations/full_pivot_column.h	/^    class full_column {$/;"	c	namespace:phat
+full_pivot_column	phat_lib/representations/full_pivot_column.h	/^    typedef abstract_pivot_column< full_column > full_pivot_column;$/;"	t	namespace:phat	typeref:typename:abstract_pivot_column<full_column>
+genErrorString	mallocmc_lib/mallocMC_utils.hpp	/^    static std::string genErrorString(cudaError errorValue, const char* file, int line)$/;"	f	class:CUDA::error	typeref:typename:std::string
+getAllocatorHandle	mallocmc_lib/allocator.hpp	/^        getAllocatorHandle( )$/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST AllocatorHandle
+getAvailableSlots	mallocmc_lib/allocator.hpp	/^        getAvailableSlots($/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST unsigned
+getAvailableSlots	mallocmc_lib/allocator.hpp	/^        getAvailableSlots($/;"	f	struct:mallocMC::detail::GetAvailableSlotsIfAvailHost	typeref:typename:MAMC_HOST unsigned
+getAvailableSlots	mallocmc_lib/device_allocator.hpp	/^        getAvailableSlots($/;"	f	class:mallocMC::DeviceAllocator	typeref:typename:MAMC_ACCELERATOR unsigned
+getAvailableSlots	mallocmc_lib/device_allocator.hpp	/^        getAvailableSlots($/;"	f	struct:mallocMC::detail::GetAvailableSlotsIfAvailAcc	typeref:typename:MAMC_ACCELERATOR unsigned
+getAvailableSlots	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        getAvailableSlots($/;"	f	struct:mallocMC::AllocatorHandleImpl	typeref:typename:MAMC_ACCELERATOR unsigned
+getAvailableSlotsAccelerator	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ unsigned getAvailableSlotsAccelerator(size_t slotSize){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ unsigned
+getAvailableSlotsHost	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      static unsigned getAvailableSlotsHost(size_t const slotSize, T_DeviceAllocator* heap){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:unsigned
+getAvailableSlotsKernel	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^  __global__ void getAvailableSlotsKernel(T_Allocator* heap, size_t slotSize, unsigned* slots){$/;"	f	namespace:mallocMC::CreationPolicies::ScatterKernelDetail	typeref:typename:__global__ void
+getAvailaibleSlotsDeviceFunction	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ unsigned getAvailaibleSlotsDeviceFunction(size_t slotSize, int gid, int stride)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ unsigned
+getHeapLocations	mallocmc_lib/allocator.hpp	/^        getHeapLocations( )$/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST HeapInfoVector
+get_col	phat_lib/boundary_matrix.h	/^        void get_col( index idx, column& col  ) const { col.clear(); rep._get_col( idx, col ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+get_col	phat_lib/boundary_matrix_original.h	/^        void get_col( index idx, column& col  ) const { col.clear(); rep._get_col( idx, col ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+get_col	phat_lib/boundary_matrix_tants.h	/^        void get_col( index idx, column& col  ) const { col.clear(); rep._get_col( idx, col ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+get_col	phat_lib/representations/bit_tree_pivot_column.h	/^        void get_col( column& col ) {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+get_col	phat_lib/representations/full_pivot_column.h	/^        void get_col( column& col  ) {$/;"	f	class:phat::full_column	typeref:typename:void
+get_col	phat_lib/representations/heap_pivot_column.h	/^        void get_col( column& col  ) {$/;"	f	class:phat::heap_column	typeref:typename:void
+get_col	phat_lib/representations/sparse_pivot_column.h	/^        void get_col( column& col  ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+get_col_and_clear	phat_lib/representations/bit_tree_pivot_column.h	/^        void get_col_and_clear( column &out ) {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+get_col_and_clear	phat_lib/representations/full_pivot_column.h	/^        void get_col_and_clear( column& col ) {$/;"	f	class:phat::full_column	typeref:typename:void
+get_col_and_clear	phat_lib/representations/heap_pivot_column.h	/^        void get_col_and_clear( column& col ) {$/;"	f	class:phat::heap_column	typeref:typename:void
+get_col_and_clear	phat_lib/representations/sparse_pivot_column.h	/^        void get_col_and_clear( column& col ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+get_dim	phat_lib/boundary_matrix.h	/^        dimension get_dim( index idx ) const { return rep._get_dim( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
+get_dim	phat_lib/boundary_matrix_original.h	/^        dimension get_dim( index idx ) const { return rep._get_dim( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
+get_dim	phat_lib/boundary_matrix_tants.h	/^        dimension get_dim( index idx ) const { return rep._get_dim( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
+get_max_col_entries	phat_lib/boundary_matrix.h	/^        index get_max_col_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_col_entries	phat_lib/boundary_matrix_original.h	/^        index get_max_col_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_col_entries	phat_lib/boundary_matrix_tants.h	/^        index get_max_col_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_dim	gpu_boundary_matrix.cu	/^__device__ dimension gpu_boundary_matrix::get_max_dim(int col) {$/;"	f	typeref:typename:dimension gpu_boundary_matrix::
+get_max_dim	phat_lib/boundary_matrix.h	/^        dimension get_max_dim() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
+get_max_dim	phat_lib/boundary_matrix_original.h	/^        dimension get_max_dim() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
+get_max_dim	phat_lib/boundary_matrix_tants.h	/^        dimension get_max_dim() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
+get_max_index	gpu_boundary_matrix.cu	/^__device__ indx gpu_boundary_matrix::get_max_index(int col) {$/;"	f	typeref:typename:indx gpu_boundary_matrix::
+get_max_index	phat_lib/boundary_matrix.h	/^        index get_max_index( index idx ) const { return rep._get_max_index( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_index	phat_lib/boundary_matrix_original.h	/^        index get_max_index( index idx ) const { return rep._get_max_index( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_index	phat_lib/boundary_matrix_tants.h	/^        index get_max_index( index idx ) const { return rep._get_max_index( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_index	phat_lib/representations/bit_tree_pivot_column.h	/^        index get_max_index() const {$/;"	f	class:phat::bit_tree_column	typeref:typename:index
+get_max_index	phat_lib/representations/full_pivot_column.h	/^        index get_max_index() {$/;"	f	class:phat::full_column	typeref:typename:index
+get_max_index	phat_lib/representations/heap_pivot_column.h	/^        index get_max_index() {$/;"	f	class:phat::heap_column	typeref:typename:index
+get_max_index	phat_lib/representations/sparse_pivot_column.h	/^        index get_max_index() {$/;"	f	class:phat::sparse_column	typeref:typename:index
+get_max_row_entries	phat_lib/boundary_matrix.h	/^        index get_max_row_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_row_entries	phat_lib/boundary_matrix_original.h	/^        index get_max_row_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_max_row_entries	phat_lib/boundary_matrix_tants.h	/^        index get_max_row_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_cols	phat_lib/boundary_matrix.h	/^        index get_num_cols() const { return rep._get_num_cols(); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_cols	phat_lib/boundary_matrix_original.h	/^        index get_num_cols() const { return rep._get_num_cols(); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_cols	phat_lib/boundary_matrix_tants.h	/^        index get_num_cols() const { return rep._get_num_cols(); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_entries	phat_lib/boundary_matrix.h	/^        index get_num_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_entries	phat_lib/boundary_matrix_original.h	/^        index get_num_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_entries	phat_lib/boundary_matrix_tants.h	/^        index get_num_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_pairs	phat_lib/persistence_pairs.h	/^        index get_num_pairs() const { $/;"	f	class:phat::persistence_pairs	typeref:typename:index
+get_num_rows	phat_lib/boundary_matrix.h	/^        index get_num_rows( index idx ) const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_rows	phat_lib/boundary_matrix_original.h	/^        index get_num_rows( index idx ) const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_num_rows	phat_lib/boundary_matrix_tants.h	/^        index get_num_rows( index idx ) const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
+get_pair	phat_lib/persistence_pairs.h	/^        std::pair< index, index > get_pair( index idx ) const {$/;"	f	class:phat::persistence_pairs	typeref:typename:std::pair<index,index>
+get_pivot_col	phat_lib/representations/abstract_pivot_column.h	/^        pivot_col& get_pivot_col() const {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:pivot_col &
+gpuAssert	gpu_common.h	/^inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)$/;"	f	typeref:typename:void
+gpuErrchk	gpu_common.h	/^#define gpuErrchk(/;"	d
+gpu_boundary_matrix	gpu_boundary_matrix.cu	/^gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vector> *src_matrix/;"	f	typeref:typename:gpu_boundary_matrix::
+gpu_boundary_matrix	gpu_boundary_matrix.h	/^class gpu_boundary_matrix {$/;"	c
+gpu_boundary_matrix.cpp.i	build/Makefile	/^gpu_boundary_matrix.cpp.i:$/;"	t
+gpu_boundary_matrix.cpp.i	cmake-build-debug/Makefile	/^gpu_boundary_matrix.cpp.i:$/;"	t
+gpu_boundary_matrix.cpp.o	build/Makefile	/^gpu_boundary_matrix.cpp.o:$/;"	t
+gpu_boundary_matrix.cpp.o	cmake-build-debug/Makefile	/^gpu_boundary_matrix.cpp.o:$/;"	t
+gpu_boundary_matrix.cpp.s	build/Makefile	/^gpu_boundary_matrix.cpp.s:$/;"	t
+gpu_boundary_matrix.cpp.s	cmake-build-debug/Makefile	/^gpu_boundary_matrix.cpp.s:$/;"	t
+gpu_boundary_matrix.i	build/Makefile	/^gpu_boundary_matrix.i: gpu_boundary_matrix.cpp.i$/;"	t
+gpu_boundary_matrix.i	cmake-build-debug/Makefile	/^gpu_boundary_matrix.i: gpu_boundary_matrix.cpp.i$/;"	t
+gpu_boundary_matrix.o	build/Makefile	/^gpu_boundary_matrix.o: gpu_boundary_matrix.cpp.o$/;"	t
+gpu_boundary_matrix.o	cmake-build-debug/Makefile	/^gpu_boundary_matrix.o: gpu_boundary_matrix.cpp.o$/;"	t
+gpu_boundary_matrix.s	build/Makefile	/^gpu_boundary_matrix.s: gpu_boundary_matrix.cpp.s$/;"	t
+gpu_boundary_matrix.s	cmake-build-debug/Makefile	/^gpu_boundary_matrix.s: gpu_boundary_matrix.cpp.s$/;"	t
+handleOOM	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^    static void* handleOOM(void* mem){$/;"	f	struct:mallocMC::OOMPolicies::BadAllocException	typeref:typename:MAMC_ACCELERATOR void *
+handleOOM	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^      static void* handleOOM(void* mem){$/;"	f	class:mallocMC::OOMPolicies::ReturnNull	typeref:typename:MAMC_ACCELERATOR void *
+hashingDistMP	gpu_common.h	/^    typedef boost::mpl::int_<17497> hashingDistMP;$/;"	t	struct:ScatterHashParams	typeref:typename:boost::mpl::int_<17497>
+hashingDistMP	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<17497> hashingDistMP;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterHashingParams	typeref:typename:boost::mpl::int_<17497>
+hashingDistMP	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^     BOOST_STATIC_CONSTEXPR uint32 hashingDistMP  = MALLOCMC_CP_SCATTER_HASHINGDISTMP;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+hashingDistWP	gpu_common.h	/^    typedef boost::mpl::int_<1>     hashingDistWP;$/;"	t	struct:ScatterHashParams	typeref:typename:boost::mpl::int_<1>
+hashingDistWP	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<1>     hashingDistWP;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterHashingParams	typeref:typename:boost::mpl::int_<1>
+hashingDistWP	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^     BOOST_STATIC_CONSTEXPR uint32 hashingDistWP  = MALLOCMC_CP_SCATTER_HASHINGDISTWP;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+hashingDistWPRel	gpu_common.h	/^    typedef boost::mpl::int_<1>     hashingDistWPRel;$/;"	t	struct:ScatterHashParams	typeref:typename:boost::mpl::int_<1>
+hashingDistWPRel	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<1>     hashingDistWPRel;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterHashingParams	typeref:typename:boost::mpl::int_<1>
+hashingDistWPRel	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^     BOOST_STATIC_CONSTEXPR uint32 hashingDistWPRel = MALLOCMC_CP_SCATTER_HASHINGDISTWPREL;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+hashingK	gpu_common.h	/^    typedef boost::mpl::int_<38183> hashingK;$/;"	t	struct:ScatterHashParams	typeref:typename:boost::mpl::int_<38183>
+hashingK	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<38183> hashingK;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterHashingParams	typeref:typename:boost::mpl::int_<38183>
+hashingK	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^     BOOST_STATIC_CONSTEXPR uint32 hashingK       = MALLOCMC_CP_SCATTER_HASHINGK;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+heapInfos	mallocmc_lib/allocator.hpp	/^        HeapInfo heapInfos;$/;"	m	class:mallocMC::Allocator	typeref:typename:HeapInfo
+heap_column	phat_lib/representations/heap_pivot_column.h	/^    class heap_column {$/;"	c	namespace:phat
+heap_pivot_column	phat_lib/representations/heap_pivot_column.h	/^    typedef abstract_pivot_column< heap_column > heap_pivot_column;$/;"	t	namespace:phat	typeref:typename:abstract_pivot_column<heap_column>
+help	build/Makefile	/^help:$/;"	t
+help	cmake-build-debug/Makefile	/^help:$/;"	t
+history	phat_lib/representations/full_pivot_column.h	/^        std::priority_queue< index > history;$/;"	m	class:phat::full_column	typeref:typename:std::priority_queue<index>
+idx_of_pivot_cols	phat_lib/representations/abstract_pivot_column.h	/^        mutable thread_local_storage< index > idx_of_pivot_cols;$/;"	m	class:phat::abstract_pivot_column	typeref:typename:thread_local_storage<index>
+index	phat_lib/helpers/misc.h	/^    typedef int64_t index;$/;"	t	namespace:phat	typeref:typename:int64_t
+indx	gpu_boundary_matrix.cu	/^typedef long indx;$/;"	t	typeref:typename:long	file:
+indx	gpu_boundary_matrix.h	/^typedef long indx;$/;"	t	typeref:typename:long
+indx	gpu_common.h	/^typedef long indx;$/;"	t	typeref:typename:long
+info	mallocmc_lib/allocator.hpp	/^        info($/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST std::string
+info_arch	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_cray	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_language_dialect_default	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_dialect_default =$/;"	v	typeref:typename:const char *
+info_language_dialect_default	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_dialect_default = "INFO" ":" "dialect_default["$/;"	v	typeref:typename:const char *
+info_language_dialect_default	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_dialect_default =$/;"	v	typeref:typename:const char *
+info_language_dialect_default	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_dialect_default = "INFO" ":" "dialect_default["$/;"	v	typeref:typename:const char *
+info_platform	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate_version	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+init	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        __device__ void init()$/;"	f	struct:mallocMC::CreationPolicies::Scatter::PAGE	typeref:typename:__device__ void
+init	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        __device__ void init()$/;"	f	struct:mallocMC::CreationPolicies::Scatter::PTE	typeref:typename:__device__ void
+init	phat_lib/representations/bit_tree_pivot_column.h	/^        void init( index num_cols ) {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+init	phat_lib/representations/full_pivot_column.h	/^        void init( const index total_size ) {$/;"	f	class:phat::full_column	typeref:typename:void
+init	phat_lib/representations/heap_pivot_column.h	/^        void init( const index total_size ) {$/;"	f	class:phat::heap_column	typeref:typename:void
+init	phat_lib/representations/sparse_pivot_column.h	/^        void init( const index total_size ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+initDeviceFunction	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void initDeviceFunction(void* memory, size_t memsize)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void
+initHeap	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    static void* initHeap(T* dAlloc, void*, size_t){$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:void *
+initHeap	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      static void* initHeap( T_DeviceAllocator* heap, void* pool, size_t memsize){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:void *
+initKernel	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^  __global__ void initKernel(T_Allocator* heap, void* heapmem, size_t memsize){$/;"	f	namespace:mallocMC::CreationPolicies::ScatterKernelDetail	typeref:typename:__global__ void
+inserts_since_last_prune	phat_lib/representations/heap_pivot_column.h	/^        index inserts_since_last_prune;$/;"	m	class:phat::heap_column	typeref:typename:index
+inserts_since_last_prune	phat_lib/representations/vector_heap.h	/^        std::vector< index > inserts_since_last_prune;$/;"	m	class:phat::vector_heap	typeref:typename:std::vector<index>
+int16_t	phat_lib/helpers/misc.h	/^    typedef __int16 int16_t;$/;"	t	typeref:typename:__int16
+int32_t	phat_lib/helpers/misc.h	/^    typedef __int32 int32_t;$/;"	t	typeref:typename:__int32
+int64_t	phat_lib/helpers/misc.h	/^    typedef __int64 int64_t;$/;"	t	typeref:typename:__int64
+int8_t	phat_lib/helpers/misc.h	/^    typedef __int8 int8_t;$/;"	t	typeref:typename:__int8
+isOOM	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    __device__ bool isOOM(void* p, size_t s){$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:__device__ bool
+isOOM	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ bool isOOM(void* p, size_t s){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ bool
+is_active	gpu_boundary_matrix.h	/^    bool *is_active; \/\/denotes each column as active or inactive.$/;"	m	class:gpu_boundary_matrix	typeref:typename:bool *
+is_empty	gpu_boundary_matrix.cu	/^__device__ bool gpu_boundary_matrix::is_empty(int col) {$/;"	f	typeref:typename:bool gpu_boundary_matrix::
+is_empty	phat_lib/boundary_matrix.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+is_empty	phat_lib/boundary_matrix_original.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+is_empty	phat_lib/boundary_matrix_tants.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+is_empty	phat_lib/representations/bit_tree_pivot_column.h	/^        bool is_empty() const {$/;"	f	class:phat::bit_tree_column	typeref:typename:bool
+is_empty	phat_lib/representations/full_pivot_column.h	/^        bool is_empty() {$/;"	f	class:phat::full_column	typeref:typename:bool
+is_empty	phat_lib/representations/heap_pivot_column.h	/^        bool is_empty() {$/;"	f	class:phat::heap_column	typeref:typename:bool
+is_empty	phat_lib/representations/sparse_pivot_column.h	/^        bool is_empty() {$/;"	f	class:phat::sparse_column	typeref:typename:bool
+is_in_history	phat_lib/representations/full_pivot_column.h	/^        std::vector< char > is_in_history;$/;"	m	class:phat::full_column	typeref:typename:std::vector<char>
+is_pivot_col	phat_lib/representations/abstract_pivot_column.h	/^        bool is_pivot_col( index idx ) const {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:bool
+is_ready_for_mark	gpu_boundary_matrix.h	/^    bool *is_ready_for_mark;$/;"	m	class:gpu_boundary_matrix	typeref:typename:bool *
+laneid	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t laneid()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+lanemask	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+lanemask_ge	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask_ge()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+lanemask_gt	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask_gt()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+lanemask_le	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask_le()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+lanemask_lt	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask_lt()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+load_ascii	phat_lib/boundary_matrix.h	/^        bool load_ascii( std::string filename ) { $/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+load_ascii	phat_lib/boundary_matrix_original.h	/^        bool load_ascii( std::string filename ) { $/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+load_ascii	phat_lib/boundary_matrix_tants.h	/^        bool load_ascii( std::string filename ) { $/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+load_ascii	phat_lib/persistence_pairs.h	/^        bool load_ascii( std::string filename ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:bool
+load_binary	phat_lib/boundary_matrix.h	/^        bool load_binary( std::string filename )$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+load_binary	phat_lib/boundary_matrix_original.h	/^        bool load_binary( std::string filename )$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+load_binary	phat_lib/boundary_matrix_tants.h	/^        bool load_binary( std::string filename )$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+load_binary	phat_lib/persistence_pairs.h	/^        bool load_binary( std::string filename ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:bool
+load_vector_vector	phat_lib/boundary_matrix.h	/^        void load_vector_vector( const std::vector< std::vector< index_type > >& input_matrix, c/;"	f	class:phat::boundary_matrix	typeref:typename:void
+load_vector_vector	phat_lib/boundary_matrix_original.h	/^        void load_vector_vector( const std::vector< std::vector< index_type > >& input_matrix, c/;"	f	class:phat::boundary_matrix	typeref:typename:void
+load_vector_vector	phat_lib/boundary_matrix_tants.h	/^        void load_vector_vector( const std::vector< std::vector< index_type > >& input_matrix, c/;"	f	class:phat::boundary_matrix	typeref:typename:void
+local_chunk_reduction	chunk_reduction_algorithm.cu	/^void chunk_reduction_algorithm::local_chunk_reduction() {$/;"	f	typeref:typename:void chunk_reduction_algorithm::
+local_chunk_reduction	matrix_operations.h	/^__global__ void local_chunk_reduction(gpu_boundary_matrix &gpu_matrix, dimension max_dim,$/;"	f	typeref:typename:__global__ void
+lowest_one_lookup	gpu_boundary_matrix.h	/^    indx *lowest_one_lookup;$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
+main	CMakeLists.txt	/^add_executable(main$/;"	t
+main	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
+main	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
+main	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+main	build/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	typeref:typename:int
+main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	typeref:typename:int
+main	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
+main	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
+main	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+main	cmake-build-debug/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	typeref:typename:int
+main	cmake-build-debug/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	typeref:typename:int
+main	test.cu	/^int main()$/;"	f	typeref:typename:int
+main.cpp.i	build/Makefile	/^main.cpp.i:$/;"	t
+main.cpp.i	cmake-build-debug/Makefile	/^main.cpp.i:$/;"	t
+main.cpp.o	build/Makefile	/^main.cpp.o:$/;"	t
+main.cpp.o	cmake-build-debug/Makefile	/^main.cpp.o:$/;"	t
+main.cpp.s	build/Makefile	/^main.cpp.s:$/;"	t
+main.cpp.s	cmake-build-debug/Makefile	/^main.cpp.s:$/;"	t
+main.i	build/Makefile	/^main.i: main.cpp.i$/;"	t
+main.i	cmake-build-debug/Makefile	/^main.i: main.cpp.i$/;"	t
+main.o	build/Makefile	/^main.o: main.cpp.o$/;"	t
+main.o	cmake-build-debug/Makefile	/^main.o: main.cpp.o$/;"	t
+main.s	build/Makefile	/^main.s: main.cpp.s$/;"	t
+main.s	cmake-build-debug/Makefile	/^main.s: main.cpp.s$/;"	t
+make_pivot_col	phat_lib/representations/abstract_pivot_column.h	/^        void make_pivot_col( index idx ) {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+malloc	mallocmc_lib/device_allocator.hpp	/^        malloc($/;"	f	class:mallocMC::DeviceAllocator	typeref:typename:MAMC_ACCELERATOR void *
+malloc	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        malloc($/;"	f	struct:mallocMC::AllocatorHandleImpl	typeref:typename:MAMC_ACCELERATOR void *
+mallocMC	mallocmc_lib/alignmentPolicies/Noop.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/alignmentPolicies/Shrink.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/allocator.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/creationPolicies/OldMalloc.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/creationPolicies/Scatter.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/device_allocator.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/distributionPolicies/Noop.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/distributionPolicies/XMallocSIMD.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/mallocMC_allocator_handle.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/mallocMC_constraints.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/mallocMC_traits.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/mallocMC_utils.hpp	/^namespace mallocMC$/;"	n
+mallocMC	mallocmc_lib/oOMPolicies/BadAllocException.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/oOMPolicies/ReturnNull.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/reservePoolPolicies/CudaSetLimits.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc.hpp	/^namespace mallocMC{$/;"	n
+mallocMC	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^namespace mallocMC{$/;"	n
+mark_active_column	matrix_operations.h	/^__global__ void mark_active_column(gpu_boundary_matrix &gpu_matrix)$/;"	f	typeref:typename:__global__ void
+mark_and_clean	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::mark_and_clean(indx my_col_id, indx row_begin, dimension cu/;"	f	typeref:typename:void gpu_boundary_matrix::
+markpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ bool markpages(uint32 startpage, uint32 pages, uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ bool
+matrix	gpu_boundary_matrix.h	/^    column *matrix; \/\/stores columns of boundary matrix.$/;"	m	class:gpu_boundary_matrix	typeref:typename:column *
+matrix	phat_lib/representations/vector_heap.h	/^        std::vector< column > matrix;$/;"	m	class:phat::vector_heap	typeref:typename:std::vector<column>
+matrix	phat_lib/representations/vector_list.h	/^        std::vector< std::list< index > > matrix;$/;"	m	class:phat::vector_list	typeref:typename:std::vector<std::list<index>>
+matrix	phat_lib/representations/vector_set.h	/^        std::vector< std::set< index > > matrix;$/;"	m	class:phat::vector_set	typeref:typename:std::vector<std::set<index>>
+matrix	phat_lib/representations/vector_vector.h	/^        std::vector< column > matrix;$/;"	m	class:phat::vector_vector	typeref:typename:std::vector<column>
+matrix_reduction	CMakeLists.txt	/^project(matrix_reduction)$/;"	p
+matrix_reduction	README.md	/^# matrix_reduction$/;"	c
+matrix_reduction	build/Makefile	/^matrix_reduction: cmake_check_build_system$/;"	t
+matrix_reduction	cmake-build-debug/Makefile	/^matrix_reduction: cmake_check_build_system$/;"	t
+matrix_reduction/fast	build/Makefile	/^matrix_reduction\/fast:$/;"	t
+matrix_reduction/fast	cmake-build-debug/Makefile	/^matrix_reduction\/fast:$/;"	t
+maxOnPageMasks	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 maxOnPageMasks = 32 > tmp_maxOPM ? tmp_maxOPM : 32;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+minChunkSize1	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 minChunkSize1 = 0x10;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+minSegmentSize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 minSegmentSize = 32*minChunkSize1 + sizeof(uint32);$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+myoffset	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      uint32 myoffset;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:uint32
+nextspot	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline uint32 nextspot(uint32 bitfield, uint32 spot, uint32 spots)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ uint32
+nsmid	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t nsmid()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+nwarpid	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t nwarpid()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+offset	phat_lib/representations/bit_tree_pivot_column.h	/^        size_t offset; \/\/ data[i + offset] = ith block of the data-bitset$/;"	m	class:phat::bit_tree_column	typeref:typename:size_t
+omp_get_max_threads	phat_lib/helpers/misc.h	/^    #define omp_get_max_threads(/;"	d
+omp_get_num_threads	phat_lib/helpers/misc.h	/^    #define omp_get_num_threads(/;"	d
+omp_get_thread_num	phat_lib/helpers/misc.h	/^    #define omp_get_thread_num(/;"	d
+omp_get_wtime	phat_lib/helpers/misc.h	/^    #define omp_get_wtime(/;"	d
+onPageMasksPosition	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline uint32* onPageMasksPosition(uint32 page, uint32 nMasks){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ uint32 *
+operator !=	phat_lib/boundary_matrix.h	/^        bool operator!=( const boundary_matrix< OtherRepresentation >& other_boundary_matrix ) c/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+operator !=	phat_lib/boundary_matrix_original.h	/^        bool operator!=( const boundary_matrix< OtherRepresentation >& other_boundary_matrix ) c/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+operator !=	phat_lib/boundary_matrix_tants.h	/^        bool operator!=( const boundary_matrix< OtherRepresentation >& other_boundary_matrix ) c/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+operator !=	phat_lib/persistence_pairs.h	/^        bool operator!=( persistence_pairs& other_pairs ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:bool
+operator ()	phat_lib/helpers/thread_local_storage.h	/^    T& operator()() {$/;"	f	class:thread_local_storage	typeref:typename:T &
+operator ()	phat_lib/helpers/thread_local_storage.h	/^    const T& operator()() const {$/;"	f	class:thread_local_storage	typeref:typename:const T &
+operator () 	phat_lib/algorithms/chunk_reduction.h	/^        void operator() ( boundary_matrix< Representation >& boundary_matrix ) {$/;"	f	class:phat::chunk_reduction_impl	typeref:typename:void
+operator () 	phat_lib/algorithms/row_reduction.h	/^        void operator() ( boundary_matrix< Representation >& boundary_matrix ) {$/;"	f	class:phat::row_reduction	typeref:typename:void
+operator () 	phat_lib/algorithms/spectral_sequence_reduction.h	/^        void operator () ( boundary_matrix< Representation >& boundary_matrix ) {$/;"	f	class:phat::spectral_sequence_reduction	typeref:typename:void
+operator () 	phat_lib/algorithms/standard_reduction.h	/^        void operator() ( boundary_matrix< Representation >& boundary_matrix ) {$/;"	f	class:phat::standard_reduction	typeref:typename:void
+operator () 	phat_lib/algorithms/twist_reduction.h	/^        void operator () ( boundary_matrix< Representation >& boundary_matrix ) {$/;"	f	class:phat::twist_reduction	typeref:typename:void
+operator =	phat_lib/boundary_matrix.h	/^        boundary_matrix< Representation >& operator=( const boundary_matrix< OtherRepresentation/;"	f	class:phat::boundary_matrix	typeref:typename:boundary_matrix<Representation> &
+operator =	phat_lib/boundary_matrix_original.h	/^        boundary_matrix< Representation >& operator=( const boundary_matrix< OtherRepresentation/;"	f	class:phat::boundary_matrix	typeref:typename:boundary_matrix<Representation> &
+operator =	phat_lib/boundary_matrix_tants.h	/^        boundary_matrix< Representation >& operator=( const boundary_matrix< OtherRepresentation/;"	f	class:phat::boundary_matrix	typeref:typename:boundary_matrix<Representation> &
+operator ==	phat_lib/boundary_matrix.h	/^        bool operator==( const boundary_matrix< OtherRepresentation >& other_boundary_matrix ) c/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+operator ==	phat_lib/boundary_matrix_original.h	/^        bool operator==( const boundary_matrix< OtherRepresentation >& other_boundary_matrix ) c/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+operator ==	phat_lib/boundary_matrix_tants.h	/^        bool operator==( const boundary_matrix< OtherRepresentation >& other_boundary_matrix ) c/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+operator ==	phat_lib/persistence_pairs.h	/^        bool operator==( persistence_pairs& other_pairs ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:bool
+operator []	phat_lib/helpers/thread_local_storage.h	/^    T& operator[]( int tid ) {$/;"	f	class:thread_local_storage	typeref:typename:T &
+p	mallocmc_lib/allocator.hpp	/^        void* p;$/;"	m	struct:mallocMC::HeapInfo	typeref:typename:void *
+pagesize	gpu_common.h	/^    typedef boost::mpl::int_<4096>  pagesize;$/;"	t	struct:ScatterConfig	typeref:typename:boost::mpl::int_<4096>
+pagesize	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<4096>  pagesize;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterConfig	typeref:typename:boost::mpl::int_<4096>
+pagesize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 pagesize      = MALLOCMC_CP_SCATTER_PAGESIZE;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+pagesize	mallocmc_lib/distributionPolicies/XMallocSIMD.hpp	/^      typedef boost::mpl::int_<4096>     pagesize;$/;"	t	struct:mallocMC::DistributionPolicies::XMallocSIMDConf::DefaultXMallocConfig	typeref:typename:boost::mpl::int_<4096>
+pagesize	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 pagesize      = MALLOCMC_DP_XMALLOCSIMD_PAGESIZE;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+pairs	phat_lib/persistence_pairs.h	/^        std::vector< std::pair< index, index > > pairs;$/;"	m	class:phat::persistence_pairs	typeref:typename:std::vector<std::pair<index,index>>
+per_thread_storage	phat_lib/helpers/thread_local_storage.h	/^    std::vector< T > per_thread_storage; $/;"	m	class:thread_local_storage	typeref:typename:std::vector<T>
+persistence_pair	phat_lib/persistence_pairs.h	/^    	typedef std::pair< index, index > persistence_pair;$/;"	t	class:phat::persistence_pairs	typeref:typename:std::pair<index,index>
+persistence_pairs	phat_lib/persistence_pairs.h	/^    class persistence_pairs {$/;"	c	namespace:phat
+phat	phat_lib/algorithms/chunk_reduction.h	/^namespace phat {$/;"	n
+phat	phat_lib/algorithms/row_reduction.h	/^namespace phat {$/;"	n
+phat	phat_lib/algorithms/spectral_sequence_reduction.h	/^namespace phat {$/;"	n
+phat	phat_lib/algorithms/standard_reduction.h	/^namespace phat {$/;"	n
+phat	phat_lib/algorithms/twist_reduction.h	/^namespace phat {$/;"	n
+phat	phat_lib/boundary_matrix.h	/^namespace phat {$/;"	n
+phat	phat_lib/boundary_matrix_original.h	/^namespace phat {$/;"	n
+phat	phat_lib/boundary_matrix_tants.h	/^namespace phat {$/;"	n
+phat	phat_lib/compute_persistence_pairs.h	/^namespace phat {$/;"	n
+phat	phat_lib/helpers/dualize.h	/^namespace phat {$/;"	n
+phat	phat_lib/helpers/misc.h	/^namespace phat {$/;"	n
+phat	phat_lib/persistence_pairs.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/abstract_pivot_column.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/bit_tree_pivot_column.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/full_pivot_column.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/heap_pivot_column.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/sparse_pivot_column.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/vector_heap.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/vector_list.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/vector_set.h	/^namespace phat {$/;"	n
+phat	phat_lib/representations/vector_vector.h	/^namespace phat {$/;"	n
+pivot_col	phat_lib/representations/abstract_pivot_column.h	/^        typedef PivotColumn pivot_col;$/;"	t	class:phat::abstract_pivot_column	typeref:typename:PivotColumn
+pivot_cols	phat_lib/representations/abstract_pivot_column.h	/^        mutable thread_local_storage< pivot_col > pivot_cols;$/;"	m	class:phat::abstract_pivot_column	typeref:typename:thread_local_storage<pivot_col>
+pool	mallocmc_lib/device_allocator.hpp	/^        void* pool;$/;"	m	class:mallocMC::DeviceAllocator	typeref:typename:void *
+pop_max_index	phat_lib/representations/heap_pivot_column.h	/^        index pop_max_index()$/;"	f	class:phat::heap_column	typeref:typename:index
+pos	gpu_boundary_matrix.h	/^    indx *pos; \/\/the indx of non-zero 64-bits array in the current column.$/;"	m	struct:column	typeref:typename:indx *
+preinstall	build/Makefile	/^preinstall: all$/;"	t
+preinstall	cmake-build-debug/Makefile	/^preinstall: all$/;"	t
+preinstall/fast	build/Makefile	/^preinstall\/fast:$/;"	t
+preinstall/fast	cmake-build-debug/Makefile	/^preinstall\/fast:$/;"	t
+providesAvailableSlots	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    typedef boost::mpl::bool_<false> providesAvailableSlots;$/;"	t	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:boost::mpl::bool_<false>
+providesAvailableSlots	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      typedef boost::mpl::bool_<true>  providesAvailableSlots;$/;"	t	class:mallocMC::CreationPolicies::Scatter	typeref:typename:boost::mpl::bool_<true>
+providesAvailableSlots	mallocmc_lib/mallocMC_traits.hpp	/^        BOOST_STATIC_CONSTEXPR bool providesAvailableSlots = T_Allocator::CreationPolicy::provid/;"	m	struct:mallocMC::Traits	typeref:typename:BOOST_STATIC_CONSTEXPR bool
+prune	phat_lib/representations/heap_pivot_column.h	/^        void prune()$/;"	f	class:phat::heap_column	typeref:typename:void
+qnxnto	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+randInit	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline uint32 randInit()$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ uint32
+rebuild_cache	build/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache	cmake-build-debug/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache/fast	build/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+rebuild_cache/fast	cmake-build-debug/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+regionsize	gpu_common.h	/^    typedef boost::mpl::int_<16>    regionsize;$/;"	t	struct:ScatterConfig	typeref:typename:boost::mpl::int_<16>
+regionsize	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<16>    regionsize;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterConfig	typeref:typename:boost::mpl::int_<16>
+regionsize	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 regionsize    = MALLOCMC_CP_SCATTER_REGIONSIZE;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+release	Makefile	/^release: ${TARGET}$/;"	t
+release_pivot_col	phat_lib/representations/abstract_pivot_column.h	/^        void release_pivot_col() {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:void
+remove_max	phat_lib/boundary_matrix.h	/^        void remove_max( index idx ) { rep._remove_max( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+remove_max	phat_lib/boundary_matrix_original.h	/^        void remove_max( index idx ) { rep._remove_max( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+remove_max	phat_lib/boundary_matrix_tants.h	/^        void remove_max( index idx ) { rep._remove_max( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+remove_max	phat_lib/representations/bit_tree_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+remove_max	phat_lib/representations/full_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::full_column	typeref:typename:void
+remove_max	phat_lib/representations/heap_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::heap_column	typeref:typename:void
+remove_max	phat_lib/representations/sparse_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::sparse_column	typeref:typename:void
+remove_max_index	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::remove_max_index(int col) {$/;"	f	typeref:typename:void gpu_boundary_matrix::
+rep	phat_lib/boundary_matrix.h	/^        Representation rep;$/;"	m	class:phat::boundary_matrix	typeref:typename:Representation
+rep	phat_lib/boundary_matrix_original.h	/^        Representation rep;$/;"	m	class:phat::boundary_matrix	typeref:typename:Representation
+rep	phat_lib/boundary_matrix_tants.h	/^        Representation rep;$/;"	m	class:phat::boundary_matrix	typeref:typename:Representation
+req_size	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      uint32 req_size;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:uint32
+resetMemPool	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^    static void resetMemPool(void *p=NULL){$/;"	f	struct:mallocMC::ReservePoolPolicies::CudaSetLimits	typeref:typename:void
+resetMemPool	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^    static void resetMemPool(void* p){$/;"	f	struct:mallocMC::ReservePoolPolicies::SimpleCudaMalloc	typeref:typename:void
+resetfreedpages	gpu_common.h	/^    typedef boost::mpl::bool_<false> resetfreedpages;$/;"	t	struct:ScatterConfig	typeref:typename:boost::mpl::bool_<false>
+resetfreedpages	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::bool_<false> resetfreedpages;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterConfig	typeref:typename:boost::mpl::bool_<false>
+resetfreedpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR bool resetfreedpages = MALLOCMC_CP_SCATTER_RESETFREEDPAGES;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR bool
+rightmost_pos	phat_lib/representations/bit_tree_pivot_column.h	/^        size_t rightmost_pos( const block_type value ) const {                $/;"	f	class:phat::bit_tree_column	typeref:typename:size_t
+round_up_to_2s	gpu_common.h	/^__device__ indx round_up_to_2s(indx number) {$/;"	f	typeref:typename:__device__ indx
+row_reduction	phat_lib/algorithms/row_reduction.h	/^    class row_reduction {$/;"	c	namespace:phat
+save_ascii	phat_lib/boundary_matrix.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+save_ascii	phat_lib/boundary_matrix_original.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+save_ascii	phat_lib/boundary_matrix_tants.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+save_ascii	phat_lib/persistence_pairs.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:bool
+save_binary	phat_lib/boundary_matrix.h	/^        bool save_binary( std::string filename )$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+save_binary	phat_lib/boundary_matrix_original.h	/^        bool save_binary( std::string filename )$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+save_binary	phat_lib/boundary_matrix_tants.h	/^        bool save_binary( std::string filename )$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
+save_binary	phat_lib/persistence_pairs.h	/^        bool save_binary( std::string filename ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:bool
+save_scs	phat_lib/boundary_matrix.h	/^        void save_scs( $/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs	phat_lib/boundary_matrix.h	/^        void save_scs($/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs	phat_lib/boundary_matrix_original.h	/^        void save_scs( $/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs	phat_lib/boundary_matrix_tants.h	/^        void save_scs( $/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs	phat_lib/boundary_matrix_tants.h	/^        void save_scs($/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs_decreasing	phat_lib/boundary_matrix.h	/^        void save_scs_decreasing( $/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs_decreasing	phat_lib/boundary_matrix_original.h	/^        void save_scs_decreasing( $/;"	f	class:phat::boundary_matrix	typeref:typename:void
+save_scs_decreasing	phat_lib/boundary_matrix_tants.h	/^        void save_scs_decreasing( $/;"	f	class:phat::boundary_matrix	typeref:typename:void
+setMemPool	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^    static void* setMemPool(size_t memsize){$/;"	f	struct:mallocMC::ReservePoolPolicies::CudaSetLimits	typeref:typename:void *
+setMemPool	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^    static void* setMemPool(size_t memsize){$/;"	f	struct:mallocMC::ReservePoolPolicies::SimpleCudaMalloc	typeref:typename:void *
+set_col	phat_lib/boundary_matrix.h	/^        void set_col( index idx, const column& col  ) { rep._set_col( idx, col ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_col	phat_lib/boundary_matrix_original.h	/^        void set_col( index idx, const column& col  ) { rep._set_col( idx, col ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_col	phat_lib/boundary_matrix_tants.h	/^        void set_col( index idx, const column& col  ) { rep._set_col( idx, col ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_col	phat_lib/representations/bit_tree_pivot_column.h	/^        void set_col( const column& col ) {$/;"	f	class:phat::bit_tree_column	typeref:typename:void
+set_col	phat_lib/representations/full_pivot_column.h	/^        void set_col( const column& col  ) {$/;"	f	class:phat::full_column	typeref:typename:void
+set_col	phat_lib/representations/heap_pivot_column.h	/^        void set_col( const column& col  ) {$/;"	f	class:phat::heap_column	typeref:typename:void
+set_col	phat_lib/representations/sparse_pivot_column.h	/^        void set_col( const column& col  ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+set_dim	phat_lib/boundary_matrix.h	/^        void set_dim( index idx, dimension dim ) { rep._set_dim( idx, dim ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_dim	phat_lib/boundary_matrix_original.h	/^        void set_dim( index idx, dimension dim ) { rep._set_dim( idx, dim ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_dim	phat_lib/boundary_matrix_tants.h	/^        void set_dim( index idx, dimension dim ) { rep._set_dim( idx, dim ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_num_cols	phat_lib/boundary_matrix.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_num_cols	phat_lib/boundary_matrix_original.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_num_cols	phat_lib/boundary_matrix_tants.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+set_pair	phat_lib/persistence_pairs.h	/^        void set_pair( index idx, index birth, index death )  {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
+size	gpu_boundary_matrix.h	/^    size_t size;  \/\/maximal number of non-zero 64-bits arrays in the current column.$/;"	m	struct:column	typeref:typename:size_t
+size	mallocmc_lib/allocator.hpp	/^        size_t size;$/;"	m	struct:mallocMC::HeapInfo	typeref:typename:size_t
+smid	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t smid()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+sort	phat_lib/persistence_pairs.h	/^        void sort() {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
+sparse_column	phat_lib/representations/sparse_pivot_column.h	/^    class sparse_column {$/;"	c	namespace:phat
+sparse_pivot_column	phat_lib/representations/sparse_pivot_column.h	/^    typedef abstract_pivot_column< sparse_column > sparse_pivot_column;$/;"	t	namespace:phat	typeref:typename:abstract_pivot_column<sparse_column>
+spectral_sequence_reduction	phat_lib/algorithms/spectral_sequence_reduction.h	/^    class spectral_sequence_reduction {$/;"	c	namespace:phat
+standard_reduction	phat_lib/algorithms/standard_reduction.h	/^    class standard_reduction {$/;"	c	namespace:phat
+sync	phat_lib/boundary_matrix.h	/^        void sync() { rep._sync(); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+sync	phat_lib/boundary_matrix_original.h	/^        void sync() { rep._sync(); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+sync	phat_lib/boundary_matrix_tants.h	/^        void sync() { rep._sync(); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
+temp_col	phat_lib/representations/heap_pivot_column.h	/^        column temp_col;$/;"	m	class:phat::heap_column	typeref:typename:column
+temp_column_buffer	phat_lib/representations/vector_heap.h	/^        mutable thread_local_storage< column > temp_column_buffer;$/;"	m	class:phat::vector_heap	typeref:typename:thread_local_storage<column>
+temp_column_buffer	phat_lib/representations/vector_vector.h	/^        thread_local_storage< column > temp_column_buffer;$/;"	m	class:phat::vector_vector	typeref:typename:thread_local_storage<column>
+test_add	test.cu	/^__global__ void test_add(gpu_boundary_matrix &g_matrix, indx chunks_num, ScatterAllocator::Alloc/;"	f	typeref:typename:void
+thread_local_storage	phat_lib/helpers/thread_local_storage.h	/^    thread_local_storage() : per_thread_storage( omp_get_max_threads() * PHAT_TLS_SPACING_FACTOR/;"	f	class:thread_local_storage
+thread_local_storage	phat_lib/helpers/thread_local_storage.h	/^class thread_local_storage$/;"	c
+threadcount	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      uint32 threadcount;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:uint32
+tmp_maxOPM	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 tmp_maxOPM = minChunkSize1 > HierarchyThreshold ? 0 : (pages/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+transform_all_columns	gpu_boundary_matrix.cu	/^__global__ void transform_all_columns(indx ** tmp_gpu_columns, const size_t * column_length, col/;"	f	typeref:typename:void
+tryUsePage	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline void* tryUsePage(uint32 page, uint32 chunksize)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
+twist_reduction	phat_lib/algorithms/twist_reduction.h	/^    class twist_reduction {$/;"	c	namespace:phat
+type	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^  struct __PointerEquivalent<8>{ typedef unsigned long long int type; };$/;"	t	struct:mallocMC::AlignmentPolicies::Shrink2NS::__PointerEquivalent	typeref:typename:unsigned long long int
+type	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^  template<int PSIZE> struct __PointerEquivalent{ typedef unsigned int type;};$/;"	t	struct:mallocMC::AlignmentPolicies::Shrink2NS::__PointerEquivalent	typeref:typename:unsigned int
+type	mallocmc_lib/mallocMC_utils.hpp	/^    typedef unsigned int type;$/;"	t	class:mallocMC::__PointerEquivalent	typeref:typename:unsigned int
+type	mallocmc_lib/mallocMC_utils.hpp	/^    typedef unsigned long long int type;$/;"	t	class:mallocMC::__PointerEquivalent	typeref:typename:unsigned long long int
+uint16_t	phat_lib/helpers/misc.h	/^    typedef unsigned __int16 uint16_t;$/;"	t	typeref:typename:unsigned __int16
+uint32	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/allocator.hpp	/^        typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::Allocator	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::CreationPolicies::Scatter	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/device_allocator.hpp	/^        typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::DeviceAllocator	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/distributionPolicies/Noop_impl.hpp	/^    typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::DistributionPolicies::Noop	typeref:typename:boost::uint32_t
+uint32	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      typedef boost::uint32_t uint32;$/;"	t	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:boost::uint32_t
+uint32_t	phat_lib/helpers/misc.h	/^    typedef unsigned __int32 uint32_t;$/;"	t	typeref:typename:unsigned __int32
+uint64_t	phat_lib/helpers/misc.h	/^    typedef unsigned __int64 uint64_t;$/;"	t	typeref:typename:unsigned __int64
+uint8_t	phat_lib/helpers/misc.h	/^    typedef unsigned __int8 uint8_t;$/;"	t	typeref:typename:unsigned __int8
+usespot	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline int usespot(uint32 *bitfield, uint32 spots)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ int
+value	gpu_boundary_matrix.h	/^    unsigned long long *value; \/\/the value of non-zero 64-bits array represented by long integ/;"	m	struct:column	typeref:typename:unsigned long long *
+vector_heap	phat_lib/representations/vector_heap.h	/^    class vector_heap {$/;"	c	namespace:phat
+vector_list	phat_lib/representations/vector_list.h	/^    class vector_list {$/;"	c	namespace:phat
+vector_set	phat_lib/representations/vector_set.h	/^    class vector_set {$/;"	c	namespace:phat
+vector_vector	phat_lib/representations/vector_vector.h	/^    class vector_vector {$/;"	c	namespace:phat
+volatile	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
+volatile	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
+warpid	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      uint32 warpid;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:uint32
+warpid	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t warpid()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
+wastefactor	gpu_common.h	/^    typedef boost::mpl::int_<2>     wastefactor;$/;"	t	struct:ScatterConfig	typeref:typename:boost::mpl::int_<2>
+wastefactor	mallocmc_lib/creationPolicies/Scatter.hpp	/^    typedef boost::mpl::int_<2>     wastefactor;$/;"	t	struct:mallocMC::CreationPolicies::ScatterConf::DefaultScatterConfig	typeref:typename:boost::mpl::int_<2>
+wastefactor	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 wastefactor   = MALLOCMC_CP_SCATTER_WASTEFACTOR;$/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
+~Allocator	mallocmc_lib/allocator.hpp	/^        ~Allocator( )$/;"	f	class:mallocMC::Allocator	typeref:typename:MAMC_HOST
