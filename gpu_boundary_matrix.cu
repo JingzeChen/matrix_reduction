@@ -49,7 +49,7 @@ __global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_l
     unsigned long long last_value = 0;
     int cur_block_id = 0;
 
-    for (int i = 0; i < src_length; i++) 
+    for (int i = 0; i < src_length; i++)
     {
         indx current_pos = src_data[i] / BLOCK_BITS;
         if (last_pos != current_pos) {
@@ -258,7 +258,6 @@ __device__ void add_two_columns(column* matrix, int target, int source, ScatterA
             }
             tgt_id++;
             src_id++;
-            temp_id++;
         } else if (matrix[target].pos[tgt_id] < matrix[source].pos[src_id]) {
             if (matrix[target].pos[tgt_id] == matrix[source].pos[src_id + 1])
                 tgt_id++;

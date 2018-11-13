@@ -121,9 +121,9 @@ __global__ void test_standard_reduction_algorithm(column* matrix, int column_num
     indx lowest_row = get_max_index(matrix, thread_id);
     indx target_col = -1;
     bool ive_added = false;
-    for(int j = thread_id+1; j<)
+    for(int j = thread_id+1; j<column_num; j++)
     {
-        check_lowest(matrix, thread_id, thread_id+1, column_num, &target_col, &ive_added)
+        check_lowest(matrix, thread_id, thread_id+1, column_num, &target_col, &ive_added);
         if(target_col != -1 && ive_added)
         {
             add_two_columns(matrix, target_col, thread_id, allocator);

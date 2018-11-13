@@ -35,6 +35,7 @@ Allocator	mallocmc_lib/allocator.hpp	/^    class Allocator :$/;"	c	namespace:mal
 AllocatorHandle	mallocmc_lib/allocator.hpp	/^        typedef AllocatorHandleImpl<Allocator> AllocatorHandle;$/;"	t	class:mallocMC::Allocator	typeref:typename:AllocatorHandleImpl<Allocator>
 AllocatorHandleImpl	mallocmc_lib/mallocMC_allocator_handle.hpp	/^        AllocatorHandleImpl($/;"	f	struct:mallocMC::AllocatorHandleImpl
 AllocatorHandleImpl	mallocmc_lib/mallocMC_allocator_handle.hpp	/^    struct AllocatorHandleImpl$/;"	s	namespace:mallocMC
+BLOCK_BITS	gpu_boundary_matrix.cu	/^#define BLOCK_BITS /;"	d	file:
 BadAllocException	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^  struct BadAllocException$/;"	s	namespace:mallocMC::OOMPolicies
 Base	phat_lib/representations/abstract_pivot_column.h	/^        typedef vector_vector Base;$/;"	t	class:phat::abstract_pivot_column	typeref:typename:vector_vector
 CHUNK_REDUCTION_ALGORITHM_H	chunk_reduction_algorithm.h	/^#define CHUNK_REDUCTION_ALGORITHM_H$/;"	d
@@ -389,7 +390,6 @@ DistributionPolicy	mallocmc_lib/allocator.hpp	/^        typedef T_DistributionPo
 DistributionPolicy	mallocmc_lib/device_allocator.hpp	/^        typedef T_DistributionPolicy DistributionPolicy;$/;"	t	class:mallocMC::DeviceAllocator	typeref:typename:T_DistributionPolicy
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m
 EQUALS	cmake-build-debug/Makefile	/^EQUALS = =$/;"	m
-GLOBAL	gpu_boundary_matrix.cu	/^#define GLOBAL /;"	d	file:
 GLOBAL	gpu_boundary_matrix.h	/^#define GLOBAL /;"	d
 GLOBAL	phat_lib/algorithms/chunk_reduction.h	/^        enum column_type { GLOBAL$/;"	e	enum:phat::chunk_reduction_impl::column_type
 GPU_BOUNDARY_MATRIX_H	gpu_boundary_matrix.h	/^#define GPU_BOUNDARY_MATRIX_H$/;"	d
@@ -410,10 +410,8 @@ ID_VOID_MAIN	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define I
 ID_VOID_MAIN	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
 INITIAL_SIZE	gpu_boundary_matrix.h	/^#define INITIAL_SIZE /;"	d
 LDFLAGS	Makefile	/^LDFLAGS = -lcuda$/;"	m
-LOCAL_NEGATIVE	gpu_boundary_matrix.cu	/^#define LOCAL_NEGATIVE /;"	d	file:
 LOCAL_NEGATIVE	gpu_boundary_matrix.h	/^#define LOCAL_NEGATIVE /;"	d
 LOCAL_NEGATIVE	phat_lib/algorithms/chunk_reduction.h	/^                         , LOCAL_NEGATIVE };$/;"	e	enum:phat::chunk_reduction_impl::column_type
-LOCAL_POSITIVE	gpu_boundary_matrix.cu	/^#define LOCAL_POSITIVE /;"	d	file:
 LOCAL_POSITIVE	gpu_boundary_matrix.h	/^#define LOCAL_POSITIVE /;"	d
 LOCAL_POSITIVE	phat_lib/algorithms/chunk_reduction.h	/^                         , LOCAL_POSITIVE$/;"	e	enum:phat::chunk_reduction_impl::column_type
 MALLOCMC_AP_SHRINK_DATAALIGNMENT	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^#define MALLOCMC_AP_SHRINK_DATAALIGNMENT /;"	d
@@ -640,7 +638,7 @@ add_index	phat_lib/representations/sparse_pivot_column.h	/^        void add_inde
 add_to	phat_lib/boundary_matrix.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 add_to	phat_lib/boundary_matrix_original.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 add_to	phat_lib/boundary_matrix_tants.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
-add_two_columns	gpu_boundary_matrix.cu	/^gpu_boundary_matrix::add_two_columns(int target, int source, ScatterAllocator::AllocatorHandle a/;"	f	typeref:typename:void gpu_boundary_matrix::
+add_two_columns	gpu_boundary_matrix.cu	/^__device__ void add_two_columns(column* matrix, int target, int source, ScatterAllocator::Alloca/;"	f	typeref:typename:void
 alignPool	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    static boost::tuple<void*,size_t> alignPool(void* memory, size_t memsize){$/;"	f	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:boost::tuple<void *,size_t>
 alignPool	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    static boost::tuple<void*,size_t> alignPool(void* memory, size_t memsize){$/;"	f	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:boost::tuple<void *,size_t>
 all	build/Makefile	/^all: cmake_check_build_system$/;"	t
@@ -650,7 +648,7 @@ allocChunked	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ v
 allocPageBased	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocPageBased(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
 allocPageBasedSingle	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocPageBasedSingle(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
 allocPageBasedSingleRegion	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* allocPageBasedSingleRegion(uint32 startpage, uint32 endpage, uint32 bytes/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
-allocate_all_columns	gpu_boundary_matrix.cu	/^__global__ void allocate_all_columns(indx ** tmp_gpu_columns, const size_t * column_length, int /;"	f	typeref:typename:void
+allocate_all_columns	gpu_boundary_matrix.cu	/^__global__ void allocate_all_columns(indx ** tmp_gpu_columns, size_t * column_length, int column/;"	f	typeref:typename:void
 allocatorHandle	mallocmc_lib/allocator.hpp	/^        AllocatorHandle allocatorHandle;$/;"	m	class:mallocMC::Allocator	typeref:typename:AllocatorHandle
 append_pair	phat_lib/persistence_pairs.h	/^        void append_pair( index birth, index death ) {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
 applyPadding	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    static uint32 applyPadding(uint32 bytes){$/;"	f	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:MAMC_HOST MAMC_ACCELERATOR uint32
@@ -675,7 +673,8 @@ can_use_coalescing	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^    
 checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError()$/;"	f	namespace:CUDA	typeref:typename:void
 checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError(const char* file, int line)$/;"	f	namespace:CUDA	typeref:typename:void
 checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError(cudaError errorValue, const char* file, int line)$/;"	f	namespace:CUDA	typeref:typename:void
-check_lowest_one_locally	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::check_lowest_one_locally(indx my_col_id, indx block_id,$/;"	f	typeref:typename:void gpu_boundary_matrix::
+check_lowest	test.cu	/^__device__ bool check_lowest(column* matrix, indx my_col_id, indx _start, indx _end, indx* targe/;"	f	typeref:typename:bool
+check_lowest_one_locally	gpu_boundary_matrix.cu	/^__device__ void check_lowest_one_locally(column* matrix, short* column_type, indx* chunk_columns/;"	f	typeref:typename:void
 chunk_columns_finished	gpu_boundary_matrix.h	/^    indx *chunk_columns_finished; \/\/counts the number of operations that are finished.$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
 chunk_offset	gpu_boundary_matrix.h	/^    indx *chunk_offset; \/\/stores the offset of each chunk\/block in gpu.$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
 chunk_reduction	phat_lib/algorithms/chunk_reduction.h	/^    class chunk_reduction : public chunk_reduction_impl<false> {};$/;"	c	namespace:phat
@@ -717,7 +716,7 @@ clear	phat_lib/representations/bit_tree_pivot_column.h	/^		void clear() {$/;"	f	
 clear	phat_lib/representations/full_pivot_column.h	/^		void clear() {$/;"	f	class:phat::full_column	typeref:typename:void
 clear	phat_lib/representations/heap_pivot_column.h	/^		void clear() {$/;"	f	class:phat::heap_column	typeref:typename:void
 clear	phat_lib/representations/sparse_pivot_column.h	/^		void clear() {$/;"	f	class:phat::sparse_column	typeref:typename:void
-clear_column	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::clear_column(int col) {$/;"	f	typeref:typename:void gpu_boundary_matrix::
+clear_column	gpu_boundary_matrix.cu	/^__device__ void clear_column(column* matrix, int col_id) {$/;"	f	typeref:typename:void
 cmake_check_build_system	build/Makefile	/^cmake_check_build_system:$/;"	t
 cmake_check_build_system	cmake-build-debug/Makefile	/^cmake_check_build_system:$/;"	t
 cmake_force	build/Makefile	/^cmake_force:$/;"	t
@@ -818,17 +817,17 @@ get_col_and_clear	phat_lib/representations/bit_tree_pivot_column.h	/^        voi
 get_col_and_clear	phat_lib/representations/full_pivot_column.h	/^        void get_col_and_clear( column& col ) {$/;"	f	class:phat::full_column	typeref:typename:void
 get_col_and_clear	phat_lib/representations/heap_pivot_column.h	/^        void get_col_and_clear( column& col ) {$/;"	f	class:phat::heap_column	typeref:typename:void
 get_col_and_clear	phat_lib/representations/sparse_pivot_column.h	/^        void get_col_and_clear( column& col ) {$/;"	f	class:phat::sparse_column	typeref:typename:void
+get_dim	gpu_boundary_matrix.cu	/^__device__ dimension get_dim(dimension* dims, int col_id) {$/;"	f	typeref:typename:dimension
 get_dim	phat_lib/boundary_matrix.h	/^        dimension get_dim( index idx ) const { return rep._get_dim( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
 get_dim	phat_lib/boundary_matrix_original.h	/^        dimension get_dim( index idx ) const { return rep._get_dim( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
 get_dim	phat_lib/boundary_matrix_tants.h	/^        dimension get_dim( index idx ) const { return rep._get_dim( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
 get_max_col_entries	phat_lib/boundary_matrix.h	/^        index get_max_col_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
 get_max_col_entries	phat_lib/boundary_matrix_original.h	/^        index get_max_col_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
 get_max_col_entries	phat_lib/boundary_matrix_tants.h	/^        index get_max_col_entries() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:index
-get_max_dim	gpu_boundary_matrix.cu	/^__device__ dimension gpu_boundary_matrix::get_max_dim(int col) {$/;"	f	typeref:typename:dimension gpu_boundary_matrix::
 get_max_dim	phat_lib/boundary_matrix.h	/^        dimension get_max_dim() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
 get_max_dim	phat_lib/boundary_matrix_original.h	/^        dimension get_max_dim() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
 get_max_dim	phat_lib/boundary_matrix_tants.h	/^        dimension get_max_dim() const {$/;"	f	class:phat::boundary_matrix	typeref:typename:dimension
-get_max_index	gpu_boundary_matrix.cu	/^__device__ indx gpu_boundary_matrix::get_max_index(int col) {$/;"	f	typeref:typename:indx gpu_boundary_matrix::
+get_max_index	gpu_boundary_matrix.cu	/^__device__ indx get_max_index(column* matrix, int col_id) {$/;"	f	typeref:typename:indx
 get_max_index	phat_lib/boundary_matrix.h	/^        index get_max_index( index idx ) const { return rep._get_max_index( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
 get_max_index	phat_lib/boundary_matrix_original.h	/^        index get_max_index( index idx ) const { return rep._get_max_index( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
 get_max_index	phat_lib/boundary_matrix_tants.h	/^        index get_max_index( index idx ) const { return rep._get_max_index( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:index
@@ -948,7 +947,7 @@ int8_t	phat_lib/helpers/misc.h	/^    typedef __int8 int8_t;$/;"	t	typeref:typena
 isOOM	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    __device__ bool isOOM(void* p, size_t s){$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:__device__ bool
 isOOM	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ bool isOOM(void* p, size_t s){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ bool
 is_active	gpu_boundary_matrix.h	/^    bool *is_active; \/\/denotes each column as active or inactive.$/;"	m	class:gpu_boundary_matrix	typeref:typename:bool *
-is_empty	gpu_boundary_matrix.cu	/^__device__ bool gpu_boundary_matrix::is_empty(int col) {$/;"	f	typeref:typename:bool gpu_boundary_matrix::
+is_empty	gpu_boundary_matrix.cu	/^__device__ bool is_empty(column* matrix, int col_id) {$/;"	f	typeref:typename:bool
 is_empty	phat_lib/boundary_matrix.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
 is_empty	phat_lib/boundary_matrix_original.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
 is_empty	phat_lib/boundary_matrix_tants.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
@@ -1033,7 +1032,7 @@ mallocMC	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^namespace mal
 mallocMC	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc.hpp	/^namespace mallocMC{$/;"	n
 mallocMC	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^namespace mallocMC{$/;"	n
 mark_active_column	matrix_operations.h	/^__global__ void mark_active_column(gpu_boundary_matrix &gpu_matrix)$/;"	f	typeref:typename:__global__ void
-mark_and_clean	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::mark_and_clean(indx my_col_id, indx row_begin, dimension cu/;"	f	typeref:typename:void gpu_boundary_matrix::
+mark_and_clean	gpu_boundary_matrix.cu	/^__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, short* column_type, dime/;"	f	typeref:typename:void
 markpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ bool markpages(uint32 startpage, uint32 pages, uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ bool
 matrix	gpu_boundary_matrix.h	/^    column *matrix; \/\/stores columns of boundary matrix.$/;"	m	class:gpu_boundary_matrix	typeref:typename:column *
 matrix	phat_lib/representations/vector_heap.h	/^        std::vector< column > matrix;$/;"	m	class:phat::vector_heap	typeref:typename:std::vector<column>
@@ -1143,7 +1142,7 @@ remove_max	phat_lib/representations/bit_tree_pivot_column.h	/^		void remove_max(
 remove_max	phat_lib/representations/full_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::full_column	typeref:typename:void
 remove_max	phat_lib/representations/heap_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::heap_column	typeref:typename:void
 remove_max	phat_lib/representations/sparse_pivot_column.h	/^		void remove_max() {$/;"	f	class:phat::sparse_column	typeref:typename:void
-remove_max_index	gpu_boundary_matrix.cu	/^__device__ void gpu_boundary_matrix::remove_max_index(int col) {$/;"	f	typeref:typename:void gpu_boundary_matrix::
+remove_max_index	gpu_boundary_matrix.cu	/^__device__ void remove_max_index(column* matrix, int col) {$/;"	f	typeref:typename:void
 rep	phat_lib/boundary_matrix.h	/^        Representation rep;$/;"	m	class:phat::boundary_matrix	typeref:typename:Representation
 rep	phat_lib/boundary_matrix_original.h	/^        Representation rep;$/;"	m	class:phat::boundary_matrix	typeref:typename:Representation
 rep	phat_lib/boundary_matrix_tants.h	/^        Representation rep;$/;"	m	class:phat::boundary_matrix	typeref:typename:Representation
@@ -1202,12 +1201,19 @@ sync	phat_lib/boundary_matrix_tants.h	/^        void sync() { rep._sync(); }$/;"
 temp_col	phat_lib/representations/heap_pivot_column.h	/^        column temp_col;$/;"	m	class:phat::heap_column	typeref:typename:column
 temp_column_buffer	phat_lib/representations/vector_heap.h	/^        mutable thread_local_storage< column > temp_column_buffer;$/;"	m	class:phat::vector_heap	typeref:typename:thread_local_storage<column>
 temp_column_buffer	phat_lib/representations/vector_vector.h	/^        thread_local_storage< column > temp_column_buffer;$/;"	m	class:phat::vector_vector	typeref:typename:thread_local_storage<column>
-test_add	test.cu	/^__global__ void test_add(gpu_boundary_matrix &g_matrix, indx chunks_num, ScatterAllocator::Alloc/;"	f	typeref:typename:void
+test_add	test.cu	/^__global__ void test_add(column * matrix, indx chunks_num, ScatterAllocator::AllocatorHandle all/;"	f	typeref:typename:void
+test_construction	test.cu	/^__global__ void test_construction(column* matrix)$/;"	f	typeref:typename:void
+test_dims	test.cu	/^__global__ void test_dims(dimension* dims) {$/;"	f	typeref:typename:void
+test_get_max_index	test.cu	/^__global__ void test_get_max_index(column* matrix)$/;"	f	typeref:typename:void
+test_is_empty	test.cu	/^__global__ void test_is_empty(column* matrix)$/;"	f	typeref:typename:void
+test_length	gpu_boundary_matrix.cu	/^__global__ void test_length(size_t * column_length, int column_num) {$/;"	f	typeref:typename:void
+test_remove_max_index	test.cu	/^__global__ void test_remove_max_index(column* matrix)$/;"	f	typeref:typename:void
+test_standard_reduction_algorithm	test.cu	/^__global__ void test_standard_reduction_algorithm(column* matrix, int column_num,ScatterAllocato/;"	f	typeref:typename:void
 thread_local_storage	phat_lib/helpers/thread_local_storage.h	/^    thread_local_storage() : per_thread_storage( omp_get_max_threads() * PHAT_TLS_SPACING_FACTOR/;"	f	class:thread_local_storage
 thread_local_storage	phat_lib/helpers/thread_local_storage.h	/^class thread_local_storage$/;"	c
 threadcount	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^      uint32 threadcount;$/;"	m	class:mallocMC::DistributionPolicies::XMallocSIMD	typeref:typename:uint32
 tmp_maxOPM	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STATIC_CONSTEXPR uint32 tmp_maxOPM = minChunkSize1 > HierarchyThreshold ? 0 : (pages/;"	m	class:mallocMC::CreationPolicies::Scatter	typeref:typename:BOOST_STATIC_CONSTEXPR uint32
-transform_all_columns	gpu_boundary_matrix.cu	/^__global__ void transform_all_columns(indx ** tmp_gpu_columns, const size_t * column_length, col/;"	f	typeref:typename:void
+transform_all_columns	gpu_boundary_matrix.cu	/^__global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_length, column *m/;"	f	typeref:typename:void
 tryUsePage	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ inline void* tryUsePage(uint32 page, uint32 chunksize)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
 twist_reduction	phat_lib/algorithms/twist_reduction.h	/^    class twist_reduction {$/;"	c	namespace:phat
 type	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^  struct __PointerEquivalent<8>{ typedef unsigned long long int type; };$/;"	t	struct:mallocMC::AlignmentPolicies::Shrink2NS::__PointerEquivalent	typeref:typename:unsigned long long int
