@@ -8,7 +8,10 @@
 #include <cstdio>
 #include <iostream>
 
-//#include "gpu_boundary_matrix.h"
+#include "gpu_common.h"
+#include "mallocMC.hpp"
+
+#include "gpu_boundary_matrix.h"
 
 #endif
 

@@ -1,7 +1,13 @@
-#ifndef _GPU_COMMON_H_
-#define _GPU_COMMON_H_
+//
+// Created by 唐艺峰 on 2018/11/5.
+//
+
+#ifndef MATRIX_REDUCTION_GPU_COMMON_H
+#define MATRIX_REDUCTION_GPU_COMMON_H
 
 #include <mallocMC.hpp>
+#include <thrust/device_vector.h>
+#include <thrust/host_vector.h>
 #include <representations/vector_vector.h>
 #include <boundary_matrix.h>
 
@@ -9,17 +15,9 @@
 #include "cuda_runtime.h"
 #include "cuda.h"
 
-#define CUDA_MAX_BLOCK_THREADS_NUM      512
-#define CUDA_THREADS_EACH_BLOCK(cols)   (((indx)(sqrt((double)cols))) > CUDA_MAX_BLOCK_THREADS_NUM ? \
-                            CUDA_MAX_BLOCK_THREADS_NUM : ((indx)(sqrt((double)cols))))
-#define CUDA_BLOCKS_NUM(cols) ((indx)(cols / CUDA_THREADS_EACH_BLOCK(cols) + (cols % CUDA_THREADS_EACH_BLOCK(cols) == 0 ? 0 : 1)))
-
-typedef long indx;
 //! \def gpuErrchk
 //! \brief Check the return value by CUDA functions and print error code.
 //! \param ans is a CUDA function.
-
-__device__ indx round_up_to_2s(indx number);
 
 #define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
 
@@ -39,7 +37,6 @@ inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=t
         if (abort) exit(code);
     }
 }
-
 
 // configurate the CreationPolicy "Scatter"
 struct ScatterConfig{
