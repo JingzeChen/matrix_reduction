@@ -98,19 +98,37 @@ __global__ void test_remove_max_index(column* matrix)
 }
 
 /*__global__ void test_check_lowest_one(column* matrix, short* column_type, indx* chunk_finished_column, dimension* dims, indx my_col_id, indx chunk_start, indx row_begin, dimension cur_dim, indx* target_col, bool* ive_added)*/
+__device__ bool check_lowest(column* matrix, indx my_col_id, indx _start, indx _end, indx* target_col, bool* ive_added)
+{
+    int i;
+    indx my_lowest = get_max_index(matrix, my_col_id);
+    for(i=_start; i<_end; i++)
+    {
+        indx cur_lowest = get_max_index(matrix, i);
+        if(cur_lowest == my_lowest)
+        {
+            *target_col = i;
+            *ive_added = true;
+            return true;
+        }
+    }
+    return false;
+}
 
 __global__ void test_standard_reduction_algorithm(column* matrix, int column_num,ScatterAllocator::AllocatorHandle allocator)
 {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
-    indx cur_col;
-    indx cur_lowest_row;
     indx lowest_row = get_max_index(matrix, thread_id);
-    int target_col = -1;
-    for(cur_col = thread_id+1; cur_col<column_num; cur_col++)
+    indx target_col = -1;
+    bool ive_added = false;
+    for(int j = thread_id+1; j<)
     {
-        bool ive_added = false;
-        cur_lowest_row = get_max_index(matrix, cur_col);
-
+        check_lowest(matrix, thread_id, thread_id+1, column_num, &target_col, &ive_added)
+        if(target_col != -1 && ive_added)
+        {
+            add_two_columns(matrix, target_col, thread_id, allocator);
+            target_col = -1;
+        }
     }
     __syncthreads();
     for (int i = 0; i < matrix[thread_id].data_length; i++) {
@@ -118,14 +136,9 @@ __global__ void test_standard_reduction_algorithm(column* matrix, int column_num
         matrix[thread_id].value[i]);
     }
     printf("the column %d length is %lu\n", thread_id, matrix[thread_id].data_length);
-}
 
-__global__ void show_persistent_pairs(column* matrix)
-{
-    int thread_id = threadIdx.x;
-    indx cur_lowest_row = get_max_index(matrix, thread_id);
-    if(cur_lowest_row != -1)
-        printf("column %d: persistent pairs are (%d , %ld)\n", thread_id, thread_id, cur_lowest_row);
+    __syncthreads();
+    //for(int i = 0; i < matrix[])
 }
 
 /*__global__ void unpacking(column* matrix)
@@ -267,7 +280,6 @@ int main()
 
     gpu_boundary_matrix g_matrix(&boundary_matrix, block_num, allocator);
     test_standard_reduction_algorithm<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix, boundary_matrix.get_num_cols(),allocator);
-    show_persistent_pairs<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix);
     //unpacking<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix);
     //test_show_matrix(g_matrix.matrix, &boundary_matrix);
     //test_add<<<block_num, threads_block>>>(g_matrix.matrix, block_num, allocator);
