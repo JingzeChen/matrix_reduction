@@ -255,6 +255,7 @@ __device__ void add_two_columns(column* matrix, int target, int source, ScatterA
             if (matrix[target].value[tgt_id] ^ matrix[source].value[src_id] != 0) {
                 new_pos[temp_id] = matrix[target].pos[tgt_id];
                 new_value[temp_id] = matrix[target].value[tgt_id] ^ matrix[source].value[src_id];
+                temp_id++;
             }
             tgt_id++;
             src_id++;
