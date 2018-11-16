@@ -23,12 +23,14 @@ __global__ void allocate_all_columns(indx ** tmp_gpu_columns, size_t * column_le
     tmp_gpu_columns[thread_id] = (indx *) allocator.malloc(sizeof(indx) * length);
 }
 
-__global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_length, column *matrix, int column_num,
+__global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_length, column *matrix, int column_num, bool* is_reduced, indx* lowest_one_lookup,
         ScatterAllocator::AllocatorHandle allocator) {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
     if (thread_id >= column_num)
         return;
 
+    is_reduced[thread_id] = false;
+    lowest_one_lookup[thread_id] = -1;
     auto src_length = column_length[thread_id];
     auto src_data = tmp_gpu_columns[thread_id];
     auto col = &matrix[thread_id];
@@ -101,13 +103,14 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
 
     gpuErrchk(cudaMalloc((void **) &matrix, sizeof(column) * cols_num));
     gpuErrchk(cudaMalloc((void **) &chunk_offset, sizeof(indx) * (chunks_num + 1)));
-    gpuErrchk(cudaMalloc((void **) &chunk_columns_finished, sizeof(indx) * chunks_num));
+    gpuErrchk(cudaMalloc((void **) &chunk_columns_finished, sizeof(unsigned long long) * chunks_num));
     gpuErrchk(cudaMalloc((void **) &column_type, sizeof(short) * cols_num));
     gpuErrchk(cudaMalloc((void **) &dims, sizeof(dimension) * cols_num));
     gpuErrchk(cudaMalloc((void **) &column_length, sizeof(size_t) * cols_num));
     gpuErrchk(cudaMalloc((void **) &lowest_one_lookup, sizeof(indx) * cols_num));
     gpuErrchk(cudaMalloc((void **) &is_active, sizeof(bool) * cols_num));
     gpuErrchk(cudaMalloc((void **) &is_ready_for_mark, sizeof(bool) * cols_num));
+    gpuErrchk(cudaMalloc((void **) &is_reduced, sizeof(bool) * cols_num));
 
     size_t * d_column_length;
     gpuErrchk(cudaMalloc((void **) &d_column_length, sizeof(size_t) * cols_num));
@@ -138,7 +141,7 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
     }
 
     transform_all_columns <<< CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >>> (tmp_gpu_columns,
-            column_length, matrix, cols_num, allocator);
+            column_length, matrix, cols_num, is_reduced, lowest_one_lookup, allocator);
 
     gpuErrchk(cudaFree(tmp_gpu_columns));
     delete[] h_matrix;
@@ -151,41 +154,81 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
     delete[] h_tmp_gpu_columns;
 }
 
-/*__host__ __device__
-gpu_boundary_matrix::~gpu_boundary_matrix(phat::boundary_matrix<phat::vector_vector> *src_matrix,
-                                          column *d_matrix, , std::vector<indx> &lowest_one_lookup, std::vector<short> &column_type)
+__global__ void transform_unpacked_data(column *matrix, unpacked_matrix* u_matrix, ScatterAllocator::AllocatorHandle allocator)
+{
+    int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
+    //int block_id = blockDim.x;
+
+    int count_length = 0;
+    for(int i = 0; i<matrix[thread_id].data_length; i++)
+    {
+       // unsigned long long temp_value = matrix[thread_id].value[i];
+        for(int j = 0; j < BLOCK_BITS; j++)
+        {
+            unsigned long long temp_value = 1 << j;
+            if(matrix[thread_id].value[i] & temp_value)
+            {
+                count_length++;
+            }
+        }
+    }
+
+    u_matrix->column[thread_id].data = (indx*) allocator.malloc(sizeof(indx) * count_length);
+    u_matrix->column[thread_id].data_length = count_length;
+    count_length = 0;
+    for(int i = 0; i < matrix[thread_id].data_length; i++)
+    {
+        for(int j = 0; j < BLOCK_BITS; j++)
+        {
+            unsigned long long temp_value = 1 << j;
+            if(matrix[thread_id].value[i] & temp_value)
+            {
+                u_matrix->column[thread_id].data[count_length] = matrix[thread_id].pos[i] * BLOCK_BITS + j;
+                count_length++;
+            }
+        }
+    }
+}
+
+/*__host__ void free_cuda_memory(columns *matrix, dimension* dims, indx* lowest_one_lookup, indx* chunks_start_offset, indx* chunk_columns_finished, short* column_type, bool* is_active, bool* is_ready_for_mark) {
+    gpuErrchk(cudaFree(dims));
+    gpuErrchk(cudaFree(matrix));
+    gpuErrchk(cudaFree(lowest_one_lookup));
+    gpuErrchk(cudaFree(chunks_start_offset));
+    gpuErrchk(cudaFree(chunk_columns_finished));
+    gpuErrchk(cudaFree(column_type));
+    gpuErrchk(cudaFree(is_active));
+    gpuErrchk(cudaFree(is_ready_for_mark));
+}
+*/
+__host__ void transfor_data_backto_cpu(phat::boundary_matrix<phat::vector_vector> *src_matrix,unpacked_matrix *d_matrix)
 {
     indx cols_num = src_matrix->get_num_cols();
-    auto h_all_columns = new column[cols_num];
+    auto h_all_columns = new unpacked_column[cols_num];
 
-    gpuErrchk(cudaMemcpy(h_matrix, d_matrix, sizeof(column), cudaMemcpyDeviceToHost));
-    gpuErrchk(cudaMemcpy(h_all_columns, h_matrix->data, sizeof(column) * cols_num, cudaMemcpyDeviceToHost));
-    gpuErrchk(cudaMemcpy(&lowest_one_lookup[0], h_matrix->lowest_one_lookup, sizeof(indx) * cols_num,
-                     cudaMemcpyDeviceToHost));
-    gpuErrchk(cudaMemcpy(&column_type[0], h_matrix->column_type, sizeof(short) * cols_num, cudaMemcpyDeviceToHost));
-
+    gpuErrchk(cudaMemcpy(h_all_columns, d_matrix->column, sizeof(column) * cols_num, cudaMemcpyDeviceToHost));
     for (int i = 0; i < cols_num; i++) {
-        auto h_single_column = h_all_columns[i];
-        if (h_single_column.data_length == 0 || column_type[i] != GLOBAL) {
-            continue;
-        }
+    auto h_single_column = h_all_columns[i];
 
     phat::column tmp_vector(h_single_column.data_length);
-    gpuErrchk(cudaMemcpy(&tmp_vector[0], h_single_column.data, sizeof(indx) * h_single_column.data_length, cudaMemcpyDeviceToHost));
+    gpuErrchk(cudaMemcpy(&tmp_vector[0], h_single_column.data,
+                sizeof(indx) * h_single_column.data_length, cudaMemcpyDeviceToHost));
     src_matrix->set_col(i, tmp_vector);
     }
-}*/
+
+    delete [] h_all_columns;
+}
 
 __device__ dimension get_dim(dimension* dims, int col_id) {
     return dims[col_id];
 }
 
 __device__ bool is_empty(column* matrix, int col_id) {
-    return matrix[col_id].data_length == 0;
+    return matrix[col_id].data_length == 0 || matrix[col_id].value[0] == 0;
 }
 
 __device__ indx get_max_index(column* matrix, int col_id) {
-    if (matrix[col_id].data_length == 0)
+    if (matrix[col_id].data_length == 0 || matrix[col_id].value[0] == 0)
         return -1;
     else {
         unsigned long long t = matrix[col_id].value[matrix[col_id].data_length - 1];
@@ -217,10 +260,10 @@ __device__ void remove_max_index(column* matrix, int col) {
         matrix[col].data_length--;
 }
 
-__device__ void check_lowest_one_locally(column* matrix, short* column_type, indx* chunk_columns_finished, dimension* dims,indx my_col_id, indx block_id, indx chunk_start, indx row_begin, dimension cur_dim, indx *target_col, bool *ive_added) {
+__device__ void check_lowest_one_locally(column* matrix, short* column_type, unsigned long long* chunk_columns_finished, dimension* dims,indx my_col_id, indx chunk_start, indx row_begin, indx num_cols, dimension cur_dim, indx *target_col, bool *ive_added) {
     if (cur_dim != get_dim(dims, my_col_id) || column_type[my_col_id] != GLOBAL) {
         if (!*ive_added) {
-            atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) 1);
+            atomicAdd((unsigned long long *) &chunk_columns_finished[0], (unsigned long long) 1);
             *ive_added = true;
         }
         return;
@@ -228,24 +271,26 @@ __device__ void check_lowest_one_locally(column* matrix, short* column_type, ind
 
     indx my_lowest_one = get_max_index(matrix, my_col_id);
     if (my_lowest_one >= row_begin) {
-        for (indx col_id = chunk_start; col_id < my_col_id; col_id++) {
+        for (indx col_id = chunk_start; col_id < num_cols; col_id++) {
             indx this_lowest_one = get_max_index(matrix, col_id);
             if (this_lowest_one == my_lowest_one) {
                 *target_col = col_id;
                 if (*ive_added) {
-                    atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) -1);
+                    atomicAdd((unsigned long long *) &chunk_columns_finished[0], (unsigned long long) -1);
                 }
                 return;
             }
         }
         if (!*ive_added) {
-            atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) 1);
+            atomicAdd((unsigned long long *) &chunk_columns_finished[0], (unsigned long long) 1);
             *ive_added = true;
         }
     }
 }
 
 __device__ void add_two_columns(column* matrix, int target, int source, ScatterAllocator::AllocatorHandle allocator) {
+    if(target == -1)
+        return;
     size_t tgt_id = 0; size_t src_id = 0; size_t temp_id = 0;
     int msize = round_up_to_2s(matrix[target].data_length + matrix[source].data_length);
     auto new_pos = (indx *) allocator.malloc(sizeof(indx) * msize);

@@ -27,11 +27,23 @@ struct column {
     size_t size;  //maximal number of non-zero 64-bits arrays in the current column.
 };
 
+struct unpacked_column
+{
+indx* data;
+size_t data_length;
+};
+
+struct unpacked_matrix
+{
+    unpacked_column* column;
+    size_t column_num;
+};
+
 class gpu_boundary_matrix {
 public:
     column *matrix; //stores columns of boundary matrix.
     indx *chunk_offset; //stores the offset of each chunk/block in gpu.
-    indx *chunk_columns_finished; //counts the number of operations that are finished.
+    unsigned long long *chunk_columns_finished; //counts the number of operations that are finished.
     short *column_type;  //denotes type of each column: global, local negative or local positive.
     dimension *dims;     //stores dimension of each column of boundary matrix.
     size_t *column_length; //stores length of each column.
@@ -40,6 +52,7 @@ public:
     indx *lowest_one_lookup;
     bool *is_active; //denotes each column as active or inactive.
     bool *is_ready_for_mark;
+    bool *is_reduced;
 
 public:
     //construct boundary matrix on gpu.
@@ -61,7 +74,7 @@ __device__ indx get_max_index(column* matrix, int col);
 __device__ void clear_column(column* matrix, int col);
 
 //search for column in the same chunk and the row indx of the column is equal to the lowest row indx of column my_col_id.
-__device__ void check_lowest_one_locally(column* matrix, short* column_type, indx* chunk_finished_column, dimension* dims, indx my_col_id, indx chunk_start, indx row_begin, dimension cur_dim, indx* target_col, bool* ive_added);
+__device__ void check_lowest_one_locally(column* matrix, short* column_type, unsigned long long* chunk_finished_column, dimension* dims, indx my_col_id, indx chunk_start, indx row_begin, indx num_cols, dimension cur_dim, indx* target_col, bool* ive_added);
 
 //mark column as global, local positive or local negative and clean corresponding column as zero.
 __device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, short* column_type, dimension* dims,indx my_col_id, indx row_begin, dimension cur_dim);
@@ -71,4 +84,10 @@ __device__ void add_two_columns(column* matrix, int target, int source, ScatterA
 
 //set lowest non-zero row of column col as zero.
 __device__ void remove_max_index(column* matrix, int col);
+
+__global__ void transform_unpacked_data(column *matrix, unpacked_matrix* u_matrix, ScatterAllocator::AllocatorHandle allocator);
+
+//__host__ void free_cuda_memory(columns *matrix, dimension* dims, indx* lowest_one_lookup, indx* chunks_start_offset, indx* chunk_columns_finished, short* column_type, bool* is_active, bool* is_ready_for_mark);
+
+__host__ void transfor_data_backto_cpu(phat::boundary_matrix<phat::vector_vector> *src_matrix,unpacked_matrix *d_matrix);
 #endif

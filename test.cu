@@ -98,49 +98,52 @@ __global__ void test_remove_max_index(column* matrix)
 }
 
 /*__global__ void test_check_lowest_one(column* matrix, short* column_type, indx* chunk_finished_column, dimension* dims, indx my_col_id, indx chunk_start, indx row_begin, dimension cur_dim, indx* target_col, bool* ive_added)*/
-__device__ bool check_lowest(column* matrix, indx my_col_id, indx _start, indx _end, indx* target_col, bool* ive_added)
+/*__device__ void check_lowest(column* matrix, indx my_lowest, int cur_col_id, bool* ive_added)
 {
     int i;
-    indx my_lowest = get_max_index(matrix, my_col_id);
-    for(i=_start; i<_end; i++)
+    unsigned long long my_rowest_bits = 1 << (my_lowest % BLOCK_BITS);
+    indx my_lowest_pos = my_lowest / BLOCK_BITS;
+
+
+    for(i = 0; i<matrix[cur_col_id].data_length; i++)
     {
-        indx cur_lowest = get_max_index(matrix, i);
-        if(cur_lowest == my_lowest)
+        unsigned long long temp = matrix[cur_col_id].value[i];
+        while(temp)
         {
-            *target_col = i;
-            *ive_added = true;
-            return true;
+            unsigne d
         }
     }
-    return false;
-}
+}*/
 
-__global__ void test_standard_reduction_algorithm(column* matrix, int column_num,ScatterAllocator::AllocatorHandle allocator)
+__global__ void test_standard_reduction_algorithm(column* matrix, int this_col, ScatterAllocator::AllocatorHandle allocator)
 {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
-    indx lowest_row = get_max_index(matrix, thread_id);
-    indx target_col = -1;
-    bool ive_added = false;
-    for(int j = thread_id+1; j<column_num; j++)
-    {
-        check_lowest(matrix, thread_id, thread_id+1, column_num, &target_col, &ive_added);
-        if(target_col != -1 && ive_added)
-        {
-            add_two_columns(matrix, target_col, thread_id, allocator);
-            target_col = -1;
-        }
-    }
-    __syncthreads();
-    for (int i = 0; i < matrix[thread_id].data_length; i++) {
-        printf("the column %d : pos: %ld value: %lu\n", thread_id, matrix[thread_id].pos[i],
-        matrix[thread_id].value[i]);
-    }
-    printf("the column %d length is %lu\n", thread_id, matrix[thread_id].data_length);
-
-    __syncthreads();
-    //for(int i = 0; i < matrix[])
+    if(thread_id <= this_col)
+        return;
+    indx this_lowest_row = get_max_index(matrix, this_col);
+    if(this_lowest_row == -1)
+        return;
+    unsigned long long my_lowest_bits = 1 << (this_lowest_row % BLOCK_BITS);
+    int temp = (this_lowest_row == -1)? 0 : this_lowest_row/BLOCK_BITS;
+    if(temp >= matrix[thread_id].data_length)
+        return;
+    unsigned long long t = my_lowest_bits & matrix[thread_id].value[temp];
+    if(t != 0)
+     {
+        add_two_columns(matrix, thread_id, this_col, allocator);
+     }
 }
 
+__global__ void show(column* matrix)
+{
+    int thread_id = threadIdx.x + blockIdx.x * blockDim.x;
+    for (int i = 0; i < matrix[thread_id].data_length; i++) {
+        printf("the column %d : pos: %ld value: %lu\n", thread_id, matrix[thread_id].pos[i],
+               matrix[thread_id].value[i]);
+    }
+    __syncthreads();
+    printf("the column %d length is %lu\n", thread_id, matrix[thread_id].data_length);
+}
 /*__global__ void unpacking(column* matrix)
 {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
@@ -279,7 +282,13 @@ int main()
     auto threads_block = CUDA_THREADS_EACH_BLOCK(boundary_matrix.get_num_cols());
 
     gpu_boundary_matrix g_matrix(&boundary_matrix, block_num, allocator);
-    test_standard_reduction_algorithm<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix, boundary_matrix.get_num_cols(),allocator);
+
+    for(int i=0; i < boundary_matrix.get_num_cols(); i++)
+    {
+        test_standard_reduction_algorithm << <block_num, threads_block>> >
+                                                  (g_matrix.matrix, i, allocator);
+    }
+    show<<<block_num, threads_block>>>(g_matrix.matrix);
     //unpacking<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix);
     //test_show_matrix(g_matrix.matrix, &boundary_matrix);
     //test_add<<<block_num, threads_block>>>(g_matrix.matrix, block_num, allocator);
