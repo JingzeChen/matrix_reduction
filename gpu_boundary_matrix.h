@@ -1,16 +1,10 @@
 #ifndef _GPU_BOUNDARY_MATRIX_H_
 #define _GPU_BOUNDARY_MATRIX_H_
 
-#include <cstdint>
-#include <cstddef>
-#include <cstdlib>
-#include <cstring>
 #include "gpu_common.h"
 
 #define BLOCK_BITS 4
 #define GLOBAL 0
-#define LOCAL_NEGATIVE -1
-#define LOCAL_POSITIVE 1
 
 typedef long indx;
 typedef short dimension;
@@ -43,7 +37,7 @@ public:
 
 public:
     //construct boundary matrix on gpu.
-    gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vector> *src_matrix,
+    static gpu_boundary_matrix * create_gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vector> *src_matrix,
                         indx chunks_num, ScatterAllocator::AllocatorHandle allocator);
 
     __device__ indx current_row_index(indx col_id, indx cur_row_idx);

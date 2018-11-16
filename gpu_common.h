@@ -1,6 +1,13 @@
 #ifndef _GPU_COMMON_H_
 #define _GPU_COMMON_H_
 
+#include <cstdint>
+#include <cstddef>
+#include <cstdlib>
+#include <cstring>
+#include <cstdio>
+#include <iostream>
+
 #include <mallocMC.hpp>
 #include <representations/vector_vector.h>
 #include <boundary_matrix.h>
@@ -65,11 +72,11 @@ struct AlignmentConfig{
 // Define a new mMCator and call it ScatterAllocator
 // which resembles the behaviour of ScatterAlloc
 typedef mallocMC::Allocator<
-mallocMC::CreationPolicies::Scatter<ScatterConfig, ScatterHashParams>,
-mallocMC::DistributionPolicies::Noop,
-mallocMC::OOMPolicies::ReturnNull,
-mallocMC::ReservePoolPolicies::SimpleCudaMalloc,
-mallocMC::AlignmentPolicies::Shrink<AlignmentConfig>
+        mallocMC::CreationPolicies::Scatter<ScatterConfig, ScatterHashParams>,
+        mallocMC::DistributionPolicies::Noop,
+        mallocMC::OOMPolicies::ReturnNull,
+        mallocMC::ReservePoolPolicies::SimpleCudaMalloc,
+        mallocMC::AlignmentPolicies::Shrink<AlignmentConfig>
 > ScatterAllocator;
 
 #endif //MATRIX_REDUCTION_GPU_COMMON_H
