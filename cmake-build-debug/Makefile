@@ -177,6 +177,87 @@ gpu_boundary_matrix.cpp.s:
 	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_boundary_matrix.cpp.s
 .PHONY : gpu_boundary_matrix.cpp.s
 
+gpu_common.o: gpu_common.cpp.o
+
+.PHONY : gpu_common.o
+
+# target to build an object file
+gpu_common.cpp.o:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_common.cpp.o
+.PHONY : gpu_common.cpp.o
+
+gpu_common.i: gpu_common.cpp.i
+
+.PHONY : gpu_common.i
+
+# target to preprocess a source file
+gpu_common.cpp.i:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_common.cpp.i
+.PHONY : gpu_common.cpp.i
+
+gpu_common.s: gpu_common.cpp.s
+
+.PHONY : gpu_common.s
+
+# target to generate assembly for a file
+gpu_common.cpp.s:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_common.cpp.s
+.PHONY : gpu_common.cpp.s
+
+gpu_spectral_sequence_reduction.o: gpu_spectral_sequence_reduction.cpp.o
+
+.PHONY : gpu_spectral_sequence_reduction.o
+
+# target to build an object file
+gpu_spectral_sequence_reduction.cpp.o:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.o
+.PHONY : gpu_spectral_sequence_reduction.cpp.o
+
+gpu_spectral_sequence_reduction.i: gpu_spectral_sequence_reduction.cpp.i
+
+.PHONY : gpu_spectral_sequence_reduction.i
+
+# target to preprocess a source file
+gpu_spectral_sequence_reduction.cpp.i:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.i
+.PHONY : gpu_spectral_sequence_reduction.cpp.i
+
+gpu_spectral_sequence_reduction.s: gpu_spectral_sequence_reduction.cpp.s
+
+.PHONY : gpu_spectral_sequence_reduction.s
+
+# target to generate assembly for a file
+gpu_spectral_sequence_reduction.cpp.s:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.s
+.PHONY : gpu_spectral_sequence_reduction.cpp.s
+
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +273,15 @@ help:
 	@echo "... gpu_boundary_matrix.o"
 	@echo "... gpu_boundary_matrix.i"
 	@echo "... gpu_boundary_matrix.s"
+	@echo "... gpu_common.o"
+	@echo "... gpu_common.i"
+	@echo "... gpu_common.s"
+	@echo "... gpu_spectral_sequence_reduction.o"
+	@echo "... gpu_spectral_sequence_reduction.i"
+	@echo "... gpu_spectral_sequence_reduction.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
