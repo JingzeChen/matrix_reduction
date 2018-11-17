@@ -29,8 +29,6 @@ __global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_l
     if (thread_id >= column_num)
         return;
 
-    is_reduced[thread_id] = false;
-    lowest_one_lookup[thread_id] = -1;
     auto src_length = column_length[thread_id];
     auto src_data = tmp_gpu_columns[thread_id];
     auto col = &matrix[thread_id];
@@ -83,6 +81,7 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
     auto h_dims = new dimension[cols_num];
     auto h_lowest_one_lookup = new indx[cols_num];
     auto h_chunks_start_offset = new indx[chunks_num + 1];
+    auto h_is_reduced = new bool[cols_num];
 
     auto chunk_size = (size_t) CUDA_THREADS_EACH_BLOCK(cols_num);
 
@@ -92,6 +91,7 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
         h_column_length[i] = col.size();
         h_column_type[i] = GLOBAL;
         h_lowest_one_lookup[i] = -1;
+        h_is_reduced[i] = false;
         h_dims[i] = src_matrix->get_dim(i);
         if (i % chunk_size == 0) {
             h_chunks_start_offset[chunk_pos] = i;
@@ -121,6 +121,7 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
     gpuErrchk(cudaMemcpy(lowest_one_lookup, h_lowest_one_lookup, sizeof(indx) * cols_num, cudaMemcpyHostToDevice));
     gpuErrchk(cudaMemcpy(chunk_offset, h_chunk_offset, sizeof(indx) * (chunks_num + 1), cudaMemcpyHostToDevice));
     gpuErrchk(cudaMemcpy(column_type, h_column_type, sizeof(short) * cols_num, cudaMemcpyHostToDevice));
+    gpuErrchk(cudaMemcpy(is_reduced, h_is_reduced, sizeof(bool) * cols_num, cudaMemcpyHostToDevice));
 
     gpuErrchk(cudaMemcpy(matrix, h_matrix, sizeof(column) * cols_num, cudaMemcpyHostToDevice));
 

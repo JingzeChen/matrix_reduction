@@ -1,5 +1,5 @@
 CXX = nvcc
-SRC =  gpu_spectral_sequence_reduction.cu gpu_common.cu chunk_reduction_algorithm.cu gpu_boundary_matrix.cu
+SRC = gpu_spectral_sequence_reduction.cu gpu_common.cu chunk_reduction_algorithm.cu gpu_boundary_matrix.cu
 OBJ = $(patsubst %.cu,%.o,${SRC})
 OBJ_DEBUG = $(patsubst %.cu,%_debug.o,${SRC})
 

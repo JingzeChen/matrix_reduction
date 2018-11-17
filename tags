@@ -504,7 +504,7 @@ SIMULATE_VERSION_MINOR	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.
 SIMULATE_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
 SIMULATE_VERSION_MINOR	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
 SOURCE_FILES	CMakeLists.txt	/^set(SOURCE_FILES main.cpp chunk_reduction_algorithm.cpp gpu_boundary_matrix.cpp gpu_common.h tes/;"	v
-SRC	Makefile	/^SRC =  gpu_spectral_sequence_reduction.cu gpu_common.cu chunk_reduction_algorithm.cu gpu_boundar/;"	m
+SRC	Makefile	/^SRC = gpu_spectral_sequence_reduction.cu gpu_common.cu chunk_reduction_algorithm.cu gpu_boundary/;"	m
 STRINGIFY	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
 STRINGIFY	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY(/;"	d	file:
 STRINGIFY	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
@@ -873,7 +873,7 @@ gpu_boundary_matrix.o	build/Makefile	/^gpu_boundary_matrix.o: gpu_boundary_matri
 gpu_boundary_matrix.o	cmake-build-debug/Makefile	/^gpu_boundary_matrix.o: gpu_boundary_matrix.cpp.o$/;"	t
 gpu_boundary_matrix.s	build/Makefile	/^gpu_boundary_matrix.s: gpu_boundary_matrix.cpp.s$/;"	t
 gpu_boundary_matrix.s	cmake-build-debug/Makefile	/^gpu_boundary_matrix.s: gpu_boundary_matrix.cpp.s$/;"	t
-gpu_spectral_sequence_reduction	gpu_spectral_sequence_reduction.cu	/^__global__ void gpu_spectral_sequence_reduction(column* matrix, dimension* dims, dimension cur_d/;"	f	typeref:typename:void
+gpu_spectral_sequence_reduction	gpu_spectral_sequence_reduction.cu	/^__global__ void gpu_spectral_sequence_reduction(column* matrix, dimension* dims, indx col_in_blo/;"	f	typeref:typename:void
 handleOOM	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^    static void* handleOOM(void* mem){$/;"	f	struct:mallocMC::OOMPolicies::BadAllocException	typeref:typename:MAMC_ACCELERATOR void *
 handleOOM	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^      static void* handleOOM(void* mem){$/;"	f	class:mallocMC::OOMPolicies::ReturnNull	typeref:typename:MAMC_ACCELERATOR void *
 hashingDistMP	gpu_common.h	/^    typedef boost::mpl::int_<17497> hashingDistMP;$/;"	t	struct:ScatterHashParams	typeref:typename:boost::mpl::int_<17497>
@@ -1197,7 +1197,7 @@ set_num_cols	phat_lib/boundary_matrix.h	/^        void set_num_cols( index nr_of
 set_num_cols	phat_lib/boundary_matrix_original.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 set_num_cols	phat_lib/boundary_matrix_tants.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 set_pair	phat_lib/persistence_pairs.h	/^        void set_pair( index idx, index birth, index death )  {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
-show	gpu_spectral_sequence_reduction.cu	/^__global__ void show(column* matrix)$/;"	f	typeref:typename:void
+show	gpu_spectral_sequence_reduction.cu	/^__global__ void show(column* matrix, indx* lowest_one_lookup, bool* is_reduced)$/;"	f	typeref:typename:void
 show	test.cu	/^__global__ void show(column* matrix)$/;"	f	typeref:typename:void
 simplified_reduction	parrallel_reduction.cu	/^__global__ void simplified_reduction(column* matrix, short* column_type, dimension max_dim, dime/;"	f	typeref:typename:void
 size	gpu_boundary_matrix.h	/^    size_t size;  \/\/maximal number of non-zero 64-bits arrays in the current column.$/;"	m	struct:column	typeref:typename:size_t
