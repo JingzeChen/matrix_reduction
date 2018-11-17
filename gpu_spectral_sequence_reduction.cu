@@ -22,49 +22,51 @@ __global__ void count_num_dims(dimension* dims, dimension cur_dim, indx* cnt)
         cnt[cur_dim]++;
 }
 
-__global__ void gpu_spectral_sequence_reduction(column* matrix, dimension* dims, indx col_in_block, dimension cur_dim, indx block_size, indx phases, indx num_cols, indx* lowest_one_lookup, bool* is_reduced, ScatterAllocator::AllocatorHandle allocator)
+__global__ void gpu_spectral_sequence_reduction(column* matrix, dimension* dims, indx col_in_block, dimension cur_dim, indx block_size, indx phases, indx cur_phase, indx num_cols, indx* lowest_one_lookup, bool* is_reduced, ScatterAllocator::AllocatorHandle allocator)
 {
-    if(threadIdx.x != col_in_block)
-        return;
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
     int block_id = blockIdx.x;
 
     if(dims[thread_id] != cur_dim || is_reduced[thread_id] == true)
         return;
 
+    if(threadIdx.x != col_in_block)
+        return;
     //indx phases = (num_cols % block_size == 0) ? (num_cols / block_size) : (num_cols / block_size + 1);
-    for(indx cur_phase = 0; cur_phase < phases ; cur_phase++)
+    //indx row_begin = (((thread_id/block_size - cur_phase) < 0) ? 0 : (thread_id/block_size - cur_phase)) * block_size;
+    indx row_begin = (block_id - cur_phase) * block_size;
+    indx row_end = ((row_begin + block_size) > num_cols) ? num_cols : (row_begin + block_size);
+    indx cur_lowest_one = get_max_index(matrix, thread_id);
+    if(cur_lowest_one == -1)
     {
-        //indx row_begin = (((thread_id/block_size - cur_phase) < 0) ? 0 : (thread_id/block_size - cur_phase)) * block_size;
-        indx row_begin = (block_id - cur_phase) * block_size;
-        indx row_end = ((row_begin + block_size) > num_cols) ? num_cols : (row_begin + block_size);
+        is_reduced[thread_id] = true;
+        return;
+    }
 
-        indx cur_lowest_one = get_max_index(matrix, thread_id);
-        if(!is_reduced[thread_id])
+    if(!is_reduced[thread_id])
+    {
+        while(cur_lowest_one != -1 && cur_lowest_one >= row_begin && cur_lowest_one < row_end  && lowest_one_lookup[cur_lowest_one] != -1 )
         {
-            while(cur_lowest_one != -1 && cur_lowest_one >= row_begin && cur_lowest_one < row_end  && lowest_one_lookup[cur_lowest_one] != -1 )
+            add_two_columns(matrix, thread_id, lowest_one_lookup[cur_lowest_one], allocator);
+            cur_lowest_one = get_max_index(matrix, thread_id);
+        }
+        if(cur_lowest_one != -1)
+        {
+            if(cur_lowest_one >= row_begin && cur_lowest_one < row_end )
             {
-                add_two_columns(matrix, thread_id, lowest_one_lookup[cur_lowest_one], allocator);
-                cur_lowest_one = get_max_index(matrix, thread_id);
+                lowest_one_lookup[cur_lowest_one] = thread_id;
+                is_reduced[thread_id] = true;
+                clear_column(matrix, cur_lowest_one);
+                is_reduced[cur_lowest_one] = true;
+                __syncthreads();
             }
-            if(cur_lowest_one != -1)
-            {
-                if(cur_lowest_one >= row_begin && cur_lowest_one < row_end )
-                {
-                    lowest_one_lookup[cur_lowest_one] = thread_id;
-                    is_reduced[thread_id] = true;
-                    clear_column(matrix, cur_lowest_one);
-                    is_reduced[cur_lowest_one] = true;
-                    __syncthreads();
-                }
-                else
+            else
                 {
                     is_reduced[thread_id] = false;
                 }
             }
-        }
-        __syncthreads();
     }
+    __syncthreads();
 }
 
 __global__ void show(column* matrix, indx* lowest_one_lookup, bool* is_reduced)
@@ -182,15 +184,17 @@ int main()
             block_size = h_cnt[cur_dim];
     }
     block_size++;*/
-    for(dimension cur_dim = max_dim; cur_dim>=1; cur_dim--)
+    for(dimension cur_dim = max_dim; cur_dim>=0; cur_dim--)
     {
-        for(indx col_in_block = 0; col_in_block < threads_block; col_in_block++)
-        {
-            gpu_spectral_sequence_reduction<<<block_num, threads_block>>>(g_matrix.matrix, g_matrix.dims, col_in_block,
-                cur_dim, threads_block, block_num, num_cols, g_matrix.lowest_one_lookup, g_matrix.is_reduced, allocator);
+        for(indx cur_phase = 0; cur_phase < block_num; cur_phase++) {
+            for (indx col_in_block = 0; col_in_block < threads_block; col_in_block++) {
+                gpu_spectral_sequence_reduction << < block_num, threads_block >> >
+                                                                (g_matrix.matrix, g_matrix.dims, col_in_block,
+                                                                        cur_dim, threads_block, block_num, cur_phase, num_cols, g_matrix.lowest_one_lookup, g_matrix.is_reduced, allocator);
+            }
         }
     }
-    //show<<<block_num, threads_block>>>(g_matrix.matrix, g_matrix.lowest_one_lookup, g_matrix.is_reduced);
+    show<<<block_num, threads_block>>>(g_matrix.matrix, g_matrix.lowest_one_lookup, g_matrix.is_reduced);
     cudaDeviceSynchronize();
     time_end = get_wall_time();
     printf("gpu parts ends at %lf\n", time_end);
