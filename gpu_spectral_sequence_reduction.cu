@@ -184,7 +184,7 @@ int main()
             block_size = h_cnt[cur_dim];
     }
     block_size++;*/
-    for(dimension cur_dim = max_dim; cur_dim>=0; cur_dim--)
+    for(dimension cur_dim = max_dim; cur_dim>=1; cur_dim--)
     {
         for(indx cur_phase = 0; cur_phase < block_num; cur_phase++) {
             for (indx col_in_block = 0; col_in_block < threads_block; col_in_block++) {
