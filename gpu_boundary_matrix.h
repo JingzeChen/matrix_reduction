@@ -58,7 +58,7 @@ __device__ indx get_max_index(column* matrix, int col);
 __device__ void clear_column(column* matrix, int col);
 
 //add two columns locally.
-__device__ void add_two_columns(column* matrix, int target, int source, ScatterAllocator::AllocatorHandle allocator);
+__device__ void add_two_columns(column* matrix, int target, int source, ScatterAllocator::AllocatorHandle * allocator);
 
 //set lowest non-zero row of column col as zero.
 __device__ void remove_max_index(column* matrix, int col);

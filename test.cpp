@@ -13,6 +13,18 @@
 #include "gpu_common.h"
 #include "gpu_boundary_matrix.h"
 
+__global__ void test_add(gpu_boundary_matrix * matrix, int column_num, ScatterAllocator::AllocatorHandle allocator) {
+    int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
+    if (thread_id >= column_num)
+        return;
+
+    if (thread_id < column_num - 1) {
+        add_two_columns(matrix->matrix, thread_id, thread_id + 1, &allocator);
+    }
+    __syncthreads();
+    printf("I'm thread %d Lengh is %lu\n", thread_id, matrix->matrix[thread_id].data_length);
+}
+
 int main()
 {
     phat::boundary_matrix<phat::vector_vector> boundary_matrix;
@@ -126,7 +138,7 @@ int main()
     //test_standard_reduction_algorithm<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix, boundary_matrix.get_num_cols(),allocator);
     //unpacking<<<1, boundary_matrix.get_num_cols()>>>(g_matrix.matrix);
     //test_show_matrix(g_matrix.matrix, &boundary_matrix);
-    //test_add<<<block_num, threads_block>>>(g_matrix.matrix, block_num, allocator);
+    test_add<<<block_num, threads_block>>>(g_matrix, boundary_matrix.get_num_cols(), allocator);
     //test_construction<<<block_num, threads_block>>>(g_matrix.matrix);
     //test_get_max_index<<<block_num, threads_block>>>(g_matrix.matrix);
     //test_dims<<<block_num, threads_block>>>(g_matrix.dims);

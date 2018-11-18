@@ -43,8 +43,7 @@ __global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_l
     unsigned long long last_value = 0;
     int cur_block_id = 0;
 
-    for (int i = 0; i < src_length; i++)
-    {
+    for (int i = 0; i < src_length; i++) {
         indx current_pos = src_data[i] / BLOCK_BITS;
         if (last_pos != current_pos) {
             if (last_pos != -1) {
@@ -52,13 +51,12 @@ __global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_l
                 col->value[cur_block_id] = last_value;
                 cur_block_id++;
             }
-	    last_pos = current_pos;
+	        last_pos = current_pos;
             last_value = 0;
         }
         unsigned long long mask = ((unsigned long long) 1) << (src_data[i] % BLOCK_BITS);
         last_value |= mask;
-	    if(i == (src_length-1))
-	    {
+	    if(i == (src_length-1)) {
 		    col->pos[cur_block_id] = last_pos;
 		    col->value[cur_block_id] = last_value;
 	    }
