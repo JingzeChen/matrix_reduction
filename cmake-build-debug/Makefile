@@ -204,33 +204,6 @@ gpu_common.cpp.s:
 	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_common.cpp.s
 .PHONY : gpu_common.cpp.s
 
-gpu_spectral_sequence_reduction.o: gpu_spectral_sequence_reduction.cpp.o
-
-.PHONY : gpu_spectral_sequence_reduction.o
-
-# target to build an object file
-gpu_spectral_sequence_reduction.cpp.o:
-	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.o
-.PHONY : gpu_spectral_sequence_reduction.cpp.o
-
-gpu_spectral_sequence_reduction.i: gpu_spectral_sequence_reduction.cpp.i
-
-.PHONY : gpu_spectral_sequence_reduction.i
-
-# target to preprocess a source file
-gpu_spectral_sequence_reduction.cpp.i:
-	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.i
-.PHONY : gpu_spectral_sequence_reduction.cpp.i
-
-gpu_spectral_sequence_reduction.s: gpu_spectral_sequence_reduction.cpp.s
-
-.PHONY : gpu_spectral_sequence_reduction.s
-
-# target to generate assembly for a file
-gpu_spectral_sequence_reduction.cpp.s:
-	$(MAKE) -f CMakeFiles/matrix_reduction.dir/build.make CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.s
-.PHONY : gpu_spectral_sequence_reduction.cpp.s
-
 test.o: test.cpp.o
 
 .PHONY : test.o
@@ -276,9 +249,6 @@ help:
 	@echo "... gpu_common.o"
 	@echo "... gpu_common.i"
 	@echo "... gpu_common.s"
-	@echo "... gpu_spectral_sequence_reduction.o"
-	@echo "... gpu_spectral_sequence_reduction.i"
-	@echo "... gpu_spectral_sequence_reduction.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

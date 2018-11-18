@@ -112,9 +112,6 @@
 		<Unit filename="/Users/tangyifeng/CLionProjects/matrix_reduction/gpu_common.h">
 			<Option target="matrix_reduction"/>
 		</Unit>
-		<Unit filename="/Users/tangyifeng/CLionProjects/matrix_reduction/gpu_spectral_sequence_reduction.cpp">
-			<Option target="matrix_reduction"/>
-		</Unit>
 		<Unit filename="/Users/tangyifeng/CLionProjects/matrix_reduction/test.cpp">
 			<Option target="matrix_reduction"/>
 		</Unit>

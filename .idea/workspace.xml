@@ -12,8 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d4d4147-117b-49a0-a10e-da3866b0edd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/chunk_reduction_algorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/chunk_reduction_algorithm.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chunk_reduction_algorithm.h" beforeDir="false" afterPath="$PROJECT_DIR$/chunk_reduction_algorithm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/matrix_reduction.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/matrix_reduction.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/matrix_reduction.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_boundary_matrix.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_boundary_matrix.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_boundary_matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_boundary_matrix.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,13 +48,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Makefile" value="1" />
-          <entry key="cpp" value="25" />
+          <entry key="Makefile" value="2" />
+          <entry key="cpp" value="30" />
           <entry key="cu" value="11" />
-          <entry key="h" value="42" />
-          <entry key="hpp" value="7" />
+          <entry key="h" value="47" />
+          <entry key="hpp" value="8" />
           <entry key="md" value="1" />
-          <entry key="sh" value="1" />
+          <entry key="sh" value="2" />
           <entry key="tags" value="1" />
           <entry key="txt" value="7" />
         </counts>
@@ -53,23 +63,23 @@
         <counts>
           <entry key="CMakeCache.txt" value="1" />
           <entry key="CMakeLists.txt" value="5" />
-          <entry key="ObjectiveC" value="85" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="ObjectiveC" value="96" />
+          <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="1682" />
-          <entry key="h" value="221" />
+          <entry key="cpp" value="2016" />
+          <entry key="h" value="245" />
           <entry key="sh" value="1" />
-          <entry key="txt" value="239" />
+          <entry key="txt" value="241" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="40" />
-          <entry key="ObjectiveC" value="1903" />
-          <entry key="PLAIN_TEXT" value="200" />
+          <entry key="ObjectiveC" value="2261" />
+          <entry key="PLAIN_TEXT" value="202" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -84,14 +94,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.642705">
+    <splitter split-orientation="horizontal" split-proportion="0.5686901">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="23" column="25" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="25" />
+                <state relative-caret-position="90">
+                  <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -99,8 +109,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/chunk_reduction_algorithm.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
                   <folding>
                     <element signature="e#73#96#0" expanded="true" />
                   </folding>
@@ -109,25 +119,28 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/gpu_common.h">
+            <entry file="file://$PROJECT_DIR$/gpu_common.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1080">
-                  <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#47#65#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="195">
+                  <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gpu_common.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="547">
+                  <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-262">
-                  <caret line="105" column="63" lean-forward="true" selection-start-line="105" selection-start-column="63" selection-end-line="105" selection-end-column="63" />
-                  <folding>
-                    <element signature="e#0#19#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="1116">
+                  <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
                 </state>
               </provider>
             </entry>
@@ -135,7 +148,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="104">
+                <state relative-caret-position="105">
                   <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
                 </state>
               </provider>
@@ -158,17 +171,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mallocmc_lib/allocator.hpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2895">
+                <state relative-caret-position="2760">
                   <caret line="193" column="18" selection-start-line="193" selection-start-column="18" selection-end-line="193" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/chunk_reduction_algorithm.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="477">
-                  <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="102" selection-start-line="46" selection-start-column="102" selection-end-line="46" selection-end-column="102" />
                 </state>
               </provider>
             </entry>
@@ -177,11 +190,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="77">
-                  <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-341">
+                  <caret line="208" column="115" selection-start-line="208" selection-start-column="115" selection-end-line="208" selection-end-column="115" />
                 </state>
               </provider>
             </entry>
@@ -208,13 +230,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/gpu_boundary_matrix.h" />
-        <option value="$PROJECT_DIR$/gpu_boundary_matrix.cpp" />
         <option value="$PROJECT_DIR$/test.cpp" />
         <option value="$PROJECT_DIR$/gpu_common.h" />
         <option value="$PROJECT_DIR$/updata.sh" />
-        <option value="$PROJECT_DIR$/chunk_reduction_algorithm.h" />
         <option value="$PROJECT_DIR$/chunk_reduction_algorithm.cpp" />
+        <option value="$PROJECT_DIR$/chunk_reduction_algorithm.h" />
+        <option value="$PROJECT_DIR$/gpu_boundary_matrix.h" />
+        <option value="$PROJECT_DIR$/gpu_boundary_matrix.cpp" />
       </list>
     </option>
   </component>
@@ -325,13 +347,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21782000" />
+    <option name="totallyTimeSpent" value="25869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="953" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20979765" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1943557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -343,8 +365,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49721295" weight="0.32868758" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.43237486" side_tool="true" visible="true" weight="0.18002322" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.5676251" visible="true" weight="0.18002322" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.42917997" side_tool="true" weight="0.25551683" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.57082003" weight="0.2543554" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49944258" weight="0.32868758" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -429,9 +451,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matrix_operations.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix_operations.h" />
     <entry file="file://$PROJECT_DIR$/phat_lib/algorithms/spectral_sequence_reduction.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -447,33 +467,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_common.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mallocmc_lib/allocator.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2895">
-          <caret line="193" column="18" selection-start-line="193" selection-start-column="18" selection-end-line="193" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_common.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-          <folding>
-            <element signature="e#47#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tags" />
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_spectral_sequence_reduction.cpp" />
     <entry file="file://$PROJECT_DIR$/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
+        <state relative-caret-position="105">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
@@ -485,40 +483,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_spectral_sequence_reduction.cpp">
+    <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mallocmc_lib/allocator.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="193" column="18" selection-start-line="193" selection-start-column="18" selection-end-line="193" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chunk_reduction_algorithm.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="102" selection-start-line="46" selection-start-column="102" selection-end-line="46" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_common.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chunk_reduction_algorithm.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="105">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="e#73#96#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_common.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262">
-          <caret line="105" column="63" lean-forward="true" selection-start-line="105" selection-start-column="63" selection-end-line="105" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_boundary_matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chunk_reduction_algorithm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+        <state relative-caret-position="-341">
+          <caret line="208" column="115" selection-start-line="208" selection-start-column="115" selection-end-line="208" selection-end-column="115" />
         </state>
       </provider>
     </entry>

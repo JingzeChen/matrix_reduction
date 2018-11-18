@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/tangyifeng/CLionProjects/matrix_reduction/chunk_reduction_algorithm.cpp" "/Users/tangyifeng/CLionProjects/matrix_reduction/cmake-build-debug/CMakeFiles/matrix_reduction.dir/chunk_reduction_algorithm.cpp.o"
   "/Users/tangyifeng/CLionProjects/matrix_reduction/gpu_boundary_matrix.cpp" "/Users/tangyifeng/CLionProjects/matrix_reduction/cmake-build-debug/CMakeFiles/matrix_reduction.dir/gpu_boundary_matrix.cpp.o"
   "/Users/tangyifeng/CLionProjects/matrix_reduction/gpu_common.cpp" "/Users/tangyifeng/CLionProjects/matrix_reduction/cmake-build-debug/CMakeFiles/matrix_reduction.dir/gpu_common.cpp.o"
-  "/Users/tangyifeng/CLionProjects/matrix_reduction/gpu_spectral_sequence_reduction.cpp" "/Users/tangyifeng/CLionProjects/matrix_reduction/cmake-build-debug/CMakeFiles/matrix_reduction.dir/gpu_spectral_sequence_reduction.cpp.o"
   "/Users/tangyifeng/CLionProjects/matrix_reduction/test.cpp" "/Users/tangyifeng/CLionProjects/matrix_reduction/cmake-build-debug/CMakeFiles/matrix_reduction.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

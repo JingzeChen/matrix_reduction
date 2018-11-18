@@ -143,12 +143,12 @@ gpu_boundary_matrix * gpu_boundary_matrix::create_gpu_boundary_matrix(phat::boun
 
 
     gpuErrchk(cudaFree(tmp_gpu_columns));
-    delete[] h_matrix;
-    delete[] h_chunk_offset;
-    delete[] h_column_type;
-    delete[] h_column_length;
-    delete[] h_dims;
-    delete[] h_lowest_one_lookup;
+    delete h_matrix;
+    delete h_chunk_offset;
+    delete h_column_type;
+    delete h_column_length;
+    delete h_dims;
+    delete h_lowest_one_lookup;
     delete[] h_chunks_start_offset;
     delete[] h_tmp_gpu_columns;
 
@@ -204,6 +204,73 @@ __device__ indx get_max_index(column* matrix, int col_id) {
 
 __device__ void clear_column(column* matrix, int col_id) {
     matrix[col_id].data_length = 0;
+}
+
+__device__ void add_two_columns(column * matrix, int target, int source, ScatterAllocator::AllocatorHandle * allocator) {
+    auto src_col = &matrix[source];
+    auto tgt_col = &matrix[target];
+    size_t tgt_id = 0, src_id = 0, temp_id = 0;
+    indx max_size = round_up_to_2s(matrix[target].data_length + matrix[source].data_length);
+    max_size = max_size > ADDED_SIZE ? max_size : ADDED_SIZE;
+
+    bool need_new_mem = tgt_col->data_length < max_size;
+    auto new_pos = (need_new_mem) ? (indx *) allocator->malloc(sizeof(indx) * max_size) : new indx[max_size];
+    auto new_value = (need_new_mem) ? (unsigned long long *) allocator->malloc(sizeof(unsigned long long) * max_size) : new unsigned long long [max_size];
+
+    while (tgt_id < matrix[target].data_length && src_id < matrix[source].data_length) {
+        if (matrix[target].pos[tgt_id] == matrix[source].pos[src_id]) {
+            if (matrix[target].value[tgt_id] ^ matrix[source].value[src_id] != 0) {
+                new_pos[temp_id] = matrix[target].pos[tgt_id];
+                new_value[temp_id] = matrix[target].value[tgt_id] ^ matrix[source].value[src_id];
+                temp_id++;
+            }
+            tgt_id++;
+            src_id++;
+        } else if (matrix[target].pos[tgt_id] < matrix[source].pos[src_id]) {
+            if (matrix[target].pos[tgt_id] == matrix[source].pos[src_id + 1])
+                tgt_id++;
+            else {
+                new_value[temp_id] = matrix[target].value[tgt_id];
+                new_pos[temp_id] = matrix[target].pos[tgt_id];
+                tgt_id++;
+                temp_id++;
+            }
+        } else {
+            if (matrix[target].pos[tgt_id + 1] == matrix[source].pos[src_id])
+                src_id++;
+            else {
+                new_value[temp_id] = matrix[source].value[src_id];
+                new_pos[temp_id] = matrix[source].pos[src_id];
+                src_id++;
+                temp_id++;
+            }
+        }
+    }
+
+    if (src_id < matrix[source].data_length) {
+        memcpy(&new_pos[temp_id], &matrix[source].pos[temp_id], sizeof(indx) * (matrix[source].data_length - src_id));
+        memcpy(&new_value[temp_id], &matrix[source].value[src_id], sizeof(unsigned long long) * (matrix[source].data_length - src_id));
+        temp_id += matrix[source].data_length - src_id;
+    } else if (tgt_id < matrix[target].data_length) {
+        memcpy(&new_pos[temp_id], &matrix[target].pos[tgt_id], sizeof(indx) * (matrix[target].data_length - tgt_id));
+        memcpy(&new_value[temp_id], &matrix[target].value[tgt_id], sizeof(unsigned long long) * (matrix[target].data_length - tgt_id));
+        temp_id += matrix[target].data_length - tgt_id;
+    }
+
+    if (need_new_mem) {
+        allocator->free(tgt_col->pos);
+        allocator->free(tgt_col->value);
+        tgt_col->pos = new_pos;
+        tgt_col->value = new_value;
+        tgt_col->size = (size_t) max_size;
+    } else {
+        memcpy(tgt_col->pos, new_pos, sizeof(indx) * temp_id);
+        memcpy(tgt_col->value, new_value, sizeof(unsigned long long) * temp_id);
+        delete new_pos;
+        delete new_value;
+    }
+
+    tgt_col->data_length = temp_id;
 }
 
 __device__ void remove_max_index(column* matrix, int col) {
