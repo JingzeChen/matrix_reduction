@@ -36,8 +36,9 @@ __global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_l
         }
     }
 
-    col->pos = (indx *) allocator.malloc(sizeof(indx) * col->data_length);
-    col->value = (unsigned long long *) allocator.malloc(sizeof(unsigned long long) * col->data_length);
+    col->size = (size_t) round_up_to_2s(col->data_length);
+    col->pos = (indx *) allocator.malloc(sizeof(indx) * col->size);
+    col->value = (unsigned long long *) allocator.malloc(sizeof(unsigned long long) * col->size);
 
     last_pos = -1;
     unsigned long long last_value = 0;
@@ -178,15 +179,15 @@ gpu_boundary_matrix::~gpu_boundary_matrix(phat::boundary_matrix<phat::vector_vec
     }
 }*/
 
-__device__ dimension get_dim(dimension* dims, int col_id) {
+__device__ dimension get_dim(dimension* dims, indx col_id) {
     return dims[col_id];
 }
 
-__device__ bool is_empty(column* matrix, int col_id) {
+__device__ bool is_empty(column* matrix, indx col_id) {
     return matrix[col_id].data_length == 0;
 }
 
-__device__ indx get_max_index(column* matrix, int col_id) {
+__device__ indx get_max_index(column* matrix, indx col_id) {
     if (matrix[col_id].data_length == 0)
         return -1;
     else {
@@ -200,12 +201,11 @@ __device__ indx get_max_index(column* matrix, int col_id) {
     }
 }
 
-__device__ void clear_column(column* matrix, int col_id) {
+__device__ void clear_column(column* matrix, indx col_id) {
     matrix[col_id].data_length = 0;
 }
 
-__device__ void add_two_columns(column * matrix, int target, int source, ScatterAllocator::AllocatorHandle * allocator) {
-    auto src_col = &matrix[source];
+__device__ void add_two_columns(column * matrix, indx target, indx source, ScatterAllocator::AllocatorHandle * allocator) {
     auto tgt_col = &matrix[target];
     size_t tgt_id = 0, src_id = 0, temp_id = 0;
     indx max_size = round_up_to_2s(matrix[target].data_length + matrix[source].data_length);
@@ -217,7 +217,7 @@ __device__ void add_two_columns(column * matrix, int target, int source, Scatter
 
     while (tgt_id < matrix[target].data_length && src_id < matrix[source].data_length) {
         if (matrix[target].pos[tgt_id] == matrix[source].pos[src_id]) {
-            if (matrix[target].value[tgt_id] ^ matrix[source].value[src_id] != 0) {
+            if ((matrix[target].value[tgt_id] ^ matrix[source].value[src_id]) != 0) {
                 new_pos[temp_id] = matrix[target].pos[tgt_id];
                 new_value[temp_id] = matrix[target].value[tgt_id] ^ matrix[source].value[src_id];
                 temp_id++;
@@ -225,23 +225,15 @@ __device__ void add_two_columns(column * matrix, int target, int source, Scatter
             tgt_id++;
             src_id++;
         } else if (matrix[target].pos[tgt_id] < matrix[source].pos[src_id]) {
-            if (matrix[target].pos[tgt_id] == matrix[source].pos[src_id + 1])
-                tgt_id++;
-            else {
-                new_value[temp_id] = matrix[target].value[tgt_id];
-                new_pos[temp_id] = matrix[target].pos[tgt_id];
-                tgt_id++;
-                temp_id++;
-            }
+            new_value[temp_id] = matrix[target].value[tgt_id];
+            new_pos[temp_id] = matrix[target].pos[tgt_id];
+            tgt_id++;
+            temp_id++;
         } else {
-            if (matrix[target].pos[tgt_id + 1] == matrix[source].pos[src_id])
-                src_id++;
-            else {
-                new_value[temp_id] = matrix[source].value[src_id];
-                new_pos[temp_id] = matrix[source].pos[src_id];
-                src_id++;
-                temp_id++;
-            }
+            new_value[temp_id] = matrix[source].value[src_id];
+            new_pos[temp_id] = matrix[source].pos[src_id];
+            src_id++;
+            temp_id++;
         }
     }
 
@@ -268,10 +260,12 @@ __device__ void add_two_columns(column * matrix, int target, int source, Scatter
         delete new_value;
     }
 
+    printf("target = %ld source = %ld temp_id = %ld\n", target, source, temp_id);
+
     tgt_col->data_length = temp_id;
 }
 
-__device__ void remove_max_index(column* matrix, int col) {
+__device__ void remove_max_index(column* matrix, indx col) {
     if(matrix[col].data_length == 0)
         return;
     unsigned long long t = matrix[col].value[matrix[col].data_length - 1];

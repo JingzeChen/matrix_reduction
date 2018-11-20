@@ -18,7 +18,7 @@ __global__ void test_add(gpu_boundary_matrix * matrix, int column_num, ScatterAl
     if (thread_id >= column_num)
         return;
 
-    if (thread_id < column_num - 1) {
+    if (thread_id == 2) {
         add_two_columns(matrix->matrix, thread_id, thread_id + 1, &allocator);
     }
     __syncthreads();
@@ -95,37 +95,41 @@ int main()
     boundary_matrix.set_col( 2, temp_col );
     temp_col.clear();
 
+    temp_col.push_back( 0 );
+    temp_col.push_back( 1 );
     boundary_matrix.set_col(3, temp_col);
-    temp_col.push_back(0);
-    temp_col.push_back(3);
+    temp_col.clear();
+
+//    temp_col.push_back(0);
+//    temp_col.push_back(3);
     boundary_matrix.set_col( 4, temp_col );
     temp_col.clear();
 
-    temp_col.push_back( 1 );
-    temp_col.push_back( 3 );
+//    temp_col.push_back( 1 );
+//    temp_col.push_back( 3 );
     boundary_matrix.set_col( 5, temp_col );
     temp_col.clear();
     boundary_matrix.set_col(6, temp_col);
     boundary_matrix.set_col(7, temp_col);
 
-    temp_col.push_back( 6 );
-    temp_col.push_back( 7 );
+//    temp_col.push_back( 6 );
+//    temp_col.push_back( 7 );
     boundary_matrix.set_col( 8, temp_col );
     temp_col.clear();
 
-    temp_col.push_back( 3 );
-    temp_col.push_back( 7 );
+//    temp_col.push_back( 3 );
+//    temp_col.push_back( 7 );
     boundary_matrix.set_col( 9, temp_col );
     temp_col.clear();
 
-    temp_col.push_back(1);
-    temp_col.push_back(6);
+//    temp_col.push_back(1);
+//    temp_col.push_back(6);
     boundary_matrix.set_col(10, temp_col);
     temp_col.clear();
 
-    temp_col.push_back(2);
-    temp_col.push_back(4);
-    temp_col.push_back(5);
+//    temp_col.push_back(2);
+//    temp_col.push_back(4);
+//    temp_col.push_back(5);
     boundary_matrix.set_col(11, temp_col);
     temp_col.clear();
 

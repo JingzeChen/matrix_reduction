@@ -46,20 +46,20 @@ public:
     __device__ indx current_row_index(indx col_id, indx cur_row_idx);
 };
 //get the dimension of column indexed with col.
-__device__ dimension get_dim(dimension* dims, int col);
+__device__ dimension get_dim(dimension* dims, indx col);
 
 //to know whether current column col is non-zero(false) or not(true).
-__device__ bool is_empty(column* matrix, int col);
+__device__ bool is_empty(column* matrix, indx col);
 
 //to get the lowest row indx of column col.
-__device__ indx get_max_index(column* matrix, int col);
+__device__ indx get_max_index(column* matrix, indx col);
 
 //set column col as zero.
-__device__ void clear_column(column* matrix, int col);
+__device__ void clear_column(column* matrix, indx col);
 
 //add two columns locally.
-__device__ void add_two_columns(column* matrix, int target, int source, ScatterAllocator::AllocatorHandle * allocator);
+__device__ void add_two_columns(column* matrix, indx target, indx source, ScatterAllocator::AllocatorHandle * allocator);
 
 //set lowest non-zero row of column col as zero.
-__device__ void remove_max_index(column* matrix, int col);
+__device__ void remove_max_index(column* matrix, indx col);
 #endif

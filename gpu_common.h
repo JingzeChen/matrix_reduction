@@ -27,6 +27,7 @@ typedef long indx;
 //! \param ans is a CUDA function.
 
 __device__ indx round_up_to_2s(indx number);
+__device__ indx most_significant_bit_pos(unsigned long long value);
 
 #define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
 

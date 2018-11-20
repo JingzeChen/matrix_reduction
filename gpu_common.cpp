@@ -13,3 +13,17 @@ __device__ indx round_up_to_2s(indx number) {
     size++;
     return size;
 }
+
+__device__ indx most_significant_bit_pos(unsigned long long v) {
+    unsigned int r;
+    unsigned int shift;
+
+    r =     (unsigned int) (v >  0xFFFFFFFF) << 5; v >>= r;
+    shift = (unsigned int) (v > 0xFFFF) << 4; v >>= shift; r |= shift;
+    shift = (unsigned int) (v > 0xFF  ) << 3; v >>= shift; r |= shift;
+    shift = (unsigned int) (v > 0xF   ) << 2; v >>= shift; r |= shift;
+    shift = (unsigned int) (v > 0x3   ) << 1; v >>= shift; r |= shift;
+    r |= (v >> 1);
+
+    return 63 - r;
+}
