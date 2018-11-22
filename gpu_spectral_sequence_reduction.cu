@@ -97,10 +97,10 @@ __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long lo
                     im_done = true;
                 }
             }
-            //__syncthreads();
+            __syncthreads();
             printf("column is %d, count is %d block id is %d cur_dim is %d cur_phase is %ld\n", thread_id, count, block_id, cur_dim, cur_phase);
         }while(count < block_size);
-        //__threadfence();
+        __threadfence();
     }
 }
 
@@ -238,7 +238,7 @@ int main(int argc, char **argv)
         gpu_spectral_sequence_reduction << < block_num, threads_block >> >
                                                         (g_matrix.matrix, g_matrix.chunk_columns_finished, g_matrix.dims, g_matrix.is_done, max_dim, cur_dim, threads_block, num_cols,
                                                                 block_num, g_matrix.lowest_one_lookup, g_matrix.is_reduced, allocator);
-        //cudaDeviceSynchronize();
+        cudaDeviceSynchronize();
     }
 
     std::vector<indx> lookup_table(boundary_matrix.get_num_cols());
