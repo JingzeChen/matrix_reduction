@@ -26,7 +26,15 @@ __device__ void set_done_work(bool* is_done, int thread_id_in_block, int block_b
     is_done[id] = true;
 }
 
-__device__ bool gpu_simplify_column(column* matrix, dimension* dims, bool* is_done, int thread_id, int thread_id_in_block, int block_begin, int block_id, dimension max_dim, dimension cur_dim,
+__device__ void clear_is_done(bool* is_done, indx num_cols)
+{
+    for(indx i=0; i<num_cols; i++)
+    {
+        is_done[i] = false;
+    }
+}
+
+__device__ bool gpu_reduce_column(column* matrix, dimension* dims, bool* is_done, int thread_id, int thread_id_in_block, int block_begin, int block_id, dimension max_dim, dimension cur_dim,
         indx cur_phase, indx* lowest_one_lookup, bool* is_reduced, indx block_size, ScatterAllocator::AllocatorHandle allocator)
 {
     if(thread_id_in_block == 0 || check_done_work(is_done, thread_id_in_block-1, block_begin))
@@ -77,19 +85,19 @@ __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long lo
     int column_start = blockDim.x * blockIdx.x;
     //int column_end = column_start + block_size;
     __shared__ unsigned int count;
-    bool im_done;
+    bool im_done = false;
+    count = 0;
 
     if(thread_id >= num_cols)
         return;
 
     for (indx cur_phase = 0; cur_phase<block_num; cur_phase++)
     {
-        count = 0;
         im_done = false;
         do{
             if(!im_done)
             {
-                bool result = gpu_simplify_column(matrix, dims, is_done, thread_id, threadidx, column_start, block_id, max_dim, cur_dim,
+                bool result = gpu_reduce_column(matrix, dims, is_done, thread_id, threadidx, column_start, block_id, max_dim, cur_dim,
                         cur_phase, lowest_one_lookup, is_reduced, block_size, allocator);
                 if(result)
                 {
@@ -101,6 +109,10 @@ __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long lo
             printf("column is %d, count is %d block id is %d cur_dim is %d cur_phase is %ld\n", thread_id, count, block_id, cur_dim, cur_phase);
         }while(count < block_size);
         __threadfence();
+        if(threadidx == 0)
+            count = 0;
+        if(thread_id == 0)
+            clear_is_done(is_done, num_cols);
     }
 }
 
@@ -151,7 +163,7 @@ double get_wall_time()
 int main(int argc, char **argv)
 {
     phat::boundary_matrix<phat::vector_vector> boundary_matrix;
-    /*if (argc == 3) {
+    if (argc == 3) {
         if (strcmp(argv[1], "-b") == 0) {
             int read_successful = boundary_matrix.load_binary(std::string(argv[2]));
         } else if (strcmp(argv[1], "-a") == 0) {
@@ -163,10 +175,10 @@ int main(int argc, char **argv)
     } else {
         printf("Usages: ./matReduct_debug <-b/a> <input_data>\n");
         exit(1);
-    }*/
+    }
     double total_time = 0, time_start = 0, time_end = 0;
 
-    boundary_matrix.set_num_cols(12);
+    /*boundary_matrix.set_num_cols(12);
     boundary_matrix.set_dim( 0, 0  );
     boundary_matrix.set_dim( 1, 0  );
     boundary_matrix.set_dim( 2, 1  );
@@ -222,7 +234,7 @@ int main(int argc, char **argv)
     temp_col.push_back(4);
     temp_col.push_back(5);
     boundary_matrix.set_col(11, temp_col);
-    temp_col.clear();
+    temp_col.clear();*/
     ScatterAllocator allocator((size_t)8 * 1024 * 1024 * 1024);
     auto block_num = CUDA_BLOCKS_NUM(boundary_matrix.get_num_cols());
     auto threads_block = CUDA_THREADS_EACH_BLOCK(boundary_matrix.get_num_cols());
