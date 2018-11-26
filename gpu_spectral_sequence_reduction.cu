@@ -14,112 +14,41 @@
 #include "gpu_boundary_matrix.h"
 #include "gpu_common.h"
 
-__device__ bool check_done_work(bool* is_done, int thread_id_in_block, int block_begin)
-{
-    int id = block_begin + thread_id_in_block;
-    return is_done[id];
-}
 
-__device__ void set_done_work(bool* is_done, int thread_id_in_block, int block_begin)
-{
-    int id = block_begin + thread_id_in_block;
-    is_done[id] = true;
-}
-
-__device__ void clear_is_done(bool* is_done, indx num_cols)
-{
-    for(indx i=0; i<num_cols; i++)
-    {
-        is_done[i] = false;
-    }
-}
-
-__device__ bool gpu_reduce_column(column* matrix, dimension* dims, bool* is_done, int thread_id, int thread_id_in_block, int block_begin, int block_id, dimension max_dim, dimension cur_dim,
-        indx cur_phase, indx* lowest_one_lookup, bool* is_reduced, indx block_size, ScatterAllocator::AllocatorHandle allocator)
-{
-    if(thread_id_in_block == 0 || check_done_work(is_done, thread_id_in_block-1, block_begin))
-    {
-    indx cur_lowest_one = get_max_index(matrix, thread_id);
-    if(dims[thread_id] == cur_dim && cur_lowest_one != -1 && is_reduced[thread_id] == false)
-    {
-        indx row_begin = (block_id - cur_phase) * block_size;
-        indx row_end = row_begin + block_size;
-
-        while (cur_lowest_one != -1 && cur_lowest_one >= row_begin && cur_lowest_one < row_end && lowest_one_lookup[cur_lowest_one] != -1 )
-        {
-            add_two_columns(matrix, thread_id, lowest_one_lookup[cur_lowest_one], allocator);
-            cur_lowest_one = get_max_index(matrix, thread_id);
-        }
-        if (cur_lowest_one != -1)
-        {
-            if (cur_lowest_one >= row_begin && cur_lowest_one < row_end)
-            {
-                lowest_one_lookup[cur_lowest_one] = thread_id;
-                is_reduced[thread_id] = true;
-                clear_column(matrix, cur_lowest_one);
-                is_reduced[cur_lowest_one] = true;
-            }
-            else{
-                is_reduced[thread_id] = false;
-            }
-        }
-        else{
-            is_reduced[thread_id] = true;
-        }
-        if(cur_lowest_one == -1)
-            is_reduced[thread_id] = true;
-    }
-    set_done_work(is_done, thread_id_in_block, block_begin);
-    return true;
-    }
-    return false;
-}
-
-
-__global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long long *chunk_columns_finished, dimension* dims, bool* is_done, dimension max_dim, dimension cur_dim, indx block_size,
-        indx num_cols, int block_num, indx* lowest_one_lookup, bool* is_reduced, ScatterAllocator::AllocatorHandle allocator)
+__global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long long *chunk_columns_finished, dimension* dims, indx* leftmost_lookup_lowest_row, dimension max_dim,
+        dimension cur_dim, indx block_size, indx num_cols, int block_num, indx* lowest_one_lookup, bool* is_reduced,
+        indx cur_phase, ScatterAllocator::AllocatorHandle allocator)
 {
     int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
     int block_id = blockIdx.x;
     int threadidx = threadIdx.x;
-    int column_start = blockDim.x * blockIdx.x;
-    //int column_end = column_start + block_size;
-    __shared__ unsigned int count;
-    bool im_done = false;
-    count = 0;
+    indx column_start = ((blockDim.x * blockIdx.x - cur_phase * block_size) > 0) ? (blockDim.x * blockIdx.x - cur_phase * block_size) : 0;
+    indx column_end = column_start + block_size * (cur_phase+1);
+    indx row_begin = ((blockDim.x * blockIdx.x - cur_phase * block_size) > 0) ? (blockDim.x * blockIdx.x - cur_phase * block_size) : 0;
+    indx row_end = row_begin + block_size;
 
-    if(thread_id >= num_cols)
-        return;
-
-    for (indx cur_phase = 0; cur_phase<block_num; cur_phase++)
-    {
-        im_done = false;
-        do{
-            if(!im_done)
-            {
-                bool result = gpu_reduce_column(matrix, dims, is_done, thread_id, threadidx, column_start, block_id, max_dim, cur_dim,
-                        cur_phase, lowest_one_lookup, is_reduced, block_size, allocator);
-                if(result)
-                {
-                    atomicAdd(&count, (unsigned int)1);
-                    im_done = true;
-                }
-            }
-            __syncthreads();
-            printf("column is %d, count is %d block id is %d cur_dim is %d cur_phase is %ld\n", thread_id, count, block_id, cur_dim, cur_phase);
-        }while(count < block_size);
-        __threadfence();
-        if(threadidx == 0)
-            count = 0;
-        if(thread_id == 0)
-            clear_is_done(is_done, num_cols);
-    }
+    bool ive_added = false;
+    int target_col = -1;
+    do{
+        check_lowest_one_locally(matrix, chunk_columns_finished, dims,is_reduced, leftmost_lookup_lowest_row, thread_id, block_id,
+                column_start, column_end, row_begin, row_end, cur_dim, num_cols, &target_col, &ive_added);
+        add_two_columns(matrix, thread_id, target_col, allocator);
+        __syncthreads();
+        if(target_col != -1)
+            update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, thread_id);
+        target_col = -1;
+        __syncthreads();
+    }while(chunk_columns_finished[block_id] < block_size);
+    mark_and_clean(matrix, lowest_one_lookup, is_reduced, dims, thread_id, row_begin, row_end, cur_dim);
+    __syncthreads();
+    if(threadidx == 0)
+        chunk_columns_finished[block_id] = 0;
 }
 
 __global__ void show(column* matrix, indx* lowest_one_lookup, bool* is_reduced, dimension * dims)
 {
     int thread_id = threadIdx.x + blockIdx.x * blockDim.x;
-    /*if(thread_id == 2561538) {
+    //if(thread_id == 2561538) {
         for (int i = 0; i < matrix[thread_id].data_length; i++) {
             printf("the column %d : pos: %ld value: %lu\n", thread_id, matrix[thread_id].pos[i],
                    matrix[thread_id].value[i]);
@@ -129,7 +58,7 @@ __global__ void show(column* matrix, indx* lowest_one_lookup, bool* is_reduced, 
             printf("the persistence pairs are %d and %ld\n", thread_id + 1, lowest_one_lookup[thread_id] + 1);
         }
         printf("whether column %d is reduced: %d\n", thread_id, is_reduced[thread_id]);
-    }*/
+    //}*/
     printf("column %d dimension %d\n", thread_id, dims[thread_id]);
 }
 
@@ -178,63 +107,6 @@ int main(int argc, char **argv)
     }
     double total_time = 0, time_start = 0, time_end = 0;
 
-    /*boundary_matrix.set_num_cols(12);
-    boundary_matrix.set_dim( 0, 0  );
-    boundary_matrix.set_dim( 1, 0  );
-    boundary_matrix.set_dim( 2, 1  );
-    boundary_matrix.set_dim( 3, 0  );
-    boundary_matrix.set_dim( 4, 1  );
-    boundary_matrix.set_dim( 5, 1  );
-    boundary_matrix.set_dim( 6, 0  );
-    boundary_matrix.set_dim( 7, 0  );
-    boundary_matrix.set_dim( 8, 0  );
-    boundary_matrix.set_dim( 9, 1  );
-    boundary_matrix.set_dim( 10, 1  );
-    boundary_matrix.set_dim( 11, 2  );
-    std::vector< phat::index > temp_col;
-
-    boundary_matrix.set_col( 0, temp_col  );
-
-    boundary_matrix.set_col( 1, temp_col  );
-
-    temp_col.push_back( 0  );
-    temp_col.push_back( 1  );
-    boundary_matrix.set_col( 2, temp_col  );
-    temp_col.clear();
-
-    boundary_matrix.set_col(3, temp_col);
-    temp_col.push_back(0);
-    temp_col.push_back(3);
-    boundary_matrix.set_col( 4, temp_col  );
-    temp_col.clear();
-
-    temp_col.push_back( 1  );
-    temp_col.push_back( 3  );
-    boundary_matrix.set_col( 5, temp_col  );
-    temp_col.clear();
-    boundary_matrix.set_col(6, temp_col);
-    boundary_matrix.set_col(7, temp_col);
-
-    temp_col.push_back( 6  );
-    temp_col.push_back( 7  );
-    boundary_matrix.set_col( 8, temp_col  );
-    temp_col.clear();
-
-    temp_col.push_back( 3  );
-    temp_col.push_back( 7  );
-    boundary_matrix.set_col( 9, temp_col  );
-    temp_col.clear();
-
-    temp_col.push_back(1);
-    temp_col.push_back(6);
-    boundary_matrix.set_col(10, temp_col);
-    temp_col.clear();
-
-    temp_col.push_back(2);
-    temp_col.push_back(4);
-    temp_col.push_back(5);
-    boundary_matrix.set_col(11, temp_col);
-    temp_col.clear();*/
     ScatterAllocator allocator((size_t)8 * 1024 * 1024 * 1024);
     auto block_num = CUDA_BLOCKS_NUM(boundary_matrix.get_num_cols());
     auto threads_block = CUDA_THREADS_EACH_BLOCK(boundary_matrix.get_num_cols());
@@ -247,10 +119,13 @@ int main(int argc, char **argv)
     printf("gpu part starts at %lf\n", time_start = get_wall_time());
 
     for(dimension cur_dim = max_dim; cur_dim>=1; cur_dim--) {
-        gpu_spectral_sequence_reduction << < block_num, threads_block >> >
-                                                        (g_matrix.matrix, g_matrix.chunk_columns_finished, g_matrix.dims, g_matrix.is_done, max_dim, cur_dim, threads_block, num_cols,
-                                                                block_num, g_matrix.lowest_one_lookup, g_matrix.is_reduced, allocator);
-        cudaDeviceSynchronize();
+        for (indx cur_phase = 0; cur_phase<block_num; cur_phase++) {
+            gpu_spectral_sequence_reduction << < block_num, threads_block >> >
+                                                            (g_matrix.matrix, g_matrix.chunk_columns_finished, g_matrix.dims,
+                                                                    g_matrix.leftmost_lookup_lowest_row, max_dim, cur_dim, threads_block,
+                                                                    num_cols,block_num, g_matrix.lowest_one_lookup, g_matrix.is_reduced, cur_phase, allocator);
+            cudaDeviceSynchronize();
+        }
     }
 
     std::vector<indx> lookup_table(boundary_matrix.get_num_cols());
@@ -261,5 +136,23 @@ int main(int argc, char **argv)
     total_time = time_end - time_start;
     printf("total_time is %lf\n", total_time);
     save_ascii(lookup_table, "result.txt");
+
+    printf("<---------------------------------------------------------------->\n");
+
+    phat::boundary_matrix<phat::vector_vector> new_matrix;
+    if (strcmp(argv[1], "-b") == 0) {
+        int read_successful = new_matrix.load_binary(std::string(argv[2]));
+    } else if (strcmp(argv[1], "-a") == 0) {
+        int read_successful = new_matrix.load_ascii(std::string(argv[2]));
+    }
+
+    phat::persistence_pairs pairs;
+    printf("cpu starts at %lf\n", time_start = get_wall_time());
+    phat::compute_persistence_pairs<phat::twist_reduction>(pairs, new_matrix);
+    printf("cpu ends at %lf\n", time_end = get_wall_time());
+    total_time = time_end - time_start;
+    pairs.save_ascii("phat_result.txt");
+    printf("cpu costs %lf time without counting IO\n", total_time);
+
     return 0;
 }

@@ -11,6 +11,7 @@ ${TARGET_DEBUG}	Makefile	/^${TARGET_DEBUG} : ${OBJ_DEBUG}$/;"	t
 ${TARGET}	Makefile	/^${TARGET} : ${OBJ}$/;"	t
 %.o	Makefile	/^%.o: %.cu$/;"	t
 %_debug.o	Makefile	/^%_debug.o: %.cu$/;"	t
+ADDED_SIZE	gpu_boundary_matrix.cu	/^#define ADDED_SIZE /;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
@@ -639,7 +640,7 @@ add_index	phat_lib/representations/sparse_pivot_column.h	/^        void add_inde
 add_to	phat_lib/boundary_matrix.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 add_to	phat_lib/boundary_matrix_original.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 add_to	phat_lib/boundary_matrix_tants.h	/^        void add_to( index source, index target ) { rep._add_to( source, target ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
-add_two_columns	gpu_boundary_matrix.cu	/^__device__ void add_two_columns(column* matrix, int target, int source, ScatterAllocator::Alloca/;"	f	typeref:typename:void
+add_two_columns	gpu_boundary_matrix.cu	/^__device__ void add_two_columns(column* matrix, indx target, indx source, ScatterAllocator::Allo/;"	f	typeref:typename:void
 alignPool	mallocmc_lib/alignmentPolicies/Noop_impl.hpp	/^    static boost::tuple<void*,size_t> alignPool(void* memory, size_t memsize){$/;"	f	class:mallocMC::AlignmentPolicies::Noop	typeref:typename:boost::tuple<void *,size_t>
 alignPool	mallocmc_lib/alignmentPolicies/Shrink_impl.hpp	/^    static boost::tuple<void*,size_t> alignPool(void* memory, size_t memsize){$/;"	f	class:mallocMC::AlignmentPolicies::Shrink	typeref:typename:boost::tuple<void *,size_t>
 all	build/Makefile	/^all: cmake_check_build_system$/;"	t
@@ -674,9 +675,8 @@ can_use_coalescing	mallocmc_lib/distributionPolicies/XMallocSIMD_impl.hpp	/^    
 checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError()$/;"	f	namespace:CUDA	typeref:typename:void
 checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError(const char* file, int line)$/;"	f	namespace:CUDA	typeref:typename:void
 checkError	mallocmc_lib/mallocMC_utils.hpp	/^  inline void checkError(cudaError errorValue, const char* file, int line)$/;"	f	namespace:CUDA	typeref:typename:void
-check_lowest_one_locally	gpu_boundary_matrix.cu	/^__device__ void check_lowest_one_locally(column* matrix, short* column_type, unsigned long long*/;"	f	typeref:typename:void
+check_lowest_one_locally	gpu_boundary_matrix.cu	/^__device__ void check_lowest_one_locally(column* matrix, unsigned long long* chunk_columns_finis/;"	f	typeref:typename:void
 chunk_columns_finished	gpu_boundary_matrix.h	/^    unsigned long long *chunk_columns_finished; \/\/counts the number of operations that are fin/;"	m	class:gpu_boundary_matrix	typeref:typename:unsigned long long *
-chunk_offset	gpu_boundary_matrix.h	/^    indx *chunk_offset; \/\/stores the offset of each chunk\/block in gpu.$/;"	m	class:gpu_boundary_matrix	typeref:typename:indx *
 chunk_reduction	phat_lib/algorithms/chunk_reduction.h	/^    class chunk_reduction : public chunk_reduction_impl<false> {};$/;"	c	namespace:phat
 chunk_reduction_algorithm.cpp.i	build/Makefile	/^chunk_reduction_algorithm.cpp.i:$/;"	t
 chunk_reduction_algorithm.cpp.i	cmake-build-debug/Makefile	/^chunk_reduction_algorithm.cpp.i:$/;"	t
@@ -729,7 +729,6 @@ column	gpu_boundary_matrix.h	/^struct column {$/;"	s
 column	phat_lib/helpers/misc.h	/^    typedef std::vector< index > column;$/;"	t	namespace:phat	typeref:typename:std::vector<index>
 column_length	gpu_boundary_matrix.h	/^    size_t *column_length; \/\/stores length of each column.$/;"	m	class:gpu_boundary_matrix	typeref:typename:size_t *
 column_num	gpu_boundary_matrix.h	/^    size_t column_num;$/;"	m	struct:unpacked_matrix	typeref:typename:size_t
-column_type	gpu_boundary_matrix.h	/^    short *column_type;  \/\/denotes type of each column: global, local negative or local positi/;"	m	class:gpu_boundary_matrix	typeref:typename:short *
 column_type	phat_lib/algorithms/chunk_reduction.h	/^        enum column_type { GLOBAL$/;"	g	class:phat::chunk_reduction_impl
 compute_persistence_pairs	phat_lib/compute_persistence_pairs.h	/^    void compute_persistence_pairs( persistence_pairs& pairs, boundary_matrix< Representation >&/;"	f	namespace:phat	typeref:typename:void
 compute_persistence_pairs_dualized	phat_lib/compute_persistence_pairs.h	/^    void compute_persistence_pairs_dualized( persistence_pairs& pairs, boundary_matrix< Represen/;"	f	namespace:phat	typeref:typename:void
@@ -737,7 +736,6 @@ const	build/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;
 const	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
 count	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^        uint32 count;$/;"	m	struct:mallocMC::CreationPolicies::Scatter::PTE	typeref:typename:uint32
 countFreeChunksInPage	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ unsigned countFreeChunksInPage(uint32 page, uint32 chunksize){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ unsigned
-count_num_dims	gpu_spectral_sequence_reduction.cu	/^__global__ void count_num_dims(dimension* dims, dimension cur_dim, indx* cnt)$/;"	f	typeref:typename:void
 create	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    __device__ void* create(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:__device__ void *
 create	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ void* create(uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ void *
 data	gpu_boundary_matrix.h	/^indx* data;$/;"	m	struct:unpacked_column	typeref:typename:indx *
@@ -873,7 +871,7 @@ gpu_boundary_matrix.o	build/Makefile	/^gpu_boundary_matrix.o: gpu_boundary_matri
 gpu_boundary_matrix.o	cmake-build-debug/Makefile	/^gpu_boundary_matrix.o: gpu_boundary_matrix.cpp.o$/;"	t
 gpu_boundary_matrix.s	build/Makefile	/^gpu_boundary_matrix.s: gpu_boundary_matrix.cpp.s$/;"	t
 gpu_boundary_matrix.s	cmake-build-debug/Makefile	/^gpu_boundary_matrix.s: gpu_boundary_matrix.cpp.s$/;"	t
-gpu_spectral_sequence_reduction	gpu_spectral_sequence_reduction.cu	/^__global__ void gpu_spectral_sequence_reduction(column* matrix, dimension* dims, indx col_in_blo/;"	f	typeref:typename:void
+gpu_spectral_sequence_reduction	gpu_spectral_sequence_reduction.cu	/^__global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long long *chunk_column/;"	f	typeref:typename:void
 handleOOM	mallocmc_lib/oOMPolicies/BadAllocException_impl.hpp	/^    static void* handleOOM(void* mem){$/;"	f	struct:mallocMC::OOMPolicies::BadAllocException	typeref:typename:MAMC_ACCELERATOR void *
 handleOOM	mallocmc_lib/oOMPolicies/ReturnNull_impl.hpp	/^      static void* handleOOM(void* mem){$/;"	f	class:mallocMC::OOMPolicies::ReturnNull	typeref:typename:MAMC_ACCELERATOR void *
 hashingDistMP	gpu_common.h	/^    typedef boost::mpl::int_<17497> hashingDistMP;$/;"	t	struct:ScatterHashParams	typeref:typename:boost::mpl::int_<17497>
@@ -954,7 +952,6 @@ int64_t	phat_lib/helpers/misc.h	/^    typedef __int64 int64_t;$/;"	t	typeref:typ
 int8_t	phat_lib/helpers/misc.h	/^    typedef __int8 int8_t;$/;"	t	typeref:typename:__int8
 isOOM	mallocmc_lib/creationPolicies/OldMalloc_impl.hpp	/^    __device__ bool isOOM(void* p, size_t s){$/;"	f	class:mallocMC::CreationPolicies::OldMalloc	typeref:typename:__device__ bool
 isOOM	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ bool isOOM(void* p, size_t s){$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ bool
-is_active	gpu_boundary_matrix.h	/^    bool *is_active; \/\/denotes each column as active or inactive.$/;"	m	class:gpu_boundary_matrix	typeref:typename:bool *
 is_empty	gpu_boundary_matrix.cu	/^__device__ bool is_empty(column* matrix, int col_id) {$/;"	f	typeref:typename:bool
 is_empty	phat_lib/boundary_matrix.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
 is_empty	phat_lib/boundary_matrix_original.h	/^        bool is_empty( index idx ) const { return rep._is_empty( idx ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
@@ -965,7 +962,7 @@ is_empty	phat_lib/representations/heap_pivot_column.h	/^        bool is_empty() 
 is_empty	phat_lib/representations/sparse_pivot_column.h	/^        bool is_empty() {$/;"	f	class:phat::sparse_column	typeref:typename:bool
 is_in_history	phat_lib/representations/full_pivot_column.h	/^        std::vector< char > is_in_history;$/;"	m	class:phat::full_column	typeref:typename:std::vector<char>
 is_pivot_col	phat_lib/representations/abstract_pivot_column.h	/^        bool is_pivot_col( index idx ) const {$/;"	f	class:phat::abstract_pivot_column	typeref:typename:bool
-is_ready_for_mark	gpu_boundary_matrix.h	/^    bool *is_ready_for_mark;$/;"	m	class:gpu_boundary_matrix	typeref:typename:bool *
+is_reduced	gpu_boundary_matrix.h	/^    bool *is_reduced;$/;"	m	class:gpu_boundary_matrix	typeref:typename:bool *
 laneid	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t laneid()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
 lanemask	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
 lanemask_ge	mallocmc_lib/mallocMC_utils.hpp	/^  MAMC_ACCELERATOR inline boost::uint32_t lanemask_ge()$/;"	f	namespace:mallocMC	typeref:typename:MAMC_ACCELERATOR boost::uint32_t
@@ -997,7 +994,7 @@ main	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c	/^void m
 main	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
 main	cmake-build-debug/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	typeref:typename:int
 main	cmake-build-debug/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	typeref:typename:int
-main	gpu_spectral_sequence_reduction.cu	/^int main()$/;"	f	typeref:typename:int
+main	gpu_spectral_sequence_reduction.cu	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
 main	parrallel_reduction.cu	/^int main ()$/;"	f	typeref:typename:int
 main	test.cu	/^int main()$/;"	f	typeref:typename:int
 main.cpp.i	build/Makefile	/^main.cpp.i:$/;"	t
@@ -1042,7 +1039,7 @@ mallocMC	mallocmc_lib/reservePoolPolicies/CudaSetLimits_impl.hpp	/^namespace mal
 mallocMC	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc.hpp	/^namespace mallocMC{$/;"	n
 mallocMC	mallocmc_lib/reservePoolPolicies/SimpleCudaMalloc_impl.hpp	/^namespace mallocMC{$/;"	n
 mark_active_column	matrix_operations.h	/^__global__ void mark_active_column(gpu_boundary_matrix &gpu_matrix)$/;"	f	typeref:typename:__global__ void
-mark_and_clean	gpu_boundary_matrix.cu	/^__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, short* column_type, dime/;"	f	typeref:typename:void
+mark_and_clean	gpu_boundary_matrix.cu	/^__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, bool* is_reduced, dimens/;"	f	typeref:typename:void
 markpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      __device__ bool markpages(uint32 startpage, uint32 pages, uint32 bytes)$/;"	f	class:mallocMC::CreationPolicies::Scatter	typeref:typename:__device__ bool
 matrix	gpu_boundary_matrix.h	/^    column *matrix; \/\/stores columns of boundary matrix.$/;"	m	class:gpu_boundary_matrix	typeref:typename:column *
 matrix	phat_lib/representations/vector_heap.h	/^        std::vector< column > matrix;$/;"	m	class:phat::vector_heap	typeref:typename:std::vector<column>
@@ -1165,6 +1162,7 @@ resetfreedpages	mallocmc_lib/creationPolicies/Scatter_impl.hpp	/^      BOOST_STA
 rightmost_pos	phat_lib/representations/bit_tree_pivot_column.h	/^        size_t rightmost_pos( const block_type value ) const {                $/;"	f	class:phat::bit_tree_column	typeref:typename:size_t
 round_up_to_2s	gpu_common.h	/^__device__ indx round_up_to_2s(indx number) {$/;"	f	typeref:typename:__device__ indx
 row_reduction	phat_lib/algorithms/row_reduction.h	/^    class row_reduction {$/;"	c	namespace:phat
+save_ascii	gpu_spectral_sequence_reduction.cu	/^__host__ void save_ascii(std::vector<indx> &lowest_one_lookup, const char *filename) {$/;"	f	typeref:typename:void
 save_ascii	phat_lib/boundary_matrix.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
 save_ascii	phat_lib/boundary_matrix_original.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
 save_ascii	phat_lib/boundary_matrix_tants.h	/^        bool save_ascii( std::string filename ) {$/;"	f	class:phat::boundary_matrix	typeref:typename:bool
@@ -1197,7 +1195,7 @@ set_num_cols	phat_lib/boundary_matrix.h	/^        void set_num_cols( index nr_of
 set_num_cols	phat_lib/boundary_matrix_original.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 set_num_cols	phat_lib/boundary_matrix_tants.h	/^        void set_num_cols( index nr_of_columns ) { rep._set_num_cols( nr_of_columns ); }$/;"	f	class:phat::boundary_matrix	typeref:typename:void
 set_pair	phat_lib/persistence_pairs.h	/^        void set_pair( index idx, index birth, index death )  {$/;"	f	class:phat::persistence_pairs	typeref:typename:void
-show	gpu_spectral_sequence_reduction.cu	/^__global__ void show(column* matrix, indx* lowest_one_lookup, bool* is_reduced)$/;"	f	typeref:typename:void
+show	gpu_spectral_sequence_reduction.cu	/^__global__ void show(column* matrix, indx* lowest_one_lookup, bool* is_reduced, dimension * dims/;"	f	typeref:typename:void
 show	test.cu	/^__global__ void show(column* matrix)$/;"	f	typeref:typename:void
 simplified_reduction	parrallel_reduction.cu	/^__global__ void simplified_reduction(column* matrix, short* column_type, dimension max_dim, dime/;"	f	typeref:typename:void
 size	gpu_boundary_matrix.h	/^    size_t size;  \/\/maximal number of non-zero 64-bits arrays in the current column.$/;"	m	struct:column	typeref:typename:size_t
