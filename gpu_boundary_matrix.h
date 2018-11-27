@@ -56,6 +56,7 @@ public:
     indx *lowest_one_lookup;
     bool *is_reduced;
     indx* leftmost_lookup_lowest_row;
+    //lookup_table* lookup_lowest_row_table;
 
 public:
     //construct boundary matrix on gpu.
@@ -81,7 +82,7 @@ __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chu
         int thread_id, int block_id, indx column_start, indx column_end, indx row_begin, indx row_end, dimension cur_dim, indx num_cols,
         int* target_col, bool* ive_added);
 //mark column as global, local positive or local negative and clean corresponding column as zero.
-__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, bool* is_reduced, dimension* dims,indx my_col_id, indx row_begin, indx row_end, dimension cur_dim);
+__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, indx* leftmost_lookup_lowest_row, bool* is_reduced, dimension* dims,indx my_col_id, indx row_begin, indx row_end, dimension cur_dim);
 
 //add two columns locally.
 __device__ void add_two_columns(column* matrix, indx target, indx source, ScatterAllocator::AllocatorHandle allocator);
@@ -99,4 +100,6 @@ __device__ indx get_second_max_index(column* matrix, int col_id);
 
 //__host__ void init_table(column* matrix, indx num_cols);
 __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup_lowest_row, int thread_id);
+
+__global__ void update_table(column* matrix, indx* leftmost_lookup_lowest_row, indx cur_phase, indx block_size);
 #endif

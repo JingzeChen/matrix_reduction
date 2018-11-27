@@ -4,6 +4,7 @@
 #include "gpu_boundary_matrix.h"
 #define BLOCK_BITS 64
 #define ADDED_SIZE 32
+#define TABLE_SIZE 512
 
 typedef long indx;
 typedef short dimension;
@@ -22,6 +23,7 @@ __global__ void allocate_all_columns(indx ** tmp_gpu_columns, size_t * column_le
 
     auto length = column_length[thread_id];
     tmp_gpu_columns[thread_id] = (indx *) allocator.malloc(sizeof(indx) * length);
+    //leftmost_lookup_lowest_row[thread_id] = (indx *)allocator.malloc(sizeof(indx) * TABLE_SIZE);
 }
 
 __global__ void transform_all_columns(indx ** tmp_gpu_columns, size_t * column_length, column *matrix, int column_num, ScatterAllocator::AllocatorHandle allocator, dimension* dims) {
@@ -94,7 +96,7 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
         indx max_index = src_matrix->get_max_index(i);
         if(max_index != -1) {
             if(h_leftmost_lookup_lowest_row[max_index] == -1)
-                h_leftmost_lookup_lowest_row[max_index] = i;
+               h_leftmost_lookup_lowest_row[max_index] = i;
         }
     }
 
@@ -124,6 +126,7 @@ gpu_boundary_matrix::gpu_boundary_matrix(phat::boundary_matrix <phat::vector_vec
     indx ** tmp_gpu_columns, ** h_tmp_gpu_columns;
     h_tmp_gpu_columns = new indx * [cols_num];
     gpuErrchk(cudaMalloc((void **) &tmp_gpu_columns, sizeof(indx *) * cols_num));
+    //gpuErrchk(cudaMalloc((void **) &leftmost_lookup_lowest_row, sizeof(indx *) * cols_num));
     allocate_all_columns <<< CUDA_BLOCKS_NUM(cols_num), CUDA_THREADS_EACH_BLOCK(cols_num) >>> (tmp_gpu_columns, d_column_length, cols_num, allocator);
     cudaMemcpy(h_tmp_gpu_columns, tmp_gpu_columns, sizeof(indx *) * cols_num, cudaMemcpyDeviceToHost);
 
@@ -271,7 +274,8 @@ __device__ void remove_max_index(column* matrix, int col) {
 __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chunk_columns_finished, dimension * dims,
         bool* is_reduced, indx* leftmost_lookup_lowest_row, int thread_id, int block_id, indx column_start, indx column_end, indx row_begin, indx row_end,
         dimension cur_dim, indx num_cols, int* target_col, bool* ive_added) {
-    if (cur_dim != get_dim(dims, thread_id) || is_reduced[thread_id] == true || thread_id >= num_cols)
+    indx my_lowest_one = get_max_index(matrix, thread_id);
+    if (cur_dim != get_dim(dims, thread_id) || is_reduced[thread_id] == true || thread_id >= num_cols || my_lowest_one == -1)
     {
         if (!*ive_added) {
             atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) 1);
@@ -280,27 +284,29 @@ __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chu
         return;
     }
 
-    indx my_lowest_one = get_max_index(matrix, thread_id);
-
+    //bool flag = false;
     if (my_lowest_one >= row_begin && my_lowest_one < row_end) {
     //for(indx col_id = column_start; col_id < thread_id; col_id++)
     //{
         //indx this_lowest_one = get_max_index(matrix, col_id);
         //if(this_lowest_one == my_lowest_one){
         //    *target_col = col_id;
-        if (leftmost_lookup_lowest_row[my_lowest_one] >= column_start && leftmost_lookup_lowest_row[my_lowest_one] < thread_id) {
+        //leftmost_lookup_lowest_row[my_lowest_one]>=column_start;
+        if (leftmost_lookup_lowest_row[my_lowest_one]>=column_start && leftmost_lookup_lowest_row[my_lowest_one] < thread_id) {
             *target_col = leftmost_lookup_lowest_row[my_lowest_one];
+            //flag = true;
             if (*ive_added) {
                 atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) -1);
                 *ive_added = false;
             }
             return;
         }
-    //}
     }
+    //}
+
     if (!*ive_added) {
        atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) 1);
-      *ive_added = true;
+       *ive_added = true;
     }
 }
 
@@ -369,7 +375,7 @@ __device__ void add_two_columns(column* matrix, indx target, indx source, Scatte
     tgt_col->data_length = temp_id;
 }
 
-__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, bool* is_reduced, dimension* dims, indx my_col_id,
+__device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, indx* leftmost_lookup_lowest_row, bool* is_reduced, dimension* dims, indx my_col_id,
         indx row_begin, indx row_end, dimension cur_dim) {
     if (cur_dim != get_dim(dims, my_col_id) || is_reduced[my_col_id]) {
         return;
@@ -381,9 +387,10 @@ __device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, bool* is
         return;
     }
     if (lowest_one_lookup[my_lowest_one] == -1 && my_lowest_one >= row_begin && my_lowest_one < row_end) {
-      	lowest_one_lookup[my_lowest_one] = my_col_id;
+        lowest_one_lookup[my_lowest_one] = my_col_id;
         is_reduced[my_col_id] = true;
         clear_column(matrix, my_lowest_one);
+        update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, my_lowest_one);
         is_reduced[my_lowest_one] = true;
     }
 }
@@ -391,10 +398,33 @@ __device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, bool* is
 __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup_lowest_row, int thread_id)
 {
     indx cur_lowest_one = get_max_index(matrix, thread_id);
-    indx cur_leftmost = leftmost_lookup_lowest_row[cur_lowest_one];
+    if(cur_lowest_one == -1)
+        return;
+    if(leftmost_lookup_lowest_row[cur_lowest_one] == -1)
+        atomicExch((int *)&leftmost_lookup_lowest_row[cur_lowest_one], thread_id);
+    else
+        atomicMin((int *)&leftmost_lookup_lowest_row[cur_lowest_one], thread_id);
+}
 
-    if(cur_leftmost == -1 || cur_leftmost > thread_id)
-        leftmost_lookup_lowest_row[cur_lowest_one] = thread_id;
+__global__ void update_table(column* matrix, indx* leftmost_lookup_lowest_row, indx cur_phase, indx block_size)
+{
+    int thread_id = threadIdx.x + blockDim.x * blockIdx.x;
+    //int block_id = blockIdx.x;
+    //int threadidx = threadIdx.x;
+    indx column_start = ((blockDim.x * blockIdx.x - cur_phase * block_size) > 0) ? (blockDim.x * blockIdx.x - cur_phase * block_size) : 0;
+    indx column_end = column_start + block_size * (cur_phase+1);
+    //indx row_begin = ((blockDim.x * blockIdx.x - cur_phase * block_size) > 0) ? (blockDim.x * blockIdx.x - cur_phase * block_size) : 0;
+    //indx row_end = row_begin + block_size;
+
+    indx this_max_index = get_max_index(matrix, thread_id);
+    __syncthreads();
+    if(thread_id >= column_start && thread_id < column_end)// && this_max_index >= row_begin && this_max_index < row_end)
+    {
+        if(leftmost_lookup_lowest_row[this_max_index] == -1)
+            atomicExch((int *)&leftmost_lookup_lowest_row[this_max_index], thread_id);
+        else
+            atomicMin((int *)&leftmost_lookup_lowest_row[this_max_index], thread_id);
+    }
 }
 
 /*__global__ void init_table(column* matrix, lookup_table *lookup_lowest_row_table, indx num_cols, ScatterAllocator::AllocatorHandle allocator)
@@ -413,11 +443,11 @@ __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup
     }
     lookup_lowest_row_table[cur_lowest_one].data = (indx *) allocator.malloc(sizeof(indx) * temp_id);
     lookup_lowest_row_table[cur_lowest_one].data_length = temp_id;
-    //gpuErrchk(cudaMalloc((void **) &lookup_lowest_row_table[cur_lowest_one].data, sizeof(indx) * temp_id));
-    //gpuErrchk(cudaMemcpy(lookup_lowest_row_table[cur_lowest_one].data, temp_lowest_table, sizeof(indx) * temp_id, cudaMemcpyHostToDevice));
-    //gpuErrchk(cudaMalloc((void **) &lookup_lowest_row_table[cur_lowest_one].data_length, sizeof(indx)));
-    //gpuErrchk(cudaMemcpy(&lookup_lowest_row_table[cur_lowest_one].data_length, &temp_id, sizeof(indx), cudaMemcpyHostToDevice));
-    //}
+//gpuErrchk(cudaMalloc((void **) &lookup_lowest_row_table[cur_lowest_one].data, sizeof(indx) * temp_id));
+//gpuErrchk(cudaMemcpy(lookup_lowest_row_table[cur_lowest_one].data, temp_lowest_table, sizeof(indx) * temp_id, cudaMemcpyHostToDevice));
+//gpuErrchk(cudaMalloc((void **) &lookup_lowest_row_table[cur_lowest_one].data_length, sizeof(indx)));
+//gpuErrchk(cudaMemcpy(&lookup_lowest_row_table[cur_lowest_one].data_length, &temp_id, sizeof(indx), cudaMemcpyHostToDevice));
+//}
     temp_id = 0;
     for(indx cur_id = 0; cur_id < num_cols; cur_id++)
     {
@@ -428,9 +458,9 @@ __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup
             temp_id++;
         }
     }
-}*/
+}
 
-/*__device__ indx lookup_col_index(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx column_begin, indx cur_col)
+__device__ indx lookup_col_index(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx column_begin, indx cur_col)
 {
     for(indx cur_id = 0; cur_id < lookup_lowest_row_table[cur_lowest_one].data_length; cur_id++)
     {
@@ -438,18 +468,17 @@ __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup
         if(temp_col >= column_begin && temp_col < cur_col)
             return temp_col;
     }
-}*/
+}
 
-/*__device__ indx check_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id)
+__device__ indx check_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id)
 {
     for(indx id = 0; id < lookup_lowest_row_table[cur_lowest_one].data_length; id++)
         if(id == col_id)
             return id;
-
     return -1;
-}*/
+}
 
-/*__device__ void delete_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id)
+__device__ void delete_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id)
 {
     indx col_index = check_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id);
     if(col_index == -1)
@@ -458,9 +487,30 @@ __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup
     for(indx id = col_index; id < len; id++)
         lookup_lowest_row_table[cur_lowest_one].data[id] = lookup_lowest_row_table[cur_lowest_one].data[id+1];
     lookup_lowest_row_table[cur_lowest_one].data_length--;
-}*/
+}
 
-/*__device__ void add_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id, ScatterAllocator::AllocatorHandle allocator)
+__device__ void add_col_in_table(lookup_table* lookup_lowest_row_table, indx cur_lowest_one, indx col_id, ScatterAllocator::AllocatorHandle allocator)
 {
+    indx insert_id = -1;
+    for(indx id=0; id<lookup_lowest_row_table[cur_lowest_one].data_length; id++)
+    {
+        if(lookup_lowest_row_table[cur_lowest_one].data[id] > col_id)
+        {
+            insert_id = id;
+            break;
+        }
+    }
+    if(insert_id == -1)
+        return;
+    auto new_data = (indx *)allocator.malloc(sizeof(indx) * (lookup_lowest_row_table[cur_lowest_one].data_length+1));
+    for(indx id = 0; id < insert_id; id++)
+        new_data[id] = lookup_lowest_row_table[cur_lowest_one].data[id];
+    new_data[insert_id] = col_id;
+    for(indx id=(insert_id+1); id<(lookup_lowest_row_table[cur_lowest_one].data_length+1); id++)
+        new_data[id] = lookup_lowest_row_table[cur_lowest_one].data[id-1];
 
+    lookup_lowest_row_table[cur_lowest_one].data = new_data;
+    lookup_lowest_row_table[cur_lowest_one].data_length++;
 }*/
+
+

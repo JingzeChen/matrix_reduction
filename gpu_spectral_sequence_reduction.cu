@@ -13,7 +13,7 @@
 
 #include "gpu_boundary_matrix.h"
 #include "gpu_common.h"
-
+#define TABLE_SIZE 512
 
 __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long long *chunk_columns_finished, dimension* dims, indx* leftmost_lookup_lowest_row, dimension max_dim,
         dimension cur_dim, indx block_size, indx num_cols, int block_num, indx* lowest_one_lookup, bool* is_reduced,
@@ -33,13 +33,15 @@ __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long lo
         check_lowest_one_locally(matrix, chunk_columns_finished, dims,is_reduced, leftmost_lookup_lowest_row, thread_id, block_id,
                 column_start, column_end, row_begin, row_end, cur_dim, num_cols, &target_col, &ive_added);
         add_two_columns(matrix, thread_id, target_col, allocator);
-        __syncthreads();
-        if(target_col != -1)
+        //__syncthreads();
+        if(target_col != -1){
             update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, thread_id);
+        }
+        __threadfence();
         target_col = -1;
         __syncthreads();
     }while(chunk_columns_finished[block_id] < block_size);
-    mark_and_clean(matrix, lowest_one_lookup, is_reduced, dims, thread_id, row_begin, row_end, cur_dim);
+    mark_and_clean(matrix, lowest_one_lookup, leftmost_lookup_lowest_row, is_reduced, dims, thread_id, row_begin, row_end, cur_dim);
     __syncthreads();
     if(threadidx == 0)
         chunk_columns_finished[block_id] = 0;
@@ -124,6 +126,8 @@ int main(int argc, char **argv)
                                                             (g_matrix.matrix, g_matrix.chunk_columns_finished, g_matrix.dims,
                                                                     g_matrix.leftmost_lookup_lowest_row, max_dim, cur_dim, threads_block,
                                                                     num_cols,block_num, g_matrix.lowest_one_lookup, g_matrix.is_reduced, cur_phase, allocator);
+            cudaDeviceSynchronize();
+            update_table<<<block_num, threads_block>>>(g_matrix.matrix, g_matrix.leftmost_lookup_lowest_row, cur_phase, threads_block);
             cudaDeviceSynchronize();
         }
     }
