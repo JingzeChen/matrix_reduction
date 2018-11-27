@@ -390,7 +390,7 @@ __device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, indx* le
         lowest_one_lookup[my_lowest_one] = my_col_id;
         is_reduced[my_col_id] = true;
         clear_column(matrix, my_lowest_one);
-        update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, my_lowest_one);
+        //update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, my_lowest_one);
         is_reduced[my_lowest_one] = true;
     }
 }
@@ -401,9 +401,15 @@ __device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup
     if(cur_lowest_one == -1)
         return;
     if(leftmost_lookup_lowest_row[cur_lowest_one] == -1)
+    {
         atomicExch((int *)&leftmost_lookup_lowest_row[cur_lowest_one], thread_id);
+        __threadfence();
+    }
     else
+    {
         atomicMin((int *)&leftmost_lookup_lowest_row[cur_lowest_one], thread_id);
+        __threadfence();
+    }
 }
 
 __global__ void update_table(column* matrix, indx* leftmost_lookup_lowest_row, indx cur_phase, indx block_size)

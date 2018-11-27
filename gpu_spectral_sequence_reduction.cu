@@ -37,7 +37,6 @@ __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long lo
         if(target_col != -1){
             update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, thread_id);
         }
-        __threadfence();
         target_col = -1;
         __syncthreads();
     }while(chunk_columns_finished[block_id] < block_size);
@@ -127,8 +126,8 @@ int main(int argc, char **argv)
                                                                     g_matrix.leftmost_lookup_lowest_row, max_dim, cur_dim, threads_block,
                                                                     num_cols,block_num, g_matrix.lowest_one_lookup, g_matrix.is_reduced, cur_phase, allocator);
             cudaDeviceSynchronize();
-            update_table<<<block_num, threads_block>>>(g_matrix.matrix, g_matrix.leftmost_lookup_lowest_row, cur_phase, threads_block);
-            cudaDeviceSynchronize();
+            //update_table<<<block_num, threads_block>>>(g_matrix.matrix, g_matrix.leftmost_lookup_lowest_row, cur_phase, threads_block);
+            //cudaDeviceSynchronize();
         }
     }
 

@@ -75,7 +75,7 @@ __device__ bool is_empty(column* matrix, int col);
 __device__ indx get_max_index(column* matrix, int col);
 
 //set column col as zero.
-__device__ void clear_column(column* matrix, int col);
+__device__ void clear_column(column* matrix, int col_id);
 
 //search for column in the same chunk and the row indx of the column is equal to the lowest row indx of column my_col_id.
 __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chunk_columns_finished, dimension* dims, bool* is_reduced, indx* leftmost_lookup_lowest_row,
