@@ -3,8 +3,8 @@ SRC = gpu_spectral_sequence_reduction.cu gpu_common.cu chunk_reduction_algorithm
 OBJ = $(patsubst %.cu,%.o,${SRC})
 OBJ_DEBUG = $(patsubst %.cu,%_debug.o,${SRC})
 
-CXXFLAGS_COMMON = -std=c++14 -Iphat_lib -Imallocmc_lib
-CXXFLAGS_DEBUG =  ${CXXFLAGS_COMMON} -g -G -O0
+CXXFLAGS_COMMON = -std=c++14 -ccbin=g++-6 -O3 -use_fast_math -m64 --gpu-architecture=compute_61 --gpu-code=compute_61 -Iphat_lib -Imallocmc_lib
+CXXFLAGS_DEBUG =  ${CXXFLAGS_COMMON} -g -G
 CXXFLAGS_RELEASE = ${CXXFLAGS_COMMON} -O3 -DBDEBUG
 
 TARGET_DEBUG = matReduct_debug

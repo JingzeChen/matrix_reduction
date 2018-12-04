@@ -9,9 +9,10 @@
 #include "cuda_runtime.h"
 #include "cuda.h"
 
-#define CUDA_MAX_BLOCK_THREADS_NUM      512
+#define CUDA_MAX_BLOCK_THREADS_NUM      1024
 #define CUDA_THREADS_EACH_BLOCK(cols)   (((indx)(sqrt((double)cols))) > CUDA_MAX_BLOCK_THREADS_NUM ? \
                             CUDA_MAX_BLOCK_THREADS_NUM : ((indx)(sqrt((double)cols))))
+//#define CUDA_THREADS_EACH_BLOCK(cols) CUDA_MAX_BLOCK_THREADS_NUM
 #define CUDA_BLOCKS_NUM(cols) ((indx)(cols / CUDA_THREADS_EACH_BLOCK(cols) + (cols % CUDA_THREADS_EACH_BLOCK(cols) == 0 ? 0 : 1)))
 
 typedef long indx;

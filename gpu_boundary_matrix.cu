@@ -248,6 +248,8 @@ __device__ indx get_second_max_index(column* matrix, int col_id)
             t = (t >> 1);
             cnt++;
         }
+        if(cnt == 0 && matrix[col_id].value[matrix[col_id].data_length - 1] == 0)
+            return -1;
         return (matrix[col_id].pos[matrix[col_id].data_length - 1] * BLOCK_BITS + cnt);
     }
 }
@@ -273,7 +275,7 @@ __device__ void remove_max_index(column* matrix, int col) {
 
 __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chunk_columns_finished, dimension * dims,
         bool* is_reduced, indx* leftmost_lookup_lowest_row, int thread_id, int block_id, indx column_start, indx column_end, indx row_begin, indx row_end,
-        dimension cur_dim, indx num_cols, int* target_col, bool* ive_added) {
+        dimension cur_dim, indx num_cols, int* target_col, bool* ive_added, indx* front_lowest_one) {
     indx my_lowest_one = get_max_index(matrix, thread_id);
     if (cur_dim != get_dim(dims, thread_id) || is_reduced[thread_id] == true || thread_id >= num_cols || my_lowest_one == -1)
     {
@@ -294,6 +296,7 @@ __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chu
         //leftmost_lookup_lowest_row[my_lowest_one]>=column_start;
         if (leftmost_lookup_lowest_row[my_lowest_one]>=column_start && leftmost_lookup_lowest_row[my_lowest_one] < thread_id) {
             *target_col = leftmost_lookup_lowest_row[my_lowest_one];
+            *front_lowest_one = my_lowest_one;
             //flag = true;
             if (*ive_added) {
                 atomicAdd((unsigned long long *) &chunk_columns_finished[block_id], (unsigned long long) -1);
@@ -395,9 +398,11 @@ __device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, indx* le
     }
 }
 
-__device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup_lowest_row, int thread_id)
+__device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup_lowest_row, indx front_lowest_one, int thread_id)
 {
     indx cur_lowest_one = get_max_index(matrix, thread_id);
+    if(front_lowest_one != -1 && leftmost_lookup_lowest_row[front_lowest_one] == thread_id)
+        atomicExch((int *)&leftmost_lookup_lowest_row[front_lowest_one], -1);
     if(cur_lowest_one == -1)
         return;
     if(leftmost_lookup_lowest_row[cur_lowest_one] == -1)

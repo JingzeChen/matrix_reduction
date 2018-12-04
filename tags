@@ -351,8 +351,8 @@ CUDA_MAX_BLOCK_THREADS_NUM	gpu_common.h	/^#define CUDA_MAX_BLOCK_THREADS_NUM /;"
 CUDA_NVCC_FLAGS	CMakeLists.txt	/^    CUDA_NVCC_FLAGS$/;"	v
 CUDA_THREADS_EACH_BLOCK	gpu_common.h	/^#define CUDA_THREADS_EACH_BLOCK(/;"	d
 CXX	Makefile	/^CXX = nvcc$/;"	m
-CXXFLAGS_COMMON	Makefile	/^CXXFLAGS_COMMON = -std=c++14 -Iphat_lib -Imallocmc_lib$/;"	m
-CXXFLAGS_DEBUG	Makefile	/^CXXFLAGS_DEBUG =  ${CXXFLAGS_COMMON} -g -G -O0$/;"	m
+CXXFLAGS_COMMON	Makefile	/^CXXFLAGS_COMMON = -std=c++14 -ccbin=g++-6 -O3 -use_fast_math -m64 --gpu-architecture=compute_61 /;"	m
+CXXFLAGS_DEBUG	Makefile	/^CXXFLAGS_DEBUG =  ${CXXFLAGS_COMMON} -g -G$/;"	m
 CXXFLAGS_RELEASE	Makefile	/^CXXFLAGS_RELEASE = ${CXXFLAGS_COMMON} -O3 -DBDEBUG$/;"	m
 CXX_STD	build/CMakeFiles/3.12.4/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define CXX_STD /;"	d	file:
 CXX_STD	cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define CXX_STD /;"	d	file:

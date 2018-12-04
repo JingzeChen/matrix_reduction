@@ -30,13 +30,14 @@ __global__ void gpu_spectral_sequence_reduction(column* matrix, unsigned long lo
     bool ive_added = false;
     int target_col = -1;
     do{
+        indx front_lowest_one = -1;
         check_lowest_one_locally(matrix, chunk_columns_finished, dims,is_reduced, leftmost_lookup_lowest_row, thread_id, block_id,
-                column_start, column_end, row_begin, row_end, cur_dim, num_cols, &target_col, &ive_added);
+                column_start, column_end, row_begin, row_end, cur_dim, num_cols, &target_col, &ive_added, &front_lowest_one);
         add_two_columns(matrix, thread_id, target_col, allocator);
-        //__syncthreads();
         if(target_col != -1){
-            update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, thread_id);
+            update_lookup_lowest_table(matrix, leftmost_lookup_lowest_row, front_lowest_one, thread_id);
         }
+        //__syncthreads();
         target_col = -1;
         __syncthreads();
     }while(chunk_columns_finished[block_id] < block_size);

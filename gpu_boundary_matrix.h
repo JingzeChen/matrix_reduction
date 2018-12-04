@@ -80,7 +80,7 @@ __device__ void clear_column(column* matrix, int col_id);
 //search for column in the same chunk and the row indx of the column is equal to the lowest row indx of column my_col_id.
 __device__ void check_lowest_one_locally(column* matrix, unsigned long long* chunk_columns_finished, dimension* dims, bool* is_reduced, indx* leftmost_lookup_lowest_row,
         int thread_id, int block_id, indx column_start, indx column_end, indx row_begin, indx row_end, dimension cur_dim, indx num_cols,
-        int* target_col, bool* ive_added);
+        int* target_col, bool* ive_added, indx* front_lowest_one);
 //mark column as global, local positive or local negative and clean corresponding column as zero.
 __device__ void mark_and_clean(column* matrix, indx* lowest_one_lookup, indx* leftmost_lookup_lowest_row, bool* is_reduced, dimension* dims,indx my_col_id, indx row_begin, indx row_end, dimension cur_dim);
 
@@ -99,7 +99,7 @@ __host__ void transfor_data_backto_cpu(phat::boundary_matrix<phat::vector_vector
 __device__ indx get_second_max_index(column* matrix, int col_id);
 
 //__host__ void init_table(column* matrix, indx num_cols);
-__device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup_lowest_row, int thread_id);
+__device__ void update_lookup_lowest_table(column* matrix, indx* leftmost_lookup_lowest_row, indx front_lowest_one, int thread_id);
 
 __global__ void update_table(column* matrix, indx* leftmost_lookup_lowest_row, indx cur_phase, indx block_size);
 #endif
